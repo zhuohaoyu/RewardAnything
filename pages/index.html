@@ -294,55 +294,57 @@ description: "RewardAnything: Generalizable Principle-Following Reward Models"
                 </div>
             </div>
         </div>
-
-        <!-- The Paradigm Shift -->
-        <div class="mt-12 text-center">
-            <div class="bg-gradient-to-r from-blue-600 to-purple-600 text-white p-8 rounded-2xl shadow-lg">
-                <h3 class="text-2xl font-bold mb-4">The Solution: Principle-Following Reward Models</h3>
-                <p class="text-lg mb-6 max-w-4xl mx-auto">
-                    Instead of learning implicit preferences, RewardAnything follows <span class="font-semibold">explicit natural language principles</span> — enabling dynamic adaptation to any evaluation criteria without retraining.
-                </p>
-                
-                <!-- Mini Demo -->
-                <div class="bg-white/10 backdrop-blur-sm rounded-xl p-6 max-w-4xl mx-auto">
-                    <div class="grid md:grid-cols-2 gap-6 text-left">
-                        <div>
-                            <div class="text-sm font-semibold text-blue-200 mb-2">📋 Principle A: Brevity Focus</div>
-                            <div class="bg-blue-500/20 p-3 rounded-lg text-sm">
-                                "Prefer concise, to-the-point responses that directly answer the question without unnecessary details."
-                            </div>
-                            <div class="mt-2 text-xs text-blue-200">→ Ranks brief, accurate answer highest</div>
-                        </div>
-                        <div>
-                            <div class="text-sm font-semibold text-purple-200 mb-2">📋 Principle B: Detail Focus</div>
-                            <div class="bg-purple-500/20 p-3 rounded-lg text-sm">
-                                "Prefer comprehensive responses with detailed explanations, examples, and thorough coverage of the topic."
-                            </div>
-                            <div class="mt-2 text-xs text-purple-200">→ Ranks detailed, educational answer highest</div>
-                        </div>
-                    </div>
-                    <div class="text-center mt-4 text-sm text-white/80">
-                        <span class="font-semibold">Same model, same responses, different principles → different rankings</span>
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
 </section>
 
-
-<!-- Problem & Solution Overview -->
-<section class="py-20 bg-gray-50">
+<!-- New Solution Section -->
+<section class="py-20 bg-slate-50"> <!-- Neutral background for the solution section -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-16">
-            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">The Problem with Current Reward Models</h2>
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">The Solution: Principle-Following Reward Models</h2>
             <p class="text-xl text-gray-600 max-w-4xl mx-auto">
-                Traditional reward models learn implicit preferences from fixed datasets, making them rigid and unable to adapt to diverse real-world needs.
+                To overcome these limitations, we propose a paradigm shift towards reward models that explicitly understand and follow natural language principles. This approach enables dynamic adaptation to any evaluation criteria without costly retraining and is embodied by two key innovations:
             </p>
         </div>
 
-        <!-- Research Figure Container -->
-        <div class="paper-figure-container mb-16">
+        <div class="grid md:grid-cols-1 lg:grid-cols-2 gap-10 mb-16 items-stretch">
+            <!-- Sub-block 1: Evaluating Principle-Following (RABench) -->
+            <div class="bg-white p-8 rounded-xl shadow-lg border border-gray-200 flex flex-col">
+                <div class="flex items-center mb-4">
+                    <span class="text-3xl mr-3">🎯</span>
+                    <h3 class="text-2xl font-bold text-blue-700">1. A New Evaluation Paradigm: RABench</h3>
+                </div>
+                <p class="text-gray-700 mb-4 flex-grow">
+                    Current benchmarks assess how well RMs fit a <span class="font-semibold">single, fixed preference</span>. This is insufficient. We argue that, analogous to how Large Language Models (LLMs) are valued for their ability to <span class="font-semibold text-blue-600">follow diverse instructions</span>, reward models must be evaluated on their capacity to <span class="font-semibold text-blue-600">follow diverse principles</span>.
+                </p>
+                <p class="text-gray-700 mb-4 flex-grow">
+                    To this end, we introduce <strong class="text-blue-700">RABench (RewardAnything Benchmark)</strong>. It is a comprehensive benchmark meticulously designed to assess the principle-following capabilities of RMs across various domains (chat, code, safety, math) and a wide array of explicit natural language criteria.
+                </p>
+                 <p class="text-gray-700">
+                    RABench moves beyond static preference matching, pushing for RMs that demonstrate true generalization in understanding and applying "goodness" based on varied, explicit guidance.
+                </p>
+            </div>
+
+            <!-- Sub-block 2: RewardAnything Model -->
+            <div class="bg-white p-8 rounded-xl shadow-lg border border-gray-200 flex flex-col">
+                 <div class="flex items-center mb-4">
+                    <span class="text-3xl mr-3">🏆</span>
+                    <h3 class="text-2xl font-bold text-green-700">2. The RewardAnything Model</h3>
+                </div>
+                <p class="text-gray-700 mb-4 flex-grow">
+                    We develop <strong class="text-green-700">RewardAnything</strong>, a novel reward model engineered to embody this principle-following paradigm.
+                </p>
+                <p class="text-gray-700 mb-4 flex-grow">
+                    Trained using advanced Reinforcement Learning (RL) techniques on principle-conditioned preference data, RewardAnything learns to robustly distinguish better responses from worse ones by <span class="font-semibold text-green-600">directly conditioning on explicit natural language principles</span> provided at inference time. This allows it to adapt its judgment dynamically without any retraining.
+                </p>
+                <p class="text-gray-700">
+                    A key feature is its <span class="font-semibold text-green-600">inference-time reasoning process</span>. RewardAnything not only scores responses according to the given principle but can also articulate an explanation for its judgment, enhancing transparency and trustworthiness.
+                </p>
+            </div>
+        </div>
+
+        <!-- Figure 1 Moved Here -->
+        <div class="paper-figure-container mb-0"> <!-- paper-figure-container already has good styling -->
             <div class="max-w-5xl mx-auto">
                 <img src="{{ '/assets/images/figure_1_placeholder.jpg' | relative_url }}" 
                      alt="Figure 1: Current post-training optimization paradigm vs RewardAnything approach"
@@ -351,56 +353,6 @@ description: "RewardAnything: Generalizable Principle-Following Reward Models"
                     <strong>Figure 1:</strong> Current post-training optimization requires costly retraining for different preferences. 
                     RewardAnything directly follows natural language principles without retraining.
                 </p>
-            </div>
-        </div>
-
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            <!-- Current Limitations -->
-            <div class="bg-red-50 p-8 rounded-xl">
-                <div class="text-red-600 text-2xl mb-4">⚠️</div>
-                <h3 class="text-xl font-bold text-red-900 mb-4">Current Limitations</h3>
-                <ul class="space-y-3 text-red-800">
-                    <li class="flex items-start">
-                        <span class="text-red-600 mr-2">•</span>
-                        <span><strong>Limited Adaptability:</strong> Need to retrain for different preference criteria</span>
-                    </li>
-                    <li class="flex items-start">
-                        <span class="text-red-600 mr-2">•</span>
-                        <span><strong>Implicit Learning:</strong> Learn biases from spurious correlations in data</span>
-                    </li>
-                    <li class="flex items-start">
-                        <span class="text-red-600 mr-2">•</span>
-                        <span><strong>Costly Updates:</strong> Require new preference data collection and retraining</span>
-                    </li>
-                    <li class="flex items-start">
-                        <span class="text-red-600 mr-2">•</span>
-                        <span><strong>Poor Interpretability:</strong> Difficult to understand decision rationale</span>
-                    </li>
-                </ul>
-            </div>
-
-            <!-- Our Solution -->
-            <div class="bg-green-50 p-8 rounded-xl">
-                <div class="text-green-600 text-2xl mb-4">✅</div>
-                <h3 class="text-xl font-bold text-green-900 mb-4">RewardAnything Solution</h3>
-                <ul class="space-y-3 text-green-800">
-                    <li class="flex items-start">
-                        <span class="text-green-600 mr-2">•</span>
-                        <span><strong>Principle-Following:</strong> Adapt to any explicit natural language criteria</span>
-                    </li>
-                    <li class="flex items-start">
-                        <span class="text-green-600 mr-2">•</span>
-                        <span><strong>Zero Retraining:</strong> Dynamic adaptation without model updates</span>
-                    </li>
-                    <li class="flex items-start">
-                        <span class="text-green-600 mr-2">•</span>
-                        <span><strong>Transparent Reasoning:</strong> Explicit explanations for decisions</span>
-                    </li>
-                    <li class="flex items-start">
-                        <span class="text-green-600 mr-2">•</span>
-                        <span><strong>Bias Mitigation:</strong> Clear principles eliminate spurious correlations</span>
-                    </li>
-                </ul>
             </div>
         </div>
     </div>
