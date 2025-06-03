@@ -251,46 +251,46 @@ description: "RewardAnything: Generalizable Principle-Following Reward Models"
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
                 <div class="text-center">
                     <div class="bg-red-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <!-- Icon for Inflexible & Static Judgement (e.g., a shield or fixed block) -->
+                        <!-- Icon for Overfitting to Static Preferences -->
                         <svg class="w-8 h-8 text-red-600" fill="currentColor" viewBox="0 0 20 20">
                             <path d="M10 2.25A.75.75 0 0110.75 3v.685c.304.06.601.142.89.246l.22.079a12.506 12.506 0 006.283 1.848 1.25 1.25 0 01.958 1.239V10c0 .604-.205 1.168-.57 1.644-.26.335-.556.636-.88.898l-.32.26a11.014 11.014 0 01-5.062 1.73 11.014 11.014 0 01-5.062-1.73l-.32-.26c-.324-.262-.62-.563-.88-.898C2.205 11.168 2 10.604 2 10V7.077c0-.537.348-1.012.857-1.183a12.503 12.503 0 006.283-1.848l.22-.08c.289-.103.586-.185.89-.245V3A.75.75 0 0110 2.25z" />
                         </svg>
                     </div>
-                    <h4 class="font-semibold text-gray-900 mb-2">Inflexible & Static Judgement</h4>
-                    <p class="text-sm text-gray-600">RMs apply a fixed, learned preference, unable to adapt to varying contexts or explicit user instructions without retraining.</p>
+                    <h4 class="font-semibold text-gray-900 mb-2">Overfitting to Static Preferences</h4>
+                    <p class="text-sm text-gray-600">RMs master a single, fixed preference from training data, failing to grasp the multifaceted nature of human values or adapt to diverse contexts.</p>
                 </div>
                 
                 <div class="text-center">
                     <div class="bg-red-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <!-- Icon for Superficial & Biased Learning (e.g., list/format icon, or eye looking at surface) -->
+                        <!-- Icon for Opaque & Implicit Reasoning -->
+                        <svg class="w-8 h-8 text-red-600" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd" />
+                        </svg>
+                    </div>
+                    <h4 class="font-semibold text-gray-900 mb-2">Opaque & Implicit Reasoning</h4>
+                    <p class="text-sm text-gray-600">Learning from outcomes alone (chosen/rejected pairs), RMs lack an explicit understanding of *why* a response is preferred, making their judgments uninterpretable black boxes.</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="bg-red-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <!-- Icon for Vulnerability to Spurious Correlations -->
                         <svg class="w-8 h-8 text-red-600" fill="currentColor" viewBox="0 0 20 20">
                             <path fill-rule="evenodd" d="M3 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"/>
                         </svg>
                     </div>
-                    <h4 class="font-semibold text-gray-900 mb-2">Superficial & Biased Learning</h4>
-                    <p class="text-sm text-gray-600">Lacking explicit rationale, RMs learn from outcomes, often latching onto superficial patterns (e.g., length, format) as proxies for quality.</p>
+                    <h4 class="font-semibold text-gray-900 mb-2">Vulnerability to Spurious Correlations</h4>
+                    <p class="text-sm text-gray-600">Implicit learning on biased data leads RMs to mistakenly learn superficial cues (e.g., length, format, specific keywords) as proxies for genuine quality.</p>
                 </div>
                 
                 <div class="text-center">
                     <div class="bg-red-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <!-- Icon for Poor Generalization (e.g., padlock, or diverging paths with a block) -->
+                        <!-- Icon for Costly & Inefficient Adaptation for New Criteria -->
                         <svg class="w-8 h-8 text-red-600" fill="currentColor" viewBox="0 0 20 20">
-                           <path fill-rule="evenodd" d="M10 1a4.5 4.5 0 00-4.5 4.5V9H5a2 2 0 00-2 2v6a2 2 0 002 2h10a2 2 0 002-2v-6a2 2 0 00-2-2h-.5V5.5A4.5 4.5 0 0010 1zm3 8V5.5a3 3 0 10-6 0V9h6z" clip-rule="evenodd" />
+                           <path fill-rule="evenodd" d="M15.312 11.424a5.5 5.5 0 01-9.204 2.506l-.092-.093a.5.5 0 00-.708.708l.092.092a6.5 6.5 0 0010.888-3.003.5.5 0 00-.976-.202l-.008.02zM4.688 8.576a5.5 5.5 0 019.204-2.506l.092.093a.5.5 0 00.708-.708l-.092-.092a6.5 6.5 0 00-10.888 3.003.5.5 0 00.976.202l.008-.02z" clip-rule="evenodd" /> <path fill-rule="evenodd" d="M7.21 1.093A.5.5 0 017.5 1.5v1.848a6.504 6.504 0 00-2.833 4.79.5.5 0 00.988.142A5.504 5.504 0 017.5 3.452V5.5a.5.5 0 001 0V1.5a.5.5 0 01-.29-.907L7.21 1.093zM12.79 18.907a.5.5 0 01-.29.408l-.001.001a.5.5 0 01-.707-.707l.001-.001V16.15a5.504 5.504 0 012.833-4.79.5.5 0 00-.988-.142A6.504 6.504 0 0012.5 16.548V14.5a.5.5 0 00-1 0v4.5a.5.5 0 01.29.907z" clip-rule="evenodd" />
                         </svg>
                     </div>
-                    <h4 class="font-semibold text-gray-900 mb-2">Poor Generalization to Novel Criteria</h4>
-                    <p class="text-sm text-gray-600">Trained and benchmarked on fixed preferences, RMs fail to generalize their judgment to new, diverse, or nuanced principles defined by users.</p>
-                </div>
-                
-                <div class="text-center">
-                    <div class="bg-red-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <!-- Icon for Prohibitive Adaptation Costs (e.g., money bag with down arrow, or broken gear) -->
-                        <svg class="w-8 h-8 text-red-600" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"/>
-                        </svg>
-                    </div>
-                    <h4 class="font-semibold text-gray-900 mb-2">Prohibitive Adaptation Costs</h4>
-                    <p class="text-sm text-gray-600">Modifying an RM's core judgment or adapting to new principles typically demands expensive new data collection and full model retraining cycles.</p>
+                    <h4 class="font-semibold text-gray-900 mb-2">Costly & Inefficient Adaptation</h4>
+                    <p class="text-sm text-gray-600">Due to overfit, static preferences and opaque reasoning, aligning RMs with new criteria or principles demands expensive data collection and full retraining cycles.</p>
                 </div>
             </div>
         </div>
