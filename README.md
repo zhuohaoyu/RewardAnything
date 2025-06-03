@@ -1,5 +1,3 @@
-# RewardAnything: Generalizable Principle-Following Reward Models
-
 <div align="center">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="assets/rewardanything-logo-horizontal-dark-mode.png">
@@ -8,10 +6,16 @@
     </picture>
   <br/>
   <p>
-    <a href="https://pypi.org/project/RewardAnything/"><img alt="PyPI" src="https://img.shields.io/pypi/v/RewardAnything.svg?color=blue"></a>
-    <a href="https://github.com/zhuohaoyu/RewardAnything/blob/main/LICENSE"><img alt="License" src="https://img.shields.io/badge/License-Apache_2.0-blue.svg"></a>
+    <a href="https://pypi.org/project/rewardanything/"><img alt="PyPI" src="https://img.shields.io/pypi/v/rewardanything.svg?style=flat-square&color=7B9BB3&labelColor=5A7A94"></a>
+    <a href="https://huggingface.co/zhuohaoyu/RewardAnything-8B-v1"><img alt="Model Weights" src="https://img.shields.io/badge/🤗_HuggingFace-Model_Weights-D4A574?style=flat-square&labelColor=B8956A"></a>
+    <a href="https://arxiv.org/abs/XXXX.XXXXX"><img alt="Paper" src="https://img.shields.io/badge/📄_arXiv-Paper-C7969C?style=flat-square&labelColor=A8798A"></a>
+    <a href="https://github.com/zhuohaoyu/RewardAnything#readme"><img alt="Documentation" src="https://img.shields.io/badge/📚_GitHub-Documentation-9CAF88?style=flat-square&labelColor=7D9170"></a>
+    <a href="https://zhuohaoyu.github.io/RewardAnything"><img alt="Website" src="https://img.shields.io/badge/🌐_Project-Website-A593C2?style=flat-square&labelColor=8A7AA8"></a>
     </p>
   <br/>
+
+# RewardAnything: Generalizable Principle-Following Reward Models
+
   <a>Zhuohao Yu<sup>1,§</sup></a>&emsp;
   <a>Jiali Zeng<sup>2</sup></a>&emsp;
   <a>Weizheng Gu<sup>1</sup></a>&emsp;
