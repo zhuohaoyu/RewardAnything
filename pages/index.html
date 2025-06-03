@@ -5,26 +5,26 @@ description: "RewardAnything: Generalizable Principle-Following Reward Models"
 ---
 
 <!-- Hero Section -->
-<section class="gradient-bg text-slate-700 py-20">
+<section class="gradient-bg text-slate-700 py-12">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <div class="mb-8">
+        <div class="mb-6">
             <!-- Use your regular logo - it will look perfect on this lighter background -->
             <img src="{{ '/assets/images/rewardanything-logo-horizontal.png' | relative_url }}" 
                  alt="RewardAnything" 
-                 class="h-16 md:h-20 w-auto mx-auto mb-6">
+                 class="h-12 md:h-16 w-auto mx-auto mb-4">
         </div>
         
-        <p class="text-xl md:text-2xl mb-8 text-slate-600 max-w-4xl mx-auto font-medium">
+        <p class="text-lg md:text-xl mb-6 text-slate-600 max-w-4xl mx-auto font-medium">
             Generalizable Principle-Following Reward Models
         </p>
         
         <!-- Enhanced TLDR with better mobile typography -->
-        <div class="text-base md:text-lg mb-10 text-slate-600 max-w-5xl mx-auto leading-relaxed">
-            <p class="mb-4 text-sm md:text-base lg:text-lg">
+        <div class="text-sm md:text-base mb-8 text-slate-600 max-w-5xl mx-auto leading-relaxed">
+            <p class="mb-3 text-xs md:text-sm lg:text-base">
                 Traditional reward models learn <span class="font-semibold text-slate-800">implicit preferences</span> behind chosen-rejected pairs,<br class="hidden sm:block">
                 but human values are <span class="italic text-slate-700">far more nuanced</span> than any single distribution.
             </p>
-            <p class="text-sm md:text-base lg:text-lg">
+            <p class="text-xs md:text-sm lg:text-base">
                 <span class="font-semibold text-slate-800">Just as LLMs follow instructions</span>, reward models should follow<br class="hidden sm:block">
                 <span class="font-semibold text-blue-700">explicitly specified principles</span>—enabling<br class="hidden md:block"> 
                 <span class="underline decoration-2 decoration-blue-600">dynamic adaptation</span> to diverse evaluation criteria<br class="hidden sm:block">
@@ -33,17 +33,17 @@ description: "RewardAnything: Generalizable Principle-Following Reward Models"
         </div>
         
         <!-- Updated CTA Buttons -->
-        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
+        <div class="flex flex-col sm:flex-row gap-3 justify-center items-center mb-8">
             <a href="{{ site.paper_url | default: '#' }}" 
-               class="inline-flex items-center bg-white text-slate-700 px-8 py-3 rounded-lg font-semibold hover:bg-slate-50 transition-all transform hover:scale-105 shadow-lg border border-slate-200">
+               class="inline-flex items-center bg-white text-slate-700 px-6 py-2.5 rounded-lg font-semibold hover:bg-slate-50 transition-all transform hover:scale-105 shadow-lg border border-slate-200">
                 📄 <span class="ml-2">Paper</span>
             </a>
             <a href="{{ site.huggingface_url | default: '#' }}" 
-               class="inline-flex items-center bg-gradient-to-r from-yellow-400 to-orange-500 text-white px-8 py-3 rounded-lg font-semibold hover:from-yellow-500 hover:to-orange-600 transition-all transform hover:scale-105 shadow-lg">
+               class="inline-flex items-center bg-gradient-to-r from-yellow-400 to-orange-500 text-white px-6 py-2.5 rounded-lg font-semibold hover:from-yellow-500 hover:to-orange-600 transition-all transform hover:scale-105 shadow-lg">
                 🤗 <span class="ml-2">Model Weights</span>
             </a>
             <a href="#quickstart" 
-               class="inline-flex items-center bg-gradient-to-r from-emerald-500 to-teal-600 text-white px-8 py-3 rounded-lg font-semibold hover:from-emerald-600 hover:to-teal-700 transition-all transform hover:scale-105 shadow-lg">
+               class="inline-flex items-center bg-gradient-to-r from-emerald-500 to-teal-600 text-white px-6 py-2.5 rounded-lg font-semibold hover:from-emerald-600 hover:to-teal-700 transition-all transform hover:scale-105 shadow-lg">
                 💻 <span class="ml-2">Get Started</span>
             </a>
         </div>
@@ -51,9 +51,9 @@ description: "RewardAnything: Generalizable Principle-Following Reward Models"
 </section>
 
 <!-- Authors Section -->
-<section class="py-12 bg-white">
+<section class="py-8 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <div class="text-sm text-gray-600 mb-4">
+        <div class="text-base md:text-lg text-gray-700 mb-4">
             <div class="flex flex-wrap justify-center gap-x-6 gap-y-2">
                 <span>Zhuohao Yu<sup>1,§</sup></span>
                 <span>Jiali Zeng<sup>2</sup></span>
@@ -67,7 +67,7 @@ description: "RewardAnything: Generalizable Principle-Following Reward Models"
                 <span>Wei Ye<sup>1,†</sup></span>
             </div>
         </div>
-        <div class="text-xs text-gray-500">
+        <div class="text-sm md:text-base text-gray-600">
             <div class="mb-2">
                 <sup>1</sup>Peking University &emsp;
                 <sup>2</sup>WeChat AI &emsp;
