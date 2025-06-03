@@ -1,9 +1,11 @@
 # RewardAnything: Generalizable Principle-Following Reward Models
 
 <div align="center">
-  <a href="https://github.com/zhuohaoyu/RewardAnything">
-    <img src="assets/rewardanything-logo-horizontal.png" alt="RewardAnything Logo" width="400">
-  </a>
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/rewardanything-logo-horizontal-dark-mode.png">
+    <source media="(prefers-color-scheme: light)" srcset="assets/rewardanything-logo-horizontal.png">
+    <img alt="RewardAnything" src="assets/rewardanything-logo-horizontal.png">
+    </picture>
   <br/>
   <p>
     <a href="https://pypi.org/project/RewardAnything/"><img alt="PyPI" src="https://img.shields.io/pypi/v/RewardAnything.svg?color=blue"></a>
