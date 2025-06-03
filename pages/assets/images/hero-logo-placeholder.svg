@@ -1,15 +1,40 @@
 <svg width="96" height="96" viewBox="0 0 96 96" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <!-- Outer glow -->
-  <circle cx="48" cy="48" r="44" fill="white" fill-opacity="0.1"/>
+  <!-- Outer glow circle -->
+  <circle cx="48" cy="48" r="46" fill="white" fill-opacity="0.1" stroke="white" stroke-opacity="0.2" stroke-width="2"/>
+  
+  <!-- Trophy base with gradient -->
+  <defs>
+    <linearGradient id="trophyGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffffff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#f1f5f9;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="accentGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10b981;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#059669;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
   <!-- Trophy base -->
-  <rect x="36" y="72" width="24" height="12" rx="2" fill="white" fill-opacity="0.9"/>
+  <rect x="33" y="74" width="30" height="8" rx="4" fill="url(#trophyGradient)" stroke="white" stroke-opacity="0.3"/>
+  
   <!-- Trophy stem -->
-  <rect x="42" y="60" width="12" height="12" fill="white" fill-opacity="0.9"/>
-  <!-- Trophy cup -->
-  <path d="M24 24h48c3 0 6 3 6 6v18c0 9-9 18-24 18s-24-9-24-18V30c0-3 3-6 6-6z" fill="white" fill-opacity="0.9"/>
-  <!-- Trophy handles -->
-  <path d="M18 36c-3 0-6-3-6-6s3-6 6-6v12zm60-12c3 0 6 3 6 6s-3 6-6 6V24z" fill="#10b981"/>
-  <!-- Award elements -->
-  <circle cx="48" cy="42" r="9" fill="#2563eb"/>
-  <path d="M48 36l3 6h6l-4.5 4.5L54 54l-6-3-6 3 1.5-7.5L39 42h6l3-6z" fill="white"/>
+  <rect x="39" y="62" width="18" height="12" rx="2" fill="url(#trophyGradient)" stroke="white" stroke-opacity="0.3"/>
+  
+  <!-- Main trophy cup -->
+  <path d="M20 20h56c4 0 8 4 8 8v20c0 12-12 20-28 20s-28-8-28-20V28c0-4 4-8 8-8z" 
+        fill="url(#trophyGradient)" stroke="white" stroke-opacity="0.3" stroke-width="1"/>
+  
+  <!-- Trophy handles with improved design -->
+  <ellipse cx="12" cy="35" rx="6" ry="8" fill="url(#accentGradient)" opacity="0.9"/>
+  <ellipse cx="84" cy="35" rx="6" ry="8" fill="url(#accentGradient)" opacity="0.9"/>
+  
+  <!-- Central award star with glow -->
+  <circle cx="48" cy="40" r="12" fill="white" fill-opacity="0.2"/>
+  <circle cx="48" cy="40" r="10" fill="#2563eb"/>
+  <path d="M48 32l2.5 5h5.5l-4.5 3.5L53 46l-5-3.5L43 46l1.5-5.5L40 37.5h5.5L48 32z" 
+        fill="white" stroke="white" stroke-width="0.5"/>
+  
+  <!-- Decorative elements -->
+  <circle cx="30" cy="28" r="2" fill="url(#accentGradient)" opacity="0.6"/>
+  <circle cx="66" cy="28" r="2" fill="url(#accentGradient)" opacity="0.6"/>
 </svg> 
