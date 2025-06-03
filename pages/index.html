@@ -126,7 +126,7 @@ description: "RewardAnything: Generalizable Principle-Following Reward Models"
                     </div>
                     <div>
                         <h3 class="text-xl font-bold text-gray-900">Issue #1: Length = Quality Bias</h3>
-                        <p class="text-sm text-gray-600">Models learn "longer responses are better" instead of "accurate responses are better"</p>
+                        <p class="text-sm text-gray-600">Models learn "longer responses are better" from pairs where correctness correlates with length.</p>
                     </div>
                 </div>
                 
@@ -164,12 +164,12 @@ description: "RewardAnything: Generalizable Principle-Following Reward Models"
                     
                     <div class="bg-yellow-50 p-4 rounded-lg border border-yellow-200">
                         <div class="text-sm font-semibold text-yellow-800 mb-1">⚠️ What Current RMs Learn:</div>
-                        <p class="text-yellow-700 text-sm">"Longer responses are better" — but what if the user wanted a brief answer?</p>
+                        <p class="text-yellow-700 text-sm">A spurious correlation: "Longer responses are better." This preference is static, but what if the user actually preferred a brief, accurate answer?</p>
                     </div>
                 </div>
             </div>
 
-            <!-- Case 2: Format Over Content -->
+            <!-- Case 2: Format Over Substance -->
             <div class="bg-white rounded-2xl p-8 shadow-lg border border-red-100">
                 <div class="flex items-center mb-6">
                     <div class="bg-red-100 p-3 rounded-lg mr-4">
@@ -179,7 +179,7 @@ description: "RewardAnything: Generalizable Principle-Following Reward Models"
                     </div>
                     <div>
                         <h3 class="text-xl font-bold text-gray-900">Issue #2: Format Over Substance</h3>
-                        <p class="text-sm text-gray-600">Models prioritize structure and completeness over actual content quality</p>
+                        <p class="text-sm text-gray-600">Models often prioritize familiar structures (e.g., lists) over equally valid, natural content.</p>
                     </div>
                 </div>
                 
@@ -195,29 +195,31 @@ description: "RewardAnything: Generalizable Principle-Following Reward Models"
                                 <span class="text-green-600 font-semibold text-sm mr-2">✅ Chosen (Well-Structured)</span>
                             </div>
                             <p class="text-green-800 text-xs leading-relaxed">
-                                "There are several good browser alternatives... <strong>1. Mozilla Firefox:</strong> Strong privacy features, Open-source, Customizable... <strong>2. Microsoft Edge:</strong> Built on Chromium..."
+                                "There are several good browser alternatives to Chrome:
+                                <br><strong>1. Mozilla Firefox:</strong> Known for strong privacy features, being open-source, and highly customizable.
+                                <br><strong>2. Microsoft Edge:</strong> Now built on Chromium, offering good performance and compatibility."
                             </p>
                             <div class="mt-2 text-xs text-green-600">
-                                ✓ Clear structure ✓ Complete response
+                                ✓ Clear, itemized structure ✓ Detailed points
                             </div>
                         </div>
                         
-                        <div class="bg-red-50 p-4 rounded-lg border border-red-200">
+                        <div class="bg-orange-50 p-4 rounded-lg border border-orange-200">
                             <div class="flex items-center mb-2">
-                                <span class="text-red-600 font-semibold text-sm mr-2">❌ Rejected (Incomplete)</span>
+                                <span class="text-orange-600 font-semibold text-sm mr-2">⚠️ Rejected (Natural but Correct)</span>
                             </div>
-                            <p class="text-red-800 text-xs leading-relaxed">
-                                "Some good browser alternatives... Firefox offers... Vivaldi is a fast and customizable browser... Opera offers a range of features including a built-in ad blocker, secure password manager,"
+                            <p class="text-orange-800 text-xs leading-relaxed">
+                                "Sure! For browser alternatives, you could check out Firefox – it's really good for privacy and you can customize it a lot. Microsoft Edge is another option; it's pretty fast now that it uses Chromium tech."
                             </p>
-                            <div class="mt-2 text-xs text-red-600">
-                                ❌ Cuts off mid-sentence ❌ Incomplete
+                            <div class="mt-2 text-xs text-orange-600">
+                                ✓ Factually correct ✓ Conversational style ✓ Complete
                             </div>
                         </div>
                     </div>
                     
                     <div class="bg-yellow-50 p-4 rounded-lg border border-yellow-200">
                         <div class="text-sm font-semibold text-yellow-800 mb-1">⚠️ What Current RMs Learn:</div>
-                        <p class="text-yellow-700 text-sm">"Complete, structured responses are better" — but what about different user needs?</p>
+                        <p class="text-yellow-700 text-sm">"Structured, list-like responses are better." This overlooks that a natural, conversational style might be equally informative or even preferred by some users.</p>
                     </div>
                 </div>
             </div>
@@ -249,42 +251,46 @@ description: "RewardAnything: Generalizable Principle-Following Reward Models"
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
                 <div class="text-center">
                     <div class="bg-red-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <!-- Icon for Inflexible & Static Judgement (e.g., a shield or fixed block) -->
                         <svg class="w-8 h-8 text-red-600" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd" d="M4 2a1 1 0 011 1v2.101a7.002 7.002 0 0111.601 2.566 1 1 0 11-1.885.666A5.002 5.002 0 005.999 7H9a1 1 0 010 2H4a1 1 0 01-1-1V3a1 1 0 011-1zm.008 9.057a1 1 0 011.276.61A5.002 5.002 0 0014.001 13H11a1 1 0 110-2h5a1 1 0 011 1v5a1 1 0 11-2 0v-2.101a7.002 7.002 0 01-11.601-2.566 1 1 0 01.61-1.276z" clip-rule="evenodd"/>
+                            <path d="M10 2.25A.75.75 0 0110.75 3v.685c.304.06.601.142.89.246l.22.079a12.506 12.506 0 006.283 1.848 1.25 1.25 0 01.958 1.239V10c0 .604-.205 1.168-.57 1.644-.26.335-.556.636-.88.898l-.32.26a11.014 11.014 0 01-5.062 1.73 11.014 11.014 0 01-5.062-1.73l-.32-.26c-.324-.262-.62-.563-.88-.898C2.205 11.168 2 10.604 2 10V7.077c0-.537.348-1.012.857-1.183a12.503 12.503 0 006.283-1.848l.22-.08c.289-.103.586-.185.89-.245V3A.75.75 0 0110 2.25z" />
                         </svg>
                     </div>
-                    <h4 class="font-semibold text-gray-900 mb-2">Static Preferences</h4>
-                    <p class="text-sm text-gray-600">Same criteria for all contexts — customer service vs academic research</p>
+                    <h4 class="font-semibold text-gray-900 mb-2">Inflexible & Static Judgement</h4>
+                    <p class="text-sm text-gray-600">RMs apply a fixed, learned preference, unable to adapt to varying contexts or explicit user instructions without retraining.</p>
                 </div>
                 
                 <div class="text-center">
                     <div class="bg-red-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <!-- Icon for Superficial & Biased Learning (e.g., list/format icon, or eye looking at surface) -->
                         <svg class="w-8 h-8 text-red-600" fill="currentColor" viewBox="0 0 20 20">
                             <path fill-rule="evenodd" d="M3 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"/>
                         </svg>
                     </div>
-                    <h4 class="font-semibold text-gray-900 mb-2">Spurious Correlations</h4>
-                    <p class="text-sm text-gray-600">Learn "length = quality" instead of actual quality metrics</p>
+                    <h4 class="font-semibold text-gray-900 mb-2">Superficial & Biased Learning</h4>
+                    <p class="text-sm text-gray-600">Lacking explicit rationale, RMs learn from outcomes, often latching onto superficial patterns (e.g., length, format) as proxies for quality.</p>
                 </div>
                 
                 <div class="text-center">
                     <div class="bg-red-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <!-- Icon for Poor Generalization (e.g., padlock, or diverging paths with a block) -->
                         <svg class="w-8 h-8 text-red-600" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd" d="M18 8A6 6 0 006 8v2.5A3.5 3.5 0 009.5 14h1A3.5 3.5 0 0014 10.5V8a6 6 0 00-6-6z" clip-rule="evenodd"/>
+                           <path fill-rule="evenodd" d="M10 1a4.5 4.5 0 00-4.5 4.5V9H5a2 2 0 00-2 2v6a2 2 0 002 2h10a2 2 0 002-2v-6a2 2 0 00-2-2h-.5V5.5A4.5 4.5 0 0010 1zm3 8V5.5a3 3 0 10-6 0V9h6z" clip-rule="evenodd" />
                         </svg>
                     </div>
-                    <h4 class="font-semibold text-gray-900 mb-2">Implicit Learning</h4>
-                    <p class="text-sm text-gray-600">No explicit rationale — only outcome supervision from chosen-rejected pairs</p>
+                    <h4 class="font-semibold text-gray-900 mb-2">Poor Generalization to Novel Criteria</h4>
+                    <p class="text-sm text-gray-600">Trained and benchmarked on fixed preferences, RMs fail to generalize their judgment to new, diverse, or nuanced principles defined by users.</p>
                 </div>
                 
                 <div class="text-center">
                     <div class="bg-red-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <!-- Icon for Prohibitive Adaptation Costs (e.g., money bag with down arrow, or broken gear) -->
                         <svg class="w-8 h-8 text-red-600" fill="currentColor" viewBox="0 0 20 20">
                             <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"/>
                         </svg>
                     </div>
-                    <h4 class="font-semibold text-gray-900 mb-2">Costly Adaptation</h4>
-                    <p class="text-sm text-gray-600">New criteria require expensive data collection and model retraining</p>
+                    <h4 class="font-semibold text-gray-900 mb-2">Prohibitive Adaptation Costs</h4>
+                    <p class="text-sm text-gray-600">Modifying an RM's core judgment or adapting to new principles typically demands expensive new data collection and full model retraining cycles.</p>
                 </div>
             </div>
         </div>
