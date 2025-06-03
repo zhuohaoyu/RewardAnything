@@ -1,8 +1,15 @@
 <svg width="96" height="96" viewBox="0 0 96 96" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect width="96" height="96" rx="24" fill="white" fill-opacity="0.1"/>
-  <rect width="80" height="80" x="8" y="8" rx="16" fill="white" fill-opacity="0.9"/>
-  <path d="M24 36h48v6H24z" fill="#2563eb"/>
-  <path d="M24 48h36v6H24z" fill="#2563eb"/>
-  <path d="M24 60h24v6H24z" fill="#2563eb"/>
-  <circle cx="72" cy="24" r="9" fill="#10b981"/>
+  <!-- Outer glow -->
+  <circle cx="48" cy="48" r="44" fill="white" fill-opacity="0.1"/>
+  <!-- Trophy base -->
+  <rect x="36" y="72" width="24" height="12" rx="2" fill="white" fill-opacity="0.9"/>
+  <!-- Trophy stem -->
+  <rect x="42" y="60" width="12" height="12" fill="white" fill-opacity="0.9"/>
+  <!-- Trophy cup -->
+  <path d="M24 24h48c3 0 6 3 6 6v18c0 9-9 18-24 18s-24-9-24-18V30c0-3 3-6 6-6z" fill="white" fill-opacity="0.9"/>
+  <!-- Trophy handles -->
+  <path d="M18 36c-3 0-6-3-6-6s3-6 6-6v12zm60-12c3 0 6 3 6 6s-3 6-6 6V24z" fill="#10b981"/>
+  <!-- Award elements -->
+  <circle cx="48" cy="42" r="9" fill="#2563eb"/>
+  <path d="M48 36l3 6h6l-4.5 4.5L54 54l-6-3-6 3 1.5-7.5L39 42h6l3-6z" fill="white"/>
 </svg> 
