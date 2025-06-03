@@ -161,63 +161,373 @@ description: "RewardAnything: Generalizable Principle-Following Reward Models"
     </div>
 </section>
 
-<!-- Quick Start -->
+<!-- Installation & Usage Guide -->
 <section id="quickstart" class="py-20 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-16">
-            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Quick Start</h2>
-            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                Get started with RewardAnything in just a few lines of code
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">🚀 Quick Start</h2>
+            <p class="text-xl text-gray-600 max-w-4xl mx-auto">
+                RewardAnything offers three flexible deployment options to fit your workflow, from quick experimentation to production-scale evaluation.
             </p>
         </div>
 
-        <div class="max-w-4xl mx-auto">
-            <!-- Installation -->
-            <div class="bg-gray-50 p-6 rounded-xl mb-8">
-                <h3 class="text-lg font-semibold text-gray-900 mb-4">Installation</h3>
-                <div class="bg-gray-900 text-green-400 p-4 rounded-lg font-mono text-sm">
-                    <span class="text-gray-500"># Install from PyPI</span><br>
-                    pip install reward-anything
+        <!-- Installation -->
+        <div class="mb-16">
+            <div class="bg-gray-50 rounded-xl p-8">
+                <h3 class="text-xl font-bold text-gray-900 mb-4">📦 Installation</h3>
+                <div class="bg-gray-900 rounded-lg p-4">
+                    <code class="text-green-400 font-mono">pip install rewardanything</code>
+                </div>
+            </div>
+        </div>
+
+        <!-- Three Deployment Methods -->
+        <div class="grid md:grid-cols-3 gap-8 mb-16">
+            <!-- Method 1: Local Inference -->
+            <div class="bg-gradient-to-br from-blue-50 to-indigo-100 rounded-xl p-6 border border-blue-200">
+                <div class="flex items-center mb-4">
+                    <span class="text-2xl mr-3">🏠</span>
+                    <h3 class="text-xl font-bold text-gray-900">Local Inference</h3>
+                </div>
+                <p class="text-gray-600 mb-4">Perfect for quick experimentation and research</p>
+                
+                <div class="mb-4">
+                    <div class="text-sm font-semibold text-green-700 mb-2">✅ Pros:</div>
+                    <ul class="text-sm text-gray-600 space-y-1">
+                        <li>• Simple setup</li>
+                        <li>• No external dependencies</li>
+                        <li>• Full control</li>
+                    </ul>
+                </div>
+                
+                <div class="mb-4">
+                    <div class="text-sm font-semibold text-orange-700 mb-2">⚠️ Cons:</div>
+                    <ul class="text-sm text-gray-600 space-y-1">
+                        <li>• Requires local GPU</li>
+                        <li>• Slower for batches</li>
+                    </ul>
+                </div>
+                
+                <span class="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full font-medium">
+                    Best for: Testing & Research
+                </span>
+            </div>
+
+            <!-- Method 2: vLLM Deployment -->
+            <div class="bg-gradient-to-br from-emerald-50 to-green-100 rounded-xl p-6 border border-emerald-200">
+                <div class="flex items-center mb-4">
+                    <span class="text-2xl mr-3">🚀</span>
+                    <h3 class="text-xl font-bold text-gray-900">vLLM Deployment</h3>
+                </div>
+                <p class="text-gray-600 mb-4">Optimized for high-throughput and production</p>
+                
+                <div class="mb-4">
+                    <div class="text-sm font-semibold text-green-700 mb-2">✅ Pros:</div>
+                    <ul class="text-sm text-gray-600 space-y-1">
+                        <li>• Fast batch processing</li>
+                        <li>• Optimized inference</li>
+                        <li>• Scalable</li>
+                    </ul>
+                </div>
+                
+                <div class="mb-4">
+                    <div class="text-sm font-semibold text-orange-700 mb-2">⚠️ Cons:</div>
+                    <ul class="text-sm text-gray-600 space-y-1">
+                        <li>• Requires vLLM setup</li>
+                        <li>• More complex config</li>
+                    </ul>
+                </div>
+                
+                <span class="inline-block bg-emerald-100 text-emerald-800 text-xs px-2 py-1 rounded-full font-medium">
+                    Best for: Production & RLHF
+                </span>
+            </div>
+
+            <!-- Method 3: HuggingFace Integration -->
+            <div class="bg-gradient-to-br from-purple-50 to-violet-100 rounded-xl p-6 border border-purple-200">
+                <div class="flex items-center mb-4">
+                    <span class="text-2xl mr-3">🔧</span>
+                    <h3 class="text-xl font-bold text-gray-900">HuggingFace Direct</h3>
+                </div>
+                <p class="text-gray-600 mb-4">Maximum flexibility for custom workflows</p>
+                
+                <div class="mb-4">
+                    <div class="text-sm font-semibold text-green-700 mb-2">✅ Pros:</div>
+                    <ul class="text-sm text-gray-600 space-y-1">
+                        <li>• Full control</li>
+                        <li>• Custom processing</li>
+                        <li>• HF ecosystem</li>
+                    </ul>
+                </div>
+                
+                <div class="mb-4">
+                    <div class="text-sm font-semibold text-orange-700 mb-2">⚠️ Cons:</div>
+                    <ul class="text-sm text-gray-600 space-y-1">
+                        <li>• Manual parsing</li>
+                        <li>• More setup code</li>
+                    </ul>
+                </div>
+                
+                <span class="inline-block bg-purple-100 text-purple-800 text-xs px-2 py-1 rounded-full font-medium">
+                    Best for: Custom Integration
+                </span>
+            </div>
+        </div>
+
+        <!-- Code Examples Tabs -->
+        <div class="bg-gray-50 rounded-xl p-8">
+            <div class="mb-6">
+                <div class="flex flex-wrap gap-2 mb-6" role="tablist">
+                    <button class="tab-button active" onclick="showTab('local')" data-tab="local">
+                        🏠 Local Inference
+                    </button>
+                    <button class="tab-button" onclick="showTab('vllm')" data-tab="vllm">
+                        🚀 vLLM Deployment
+                    </button>
+                    <button class="tab-button" onclick="showTab('huggingface')" data-tab="huggingface">
+                        🔧 HuggingFace Direct
+                    </button>
                 </div>
             </div>
 
-            <!-- Basic Usage -->
-            <div class="bg-gray-50 p-6 rounded-xl mb-8">
-                <h3 class="text-lg font-semibold text-gray-900 mb-4">Basic Usage</h3>
-                <div class="bg-gray-900 text-white p-4 rounded-lg font-mono text-sm overflow-x-auto">
-<pre><code><span class="text-blue-400">from</span> reward_anything <span class="text-blue-400">import</span> RewardModel
+            <!-- Local Inference Tab -->
+            <div id="local-tab" class="tab-content">
+                <h4 class="text-lg font-bold text-gray-900 mb-4">🏠 Local Inference - Recommended for Quick Testing</h4>
+                <div class="bg-gray-900 rounded-lg p-4 overflow-x-auto">
+                    <pre class="text-sm text-gray-100"><code>import rewardanything
 
-<span class="text-gray-500"># Initialize the model</span>
-rm = RewardModel.from_pretrained(<span class="text-green-400">"reward-anything-8b"</span>)
+# Load model locally (similar to HuggingFace)
+reward_model = rewardanything.from_pretrained(
+    "zhuohaoyu/RewardAnything-8B-v1",  # Model path/name
+    device="cuda",                        # Device placement
+    torch_dtype="auto"                   # Automatic dtype selection
+)
 
-<span class="text-gray-500"># Define your principle</span>
-principle = <span class="text-green-400">"Prioritize responses that are helpful, accurate, and concise."</span>
+# Define your evaluation principle
+principle = "I prefer clear, concise and helpful responses over long and detailed ones."
 
-<span class="text-gray-500"># Evaluate responses</span>
-prompt = <span class="text-green-400">"How do I learn machine learning?"</span>
-responses = [<span class="text-green-400">"Read papers and practice coding"</span>, <span class="text-green-400">"Just use ChatGPT"</span>]
+# Your evaluation data
+prompt = "How do I learn Python programming effectively?"
+responses = {
+    "response_a": "Start with Python.org's tutorial, practice daily with small projects...",
+    "response_b": "Here's a comprehensive approach: 1) Start with Python basics...",
+    "response_c": "Learn Python by coding."
+}
 
-result = rm.evaluate(principle, prompt, responses)
-<span class="text-blue-400">print</span>(result.scores)  <span class="text-gray-500"># [4.2, 2.1]</span>
-<span class="text-blue-400">print</span>(result.ranking) <span class="text-gray-500"># ['response_1', 'response_2']</span></code></pre>
+# Get comprehensive evaluation
+result = reward_model.judge(
+    principle=principle,
+    prompt=prompt, 
+    responses=responses
+)
+
+print(f"Scores: {result.scores}")
+print(f"Best to worst: {result.ranking}")
+print(f"Reasoning: {result.reasoning}")</code></pre>
                 </div>
             </div>
 
-            <!-- Advanced Example -->
-            <div class="bg-blue-50 p-6 rounded-xl">
-                <h3 class="text-lg font-semibold text-blue-900 mb-4">Advanced: Custom Principles</h3>
-                <div class="bg-gray-900 text-white p-4 rounded-lg font-mono text-sm overflow-x-auto">
-<pre><code><span class="text-gray-500"># Use complex, task-specific principles</span>
-safety_principle = <span class="text-green-400">"""
-Safety is paramount. Responses should:
-1. Refuse harmful requests with empathy
-2. Provide constructive alternatives
-3. Maintain helpful tone without being preachy
-"""</span>
+            <!-- vLLM Deployment Tab -->
+            <div id="vllm-tab" class="tab-content hidden">
+                <h4 class="text-lg font-bold text-gray-900 mb-4">🚀 vLLM Deployment - Recommended for Production & RL Training</h4>
+                
+                <div class="space-y-6">
+                    <div>
+                        <h5 class="font-semibold text-gray-800 mb-2">Step 1: Setup vLLM Server</h5>
+                        <div class="bg-gray-900 rounded-lg p-4 overflow-x-auto">
+                            <pre class="text-sm text-gray-100"><code># Install vLLM
+pip install vllm
 
-<span class="text-gray-500"># Works for any domain without retraining</span>
-code_principle = <span class="text-green-400">"Prefer clean, readable code with good documentation"</span>
-creative_principle = <span class="text-green-400">"Value originality and emotional resonance"</span></code></pre>
+# Start vLLM server with RewardAnything model
+vllm serve zhuohaoyu/RewardAnything-8B-v1 \
+    --host 0.0.0.0 \
+    --port 8000 \
+    --max-model-len 8192 \
+    --tensor-parallel-size 1</code></pre>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h5 class="font-semibold text-gray-800 mb-2">Step 2: Start RewardAnything Server</h5>
+                        <div class="bg-gray-900 rounded-lg p-4 overflow-x-auto">
+                            <pre class="text-sm text-gray-100"><code># Start the RewardAnything API server
+rewardanything serve -c config.json --port 8001</code></pre>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h5 class="font-semibold text-gray-800 mb-2">Step 3: Use in Your Code</h5>
+                        <div class="bg-gray-900 rounded-lg p-4 overflow-x-auto">
+                            <pre class="text-sm text-gray-100"><code>import rewardanything
+
+# Connect to the RewardAnything server
+client = rewardanything.Client("http://localhost:8001")
+
+# Process batch requests efficiently
+requests = [
+    {
+        "principle": "Prefer clear, concise and helpful responses...",
+        "prompt": "How to learn programming?",
+        "responses": {
+            "assistant_a": "Start with Python, practice daily, build projects.",
+            "assistant_b": "Read books and hope for the best.",
+            "assistant_c": "Start with Python.org's tutorial, practice daily..."
+        }
+    },
+    # ... more requests
+]
+
+results = client.judge_batch(requests)
+for result in results:
+    print(f"Winner: {result.ranking[0]}")</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- HuggingFace Direct Tab -->
+            <div id="huggingface-tab" class="tab-content hidden">
+                <h4 class="text-lg font-bold text-gray-900 mb-4">🔧 Direct HuggingFace Integration - Maximum Flexibility</h4>
+                <div class="bg-gray-900 rounded-lg p-4 overflow-x-auto">
+                    <pre class="text-sm text-gray-100"><code>from transformers import AutoTokenizer, AutoModelForCausalLM
+from rewardanything.processing import prepare_chat_messages, parse_rewardanything_output
+
+# Load model and tokenizer directly
+model = AutoModelForCausalLM.from_pretrained(
+    "zhuohaoyu/RewardAnything-8B-v1",
+    torch_dtype="auto",
+    device_map="auto"
+)
+tokenizer = AutoTokenizer.from_pretrained("zhuohaoyu/RewardAnything-8B-v1")
+
+# Prepare evaluation data
+principle = "Judge responses based on helpfulness and accuracy"
+prompt = "What is the capital of France?"
+responses = {
+    "model_a": "Paris is the capital of France.",
+    "model_b": "I think it might be Lyon or Paris."
+}
+
+# Prepare chat messages (handles masking automatically)
+messages, masked2real = prepare_chat_messages(principle, prompt, responses)
+
+# Format with chat template
+formatted_input = tokenizer.apply_chat_template(
+    messages, tokenize=False, add_generation_prompt=True
+)
+
+# Generate response
+inputs = tokenizer(formatted_input, return_tensors="pt").to(model.device)
+with torch.no_grad():
+    outputs = model.generate(
+        **inputs,
+        max_new_tokens=4096,
+        temperature=0.1,
+        do_sample=True,
+        pad_token_id=tokenizer.eos_token_id
+    )
+
+# Parse structured results (handles JSON parsing robustly)
+result = parse_rewardanything_output(output_text, masked2real)
+
+print(f"Parsed scores: {result.scores}")
+print(f"Ranking: {result.ranking}")</code></pre>
+                </div>
+            </div>
+        </div>
+
+        <!-- When to Use Each Method -->
+        <div class="mt-12">
+            <h3 class="text-2xl font-bold text-gray-900 mb-6 text-center">📊 When to Use Each Method</h3>
+            <div class="overflow-x-auto">
+                <table class="w-full bg-white rounded-lg shadow-sm border border-gray-200">
+                    <thead class="bg-gray-50">
+                        <tr>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Use Case</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Method</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Why</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-gray-200">
+                        <tr>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">Quick testing</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-blue-600">Local Inference</td>
+                            <td class="px-6 py-4 text-sm text-gray-600">Simplest setup</td>
+                        </tr>
+                        <tr class="bg-gray-50">
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">Research & development</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-blue-600">Local Inference</td>
+                            <td class="px-6 py-4 text-sm text-gray-600">Full control, easy debugging</td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">RLHF training</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-emerald-600">vLLM Deployment</td>
+                            <td class="px-6 py-4 text-sm text-gray-600">High throughput, optimized for batches</td>
+                        </tr>
+                        <tr class="bg-gray-50">
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">Production evaluation</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-emerald-600">vLLM Deployment</td>
+                            <td class="px-6 py-4 text-sm text-gray-600">Scalable, reliable</td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">Custom integration</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-purple-600">Direct HuggingFace</td>
+                            <td class="px-6 py-4 text-sm text-gray-600">Maximum flexibility</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Advanced Usage -->
+<section class="py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">🔬 Advanced Usage</h2>
+            <p class="text-xl text-gray-600 max-w-4xl mx-auto">
+                Unlock the full potential of RewardAnything with sophisticated principles and RLHF integration.
+            </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8">
+            <!-- Custom Principles -->
+            <div class="bg-white rounded-xl p-8 shadow-sm border border-gray-200">
+                <h3 class="text-xl font-bold text-gray-900 mb-4">🎯 Custom Principles</h3>
+                <p class="text-gray-600 mb-4">RewardAnything excels with sophisticated, multi-criteria principles:</p>
+                <div class="bg-gray-900 rounded-lg p-4 overflow-x-auto">
+                    <pre class="text-sm text-gray-100"><code>complex_principle = """
+Evaluate responses using these criteria:
+1. **Technical Accuracy** (40%): Factual correctness
+2. **Clarity** (30%): Clear explanations  
+3. **Practical Value** (20%): Actionable advice
+4. **Safety** (10%): No harmful content
+
+Priority: safety > accuracy > clarity > practical value.
+"""
+
+result = reward_model.judge(complex_principle, prompt, responses)</code></pre>
+                </div>
+            </div>
+
+            <!-- RLHF Integration -->
+            <div class="bg-white rounded-xl p-8 shadow-sm border border-gray-200">
+                <h3 class="text-xl font-bold text-gray-900 mb-4">🔄 RLHF Integration</h3>
+                <p class="text-gray-600 mb-4">Seamlessly integrate with your RLHF training pipelines:</p>
+                <div class="bg-gray-900 rounded-lg p-4 overflow-x-auto">
+                    <pre class="text-sm text-gray-100"><code># Example: Use in PPO training loop
+def reward_function(principle, prompt, response):
+    result = reward_model.judge(
+        principle=principle,
+        prompt=prompt,
+        responses={"generated": response, "reference": "baseline"}
+    )
+    return result.scores["generated"]
+
+# Use in your RLHF training
+rewards = [reward_function(principle, prompt, resp) 
+          for resp in generated_responses]</code></pre>
                 </div>
             </div>
         </div>
@@ -489,4 +799,37 @@ creative_principle = <span class="text-green-400">"Value originality and emotion
     border-radius: 0.5rem;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
-</style> 
+
+.tab-button {
+    @apply px-4 py-2 rounded-lg text-sm font-medium transition-colors;
+    @apply bg-gray-200 text-gray-700 hover:bg-gray-300;
+}
+
+.tab-button.active {
+    @apply bg-blue-600 text-white hover:bg-blue-700;
+}
+
+.tab-content {
+    @apply transition-all duration-300;
+}
+</style>
+
+<script>
+function showTab(tabName) {
+    // Hide all tab contents
+    document.querySelectorAll('.tab-content').forEach(tab => {
+        tab.classList.add('hidden');
+    });
+    
+    // Remove active class from all buttons
+    document.querySelectorAll('.tab-button').forEach(btn => {
+        btn.classList.remove('active');
+    });
+    
+    // Show selected tab content
+    document.getElementById(tabName + '-tab').classList.remove('hidden');
+    
+    // Add active class to clicked button
+    document.querySelector(`[data-tab="${tabName}"]`).classList.add('active');
+}
+</script> 
