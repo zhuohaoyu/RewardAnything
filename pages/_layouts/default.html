@@ -12,14 +12,8 @@
         tailwind.config = {
             theme: {
                 extend: {
-                    colors: {
-                        primary: '#2563eb',
-                        secondary: '#64748b',
-                        accent: '#0ea5e9'
-                    },
                     fontFamily: {
                         'sans': ['Inter', 'system-ui', 'sans-serif'],
-                        'mono': ['JetBrains Mono', 'Consolas', 'monospace']
                     }
                 }
             }
@@ -29,103 +23,142 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-    
-    <!-- Icons -->
-    <link href="https://cdn.jsdelivr.net/npm/heroicons@2.0.18/24/outline/index.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="{{ '/assets/favicon.svg' | relative_url }}">
     
-    <!-- Custom CSS -->
     <style>
         .gradient-bg {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
         }
-        .code-block {
-            background: #1e293b;
-            border-radius: 0.5rem;
-            overflow-x: auto;
-        }
+        
         .badge {
-            display: inline-flex;
-            align-items: center;
-            padding: 0.25rem 0.75rem;
-            border-radius: 9999px;
-            font-size: 0.875rem;
-            font-weight: 500;
+            @apply inline-flex items-center px-3 py-1 rounded-full text-sm font-medium;
+        }
+        
+        .hover-lift:hover {
+            transform: translateY(-2px);
         }
     </style>
 </head>
-<body class="bg-gray-50 text-gray-900 font-sans">
+<body class="bg-white">
     <!-- Navigation -->
-    <nav class="bg-white shadow-sm border-b border-gray-200 sticky top-0 z-50">
+    <nav class="bg-white shadow-sm fixed w-full top-0 z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
                 <div class="flex items-center">
-                    <img src="{{ '/assets/images/logo-placeholder.svg' | relative_url }}" 
-                         alt="RewardAnything Logo" 
-                         class="h-8 w-auto">
-                    <span class="ml-3 text-xl font-bold text-gray-900">RewardAnything</span>
-                </div>
-                <div class="hidden md:flex items-center space-x-6">
-                    <a href="#features" class="text-gray-600 hover:text-primary transition-colors">Features</a>
-                    <a href="#quickstart" class="text-gray-600 hover:text-primary transition-colors">Quick Start</a>
-                    <a href="#performance" class="text-gray-600 hover:text-primary transition-colors">Performance</a>
-                    <a href="#documentation" class="text-gray-600 hover:text-primary transition-colors">Docs</a>
-                    <a href="{{ site.github_username }}" 
-                       class="bg-gray-900 text-white px-4 py-2 rounded-lg hover:bg-gray-800 transition-colors">
-                        GitHub
+                    <a href="{{ '/' | relative_url }}" class="flex items-center">
+                        <img src="{{ '/assets/images/logo-placeholder.svg' | relative_url }}" 
+                             alt="RewardAnything Logo" 
+                             class="h-8 w-auto mr-2">
+                        <span class="text-xl font-bold text-gray-900">RewardAnything</span>
                     </a>
                 </div>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="{{ site.github_username | prepend: 'https://github.com/' }}/RewardAnything" 
+                       class="text-gray-700 hover:text-blue-600 font-medium transition-colors">Code</a>
+                    <a href="{{ site.paper_url }}" 
+                       class="text-gray-700 hover:text-blue-600 font-medium transition-colors">Paper</a>
+                    <a href="{{ site.huggingface_url }}" 
+                       class="text-gray-700 hover:text-blue-600 font-medium transition-colors">Model Weights</a>
+                    <a href="#quickstart" 
+                       class="text-gray-700 hover:text-blue-600 font-medium transition-colors">Quick Start</a>
+                    <a href="#documentation" 
+                       class="text-gray-700 hover:text-blue-600 font-medium transition-colors">Docs</a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-gray-700 hover:text-blue-600">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-200">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="{{ site.github_username | prepend: 'https://github.com/' }}/RewardAnything" 
+                   class="block px-3 py-2 text-gray-700 hover:text-blue-600 font-medium">Code</a>
+                <a href="{{ site.paper_url }}" 
+                   class="block px-3 py-2 text-gray-700 hover:text-blue-600 font-medium">Paper</a>
+                <a href="{{ site.huggingface_url }}" 
+                   class="block px-3 py-2 text-gray-700 hover:text-blue-600 font-medium">Model Weights</a>
+                <a href="#quickstart" 
+                   class="block px-3 py-2 text-gray-700 hover:text-blue-600 font-medium">Quick Start</a>
+                <a href="#documentation" 
+                   class="block px-3 py-2 text-gray-700 hover:text-blue-600 font-medium">Docs</a>
             </div>
         </div>
     </nav>
 
     <!-- Main Content -->
-    <main>
+    <main class="pt-16">
         {{ content }}
     </main>
 
     <!-- Footer -->
-    <footer class="bg-gray-900 text-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div>
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- Logo and Description -->
+                <div class="md:col-span-2">
                     <div class="flex items-center mb-4">
                         <img src="{{ '/assets/images/logo-placeholder-white.svg' | relative_url }}" 
                              alt="RewardAnything Logo" 
-                             class="h-8 w-auto">
-                        <span class="ml-3 text-xl font-bold">RewardAnything</span>
+                             class="h-8 w-auto mr-2">
+                        <span class="text-xl font-bold">RewardAnything</span>
                     </div>
-                    <p class="text-gray-400">Generalizable Principle-Following Reward Models for next-generation AI alignment.</p>
+                    <p class="text-gray-300 max-w-md">
+                        Generalizable principle-following reward models that understand and follow 
+                        explicit natural language principles for flexible AI alignment.
+                    </p>
                 </div>
+                
+                <!-- Quick Links -->
                 <div>
-                    <h4 class="font-semibold mb-4">Resources</h4>
-                    <ul class="space-y-2 text-gray-400">
-                        <li><a href="{{ site.paper_url }}" class="hover:text-white transition-colors">Paper</a></li>
-                        <li><a href="{{ site.huggingface_url }}" class="hover:text-white transition-colors">Model Weights</a></li>
-                        <li><a href="{{ site.pypi_url }}" class="hover:text-white transition-colors">PyPI Package</a></li>
-                        <li><a href="#" class="hover:text-white transition-colors">Documentation</a></li>
+                    <h3 class="text-lg font-semibold mb-4">Resources</h3>
+                    <ul class="space-y-2">
+                        <li><a href="{{ site.paper_url }}" class="text-gray-300 hover:text-white transition-colors">Research Paper</a></li>
+                        <li><a href="{{ site.huggingface_url }}" class="text-gray-300 hover:text-white transition-colors">Model Weights</a></li>
+                        <li><a href="{{ site.pypi_url }}" class="text-gray-300 hover:text-white transition-colors">PyPI Package</a></li>
+                        <li><a href="{{ site.github_username | prepend: 'https://github.com/' }}/RewardAnything" class="text-gray-300 hover:text-white transition-colors">Source Code</a></li>
                     </ul>
                 </div>
+                
+                <!-- Contact -->
                 <div>
-                    <h4 class="font-semibold mb-4">Connect</h4>
-                    <ul class="space-y-2 text-gray-400">
-                        <li><a href="https://github.com/{{ site.github_username }}/RewardAnything" class="hover:text-white transition-colors">GitHub</a></li>
-                        <li><a href="#" class="hover:text-white transition-colors">Issues</a></li>
-                        <li><a href="#" class="hover:text-white transition-colors">Discussions</a></li>
+                    <h3 class="text-lg font-semibold mb-4">Contact</h3>
+                    <ul class="space-y-2">
+                        <li><a href="{{ site.github_username | prepend: 'https://github.com/' }}" class="text-gray-300 hover:text-white transition-colors">GitHub</a></li>
+                        <li><a href="mailto:yuezh@pku.edu.cn" class="text-gray-300 hover:text-white transition-colors">Email</a></li>
                     </ul>
                 </div>
             </div>
-            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-                <p>&copy; 2025 RewardAnything Contributors. Licensed under Apache 2.0.</p>
+            
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; {{ 'now' | date: "%Y" }} RewardAnything. {{ site.license }} License.</p>
             </div>
         </div>
     </footer>
 
-    <!-- Scripts -->
+    <!-- JavaScript -->
     <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
         // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {

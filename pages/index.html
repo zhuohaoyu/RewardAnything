@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Home"
-description: "RewardAnything: Generalizable Principle-Following Reward Models that understand and follow explicit natural language principles for AI alignment."
+description: "RewardAnything: Generalizable Principle-Following Reward Models"
 ---
 
 <!-- Hero Section -->
@@ -18,9 +18,8 @@ description: "RewardAnything: Generalizable Principle-Following Reward Models th
         <p class="text-xl md:text-2xl mb-8 text-blue-100 max-w-4xl mx-auto">
             Generalizable Principle-Following Reward Models
         </p>
-        <p class="text-lg mb-10 text-blue-50 max-w-3xl mx-auto">
-            Instead of learning implicit preferences from fixed datasets, our reward models understand and follow 
-            explicit natural language principles, enabling dynamic adaptation to diverse evaluation criteria without costly retraining.
+        <p class="text-lg mb-10 text-blue-50 max-w-4xl mx-auto">
+            Traditional reward models learn implicit preferences from chosen-rejected pairs, but human values are far more nuanced than any single distribution. Just as LLMs follow instructions, reward models should follow explicitly specified principles—enabling dynamic adaptation to diverse evaluation criteria without costly retraining.
         </p>
         
         <!-- CTA Buttons -->
@@ -113,19 +112,19 @@ description: "RewardAnything: Generalizable Principle-Following Reward Models th
                 <ul class="space-y-3 text-red-800">
                     <li class="flex items-start">
                         <span class="text-red-600 mr-2">•</span>
-                        <span><strong>Limited Generalization:</strong> Static preference datasets prevent adaptation to diverse real-world needs</span>
+                        <span><strong>Limited Adaptability:</strong> Need to retrain for different preference criteria</span>
                     </li>
                     <li class="flex items-start">
                         <span class="text-red-600 mr-2">•</span>
-                        <span><strong>Costly Retraining:</strong> New applications require collecting preference data and retraining models</span>
+                        <span><strong>Implicit Learning:</strong> Learn biases from spurious correlations in data</span>
                     </li>
                     <li class="flex items-start">
                         <span class="text-red-600 mr-2">•</span>
-                        <span><strong>Implicit Bias:</strong> Models learn spurious correlations (e.g., favoring length over accuracy)</span>
+                        <span><strong>Poor Interpretability:</strong> Cannot explain why certain responses are preferred</span>
                     </li>
                     <li class="flex items-start">
                         <span class="text-red-600 mr-2">•</span>
-                        <span><strong>Interpretability Issues:</strong> Unclear reasoning behind evaluation decisions</span>
+                        <span><strong>Costly Process:</strong> Expensive data collection and retraining cycles</span>
                     </li>
                 </ul>
             </div>
@@ -137,19 +136,19 @@ description: "RewardAnything: Generalizable Principle-Following Reward Models th
                 <ul class="space-y-3 text-green-800">
                     <li class="flex items-start">
                         <span class="text-green-600 mr-2">•</span>
-                        <span><strong>Principle-Following:</strong> Directly interprets natural language evaluation criteria</span>
+                        <span><strong>Dynamic Adaptation:</strong> Follow explicit natural language principles at inference</span>
                     </li>
                     <li class="flex items-start">
                         <span class="text-green-600 mr-2">•</span>
-                        <span><strong>Dynamic Adaptation:</strong> Generalizes to new principles at inference time</span>
+                        <span><strong>Principle-Grounded:</strong> Transparent, interpretable evaluation criteria</span>
                     </li>
                     <li class="flex items-start">
                         <span class="text-green-600 mr-2">•</span>
-                        <span><strong>Resource Efficient:</strong> No retraining needed for new evaluation criteria</span>
+                        <span><strong>Zero Retraining:</strong> Adapt to new preferences without additional training</span>
                     </li>
                     <li class="flex items-start">
                         <span class="text-green-600 mr-2">•</span>
-                        <span><strong>Transparent Reasoning:</strong> Provides interpretable evaluation rationales</span>
+                        <span><strong>Bias Mitigation:</strong> Explicit principles reduce spurious correlations</span>
                     </li>
                 </ul>
             </div>
@@ -157,58 +156,8 @@ description: "RewardAnything: Generalizable Principle-Following Reward Models th
     </div>
 </section>
 
-<!-- Key Features -->
-<section id="features" class="py-20 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-16">
-            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Key Research Contributions</h2>
-            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                Our work introduces a revolutionary paradigm for reward modeling that addresses fundamental limitations of current approaches.
-            </p>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div class="bg-blue-50 p-8 rounded-xl hover:bg-blue-100 transition-colors">
-                <div class="text-3xl mb-4">🏆</div>
-                <h3 class="text-xl font-semibold text-blue-900 mb-3">Principle-Following Paradigm</h3>
-                <p class="text-blue-800">Formally conceptualize and categorize principle-following for RMs across 5 fundamental aspects: Logic, Content, Structure, Style, and Tone.</p>
-            </div>
-
-            <div class="bg-green-50 p-8 rounded-xl hover:bg-green-100 transition-colors">
-                <div class="text-3xl mb-4">📊</div>
-                <h3 class="text-xl font-semibold text-green-900 mb-3">RABench Benchmark</h3>
-                <p class="text-green-800">Comprehensive benchmark with 1,002 validated preference rankings across diverse domains to evaluate principle-following capabilities.</p>
-            </div>
-
-            <div class="bg-purple-50 p-8 rounded-xl hover:bg-purple-100 transition-colors">
-                <div class="text-3xl mb-4">🧠</div>
-                <h3 class="text-xl font-semibold text-purple-900 mb-3">RewardAnything Model</h3>
-                <p class="text-purple-800">Novel generative reward model trained with GRPO and Group Relative Preference Learning for efficient multi-response ranking.</p>
-            </div>
-
-            <div class="bg-yellow-50 p-8 rounded-xl hover:bg-yellow-100 transition-colors">
-                <div class="text-3xl mb-4">⚡</div>
-                <h3 class="text-xl font-semibold text-yellow-900 mb-3">Inference-Time Scaling</h3>
-                <p class="text-yellow-800">Utilizes reasoning during inference to interpret diverse principles without requiring task-specific retraining.</p>
-            </div>
-
-            <div class="bg-red-50 p-8 rounded-xl hover:bg-red-100 transition-colors">
-                <div class="text-3xl mb-4">🎯</div>
-                <h3 class="text-xl font-semibold text-red-900 mb-3">Bias Mitigation</h3>
-                <p class="text-red-800">Explicitly addresses common reward model biases through clear principle specification rather than implicit learning.</p>
-            </div>
-
-            <div class="bg-indigo-50 p-8 rounded-xl hover:bg-indigo-100 transition-colors">
-                <div class="text-3xl mb-4">🔄</div>
-                <h3 class="text-xl font-semibold text-indigo-900 mb-3">RLHF Integration</h3>
-                <p class="text-indigo-800">Seamlessly integrates with existing reinforcement learning methods like PPO and GRPO for practical LLM alignment.</p>
-            </div>
-        </div>
-    </div>
-</section>
-
 <!-- Quick Start -->
-<section id="quickstart" class="py-20 bg-gray-50">
+<section id="quickstart" class="py-20 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-16">
             <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Quick Start</h2>
@@ -219,132 +168,190 @@ description: "RewardAnything: Generalizable Principle-Following Reward Models th
 
         <div class="max-w-4xl mx-auto">
             <!-- Installation -->
-            <div class="mb-8">
-                <h3 class="text-xl font-semibold mb-4">Installation</h3>
-                <div class="code-block p-4">
-                    <pre class="text-gray-300 font-mono text-sm"><code>pip install rewardanything</code></pre>
-                </div>
+            <div class="bg-gray-50 p-6 rounded-xl mb-8">
+                <h3 class="text-lg font-semibold text-gray-900 mb-4">🚀 Installation</h3>
+                <pre class="bg-gray-900 text-green-400 p-4 rounded-lg overflow-x-auto"><code>pip install rewardanything</code></pre>
             </div>
 
             <!-- Basic Usage -->
-            <div class="mb-8">
-                <h3 class="text-xl font-semibold mb-4">Basic Usage</h3>
-                <div class="code-block p-4">
-                    <pre class="text-gray-300 font-mono text-sm"><code>import rewardanything
+            <div class="bg-gray-50 p-6 rounded-xl mb-8">
+                <h3 class="text-lg font-semibold text-gray-900 mb-4">💡 Basic Usage</h3>
+                <pre class="bg-gray-900 text-gray-300 p-4 rounded-lg overflow-x-auto text-sm"><code>from rewardanything import RewardModel
 
 # Load the model
-reward_model = rewardanything.from_pretrained("RewardAnything/RewardAnything-8B")
+reward_model = RewardModel.from_pretrained("zhuohaoyu/RewardAnything-8B-v1")
 
-# Define your evaluation principle
-principle = "Prioritize factual accuracy and conciseness over detailed explanations"
+# Define your principle
+principle = "Favor responses that are helpful, accurate, and concise"
 
-# Evaluate responses according to the principle
-result = reward_model.judge(
+# Evaluate responses
+prompt = "What is machine learning?"
+responses = [
+    "Machine learning is a subset of AI...",
+    "ML uses algorithms to find patterns in data..."
+]
+
+scores = reward_model.evaluate(
     principle=principle,
-    prompt="What is the capital of France?",
-    responses={
-        "response_a": "Paris is the capital of France.",
-        "response_b": "The capital of France is Paris, which is located in the north-central part..."
-    }
+    prompt=prompt, 
+    responses=responses
 )
 
-print(result.scores)    # {'response_a': 4.8, 'response_b': 3.2}
-print(result.ranking)   # ['response_a', 'response_b']</code></pre>
-                </div>
+print(scores)  # {'response_1': 4.2, 'response_2': 3.8}</code></pre>
             </div>
 
             <!-- Advanced Example -->
-            <div class="mb-8">
-                <h3 class="text-xl font-semibold mb-4">Advanced: Custom Principles</h3>
-                <div class="code-block p-4">
-                    <pre class="text-gray-300 font-mono text-sm"><code># Define complex, multi-criteria principle
-principle = """
-Safety comes first but avoid overly sensitive rejections for safe queries. 
-Next, equally value warmth, appropriate humor, and genuine helpfulness. 
+            <div class="bg-blue-50 p-6 rounded-xl">
+                <h3 class="text-lg font-semibold text-blue-900 mb-4">🔬 Advanced: Custom Principles</h3>
+                <pre class="bg-gray-900 text-gray-300 p-4 rounded-lg overflow-x-auto text-sm"><code># Define complex, multi-faceted principles
+safety_principle = """
+Safety comes first but avoid overly sensitive rejections. 
+Value warmth, appropriate humor, and genuine helpfulness.
 Content and tone are more important than presentation style.
 """
 
-# Evaluate with detailed reasoning
-result = reward_model.judge(
-    principle=principle,
-    prompt="How to deal with stress?",
-    responses=responses,
-    include_reasoning=True
-)
+# Use for RLHF training
+from rewardanything.training import GRPO
 
-print(result.reasoning)  # Detailed explanation of evaluation</code></pre>
-                </div>
+trainer = GRPO(reward_model=reward_model)
+aligned_model = trainer.train(
+    policy_model="qwen/Qwen-8B", 
+    principle=safety_principle,
+    prompts=training_prompts
+)</code></pre>
             </div>
         </div>
     </div>
 </section>
 
 <!-- Performance Results -->
-<section id="performance" class="py-20 bg-white">
+<section class="py-20 bg-gray-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-16">
             <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">State-of-the-Art Performance</h2>
             <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                RewardAnything achieves superior performance across multiple benchmarks and evaluation criteria
+                RewardAnything achieves superior results on both traditional and principle-following benchmarks
             </p>
         </div>
 
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
             <!-- RM-Bench Results -->
-            <div class="bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-xl text-center">
-                <h3 class="text-lg font-semibold text-blue-900 mb-2">RM-Bench</h3>
-                <div class="text-3xl font-bold text-blue-700 mb-1">89.2%</div>
-                <p class="text-sm text-blue-600">Overall Accuracy</p>
-                <p class="text-xs text-blue-500 mt-2">State-of-the-art on traditional reward modeling</p>
+            <div class="bg-white p-8 rounded-xl shadow-sm">
+                <h3 class="text-xl font-bold text-gray-900 mb-6">RM-Bench Results</h3>
+                <div class="space-y-4">
+                    <div class="flex justify-between items-center">
+                        <span class="text-gray-700">Overall Accuracy</span>
+                        <span class="text-2xl font-bold text-blue-600">89.2%</span>
+                    </div>
+                    <div class="w-full bg-gray-200 rounded-full h-2">
+                        <div class="bg-blue-600 h-2 rounded-full" style="width: 89.2%"></div>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4 text-sm">
+                        <div>
+                            <span class="text-gray-600">Math:</span>
+                            <span class="font-semibold ml-1">89.1%</span>
+                        </div>
+                        <div>
+                            <span class="text-gray-600">Safety:</span>
+                            <span class="font-semibold ml-1">100%</span>
+                        </div>
+                    </div>
+                    <p class="text-sm text-gray-600 mt-4">
+                        🏆 <strong>State-of-the-art</strong> performance achieved by simply specifying evaluation principles
+                    </p>
+                </div>
             </div>
 
             <!-- RABench Results -->
-            <div class="bg-gradient-to-br from-green-50 to-green-100 p-6 rounded-xl text-center">
-                <h3 class="text-lg font-semibold text-green-900 mb-2">RABench</h3>
-                <div class="text-3xl font-bold text-green-700 mb-1">80.5%</div>
-                <p class="text-sm text-green-600">Principle-Following Accuracy</p>
-                <p class="text-xs text-green-500 mt-2">Comparable to GPT-4o on novel principles</p>
-            </div>
-
-            <!-- Efficiency Gain -->
-            <div class="bg-gradient-to-br from-purple-50 to-purple-100 p-6 rounded-xl text-center">
-                <h3 class="text-lg font-semibold text-purple-900 mb-2">Efficiency</h3>
-                <div class="text-3xl font-bold text-purple-700 mb-1">0x</div>
-                <p class="text-sm text-purple-600">Retraining Required</p>
-                <p class="text-xs text-purple-500 mt-2">Dynamic adaptation without retraining</p>
-            </div>
-        </div>
-
-        <!-- Detailed Results Table Placeholder -->
-        <div class="paper-figure-container">
-            <div class="max-w-6xl mx-auto text-center">
-                <h3 class="text-xl font-semibold mb-6">Detailed Benchmark Comparisons</h3>
-                <div class="h-64 bg-gray-100 rounded-lg flex items-center justify-center">
-                    <div class="text-center text-gray-500">
-                        <div class="text-4xl mb-2">📊</div>
-                        <div>Performance Table Placeholder</div>
-                        <div class="text-sm mt-2">Complete results from RM-Bench and RABench evaluations</div>
+            <div class="bg-white p-8 rounded-xl shadow-sm">
+                <h3 class="text-xl font-bold text-gray-900 mb-6">RABench (Our Benchmark)</h3>
+                <div class="space-y-4">
+                    <div class="flex justify-between items-center">
+                        <span class="text-gray-700">Principle Following</span>
+                        <span class="text-2xl font-bold text-green-600">80.5%</span>
                     </div>
+                    <div class="w-full bg-gray-200 rounded-full h-2">
+                        <div class="bg-green-600 h-2 rounded-full" style="width: 80.5%"></div>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4 text-sm">
+                        <div>
+                            <span class="text-gray-600">Kendall's τ:</span>
+                            <span class="font-semibold ml-1">62.59</span>
+                        </div>
+                        <div>
+                            <span class="text-gray-600">NDCG:</span>
+                            <span class="font-semibold ml-1">97.24</span>
+                        </div>
+                    </div>
+                    <p class="text-sm text-gray-600 mt-4">
+                        🎯 <strong>Competitive with GPT-4o</strong> on novel principle adaptation without retraining
+                    </p>
                 </div>
             </div>
         </div>
     </div>
 </section>
 
-<!-- Research Methodology -->
-<section class="py-20 bg-gray-50">
+<!-- Methodology -->
+<section class="py-20 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-16">
-            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Research Methodology</h2>
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Methodology</h2>
             <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                Our approach combines novel training techniques with comprehensive evaluation frameworks
+                Our approach combines Group Relative Policy Optimization (GRPO) with principle-guided training
             </p>
         </div>
 
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            <!-- Training Approach -->
-            <div>
-                <h3 class="text-2xl font-bold text-gray-900 mb-6">Training with GRPO</h3>
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <!-- GRPO Training -->
+            <div class="text-center">
+                <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <svg class="w-8 h-8 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                    </svg>
+                </div>
+                <h3 class="text-lg font-semibold text-gray-900 mb-3">Group Relative Policy Optimization</h3>
+                <p class="text-gray-600">
+                    Advanced RL training that learns from relative rankings rather than absolute scores, 
+                    enabling better generalization across principles.
+                </p>
+            </div>
+
+            <!-- Principle Categories -->
+            <div class="text-center">
+                <div class="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <svg class="w-8 h-8 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"/>
+                        <path fill-rule="evenodd" d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v6a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 2V6a1 1 0 011-1h.01a1 1 0 011 1v1a2 2 0 11-2 0zm3 0V6a1 1 0 011-1h.01a1 1 0 011 1v1a2 2 0 11-2 0z" clip-rule="evenodd"/>
+                    </svg>
+                </div>
+                <h3 class="text-lg font-semibold text-gray-900 mb-3">Structured Principle Framework</h3>
+                <p class="text-gray-600">
+                    200+ curated principles across Logic, Content, Structure, Style, and Tone categories 
+                    for comprehensive evaluation criteria.
+                </p>
+            </div>
+
+            <!-- RABench -->
+            <div class="text-center">
+                <div class="bg-purple-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <svg class="w-8 h-8 text-purple-600" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M2 10a8 8 0 018-8v8h8a8 8 0 11-16 0z"/>
+                        <path d="M12 2.252A8.014 8.014 0 0117.748 8H12V2.252z"/>
+                    </svg>
+                </div>
+                <h3 class="text-lg font-semibold text-gray-900 mb-3">RABench Evaluation</h3>
+                <p class="text-gray-600">
+                    Comprehensive benchmark with 1,002 validated rankings to measure 
+                    principle-following capabilities across diverse domains.
+                </p>
+            </div>
+        </div>
+
+        <!-- Technical Details -->
+        <div class="mt-16 bg-gray-50 p-8 rounded-xl">
+            <h3 class="text-xl font-bold text-gray-900 mb-6">Key Technical Innovations</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div class="space-y-4">
                     <div class="flex items-start">
                         <div class="bg-blue-100 p-2 rounded-lg mr-4">
@@ -353,8 +360,8 @@ print(result.reasoning)  # Detailed explanation of evaluation</code></pre>
                             </svg>
                         </div>
                         <div>
-                            <h4 class="font-semibold text-gray-900">Group Relative Preference Learning</h4>
-                            <p class="text-gray-600">Trains on listwise preferences rather than pairwise comparisons for better ranking performance</p>
+                            <h4 class="font-semibold text-gray-900">Listwise Training</h4>
+                            <p class="text-gray-600">More efficient than pairwise approaches, enabling fine-grained ranking</p>
                         </div>
                     </div>
                     <div class="flex items-start">
@@ -364,39 +371,12 @@ print(result.reasoning)  # Detailed explanation of evaluation</code></pre>
                             </svg>
                         </div>
                         <div>
-                            <h4 class="font-semibold text-gray-900">Reinforcement Learning Objective</h4>
-                            <p class="text-gray-600">Uses GRPO to optimize for relative quality discrimination and principle adherence</p>
-                        </div>
-                    </div>
-                    <div class="flex items-start">
-                        <div class="bg-blue-100 p-2 rounded-lg mr-4">
-                            <svg class="w-5 h-5 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
-                                <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                            </svg>
-                        </div>
-                        <div>
-                            <h4 class="font-semibold text-gray-900">Structured Output Generation</h4>
-                            <p class="text-gray-600">Generates reasoning, scores, and rankings in a single inference call</p>
+                            <h4 class="font-semibold text-gray-900">Inference-Time Reasoning</h4>
+                            <p class="text-gray-600">Explicit reasoning process for transparent decision making</p>
                         </div>
                     </div>
                 </div>
-            </div>
-
-            <!-- Evaluation Framework -->
-            <div>
-                <h3 class="text-2xl font-bold text-gray-900 mb-6">RABench Evaluation</h3>
                 <div class="space-y-4">
-                    <div class="flex items-start">
-                        <div class="bg-green-100 p-2 rounded-lg mr-4">
-                            <svg class="w-5 h-5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
-                                <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                            </svg>
-                        </div>
-                        <div>
-                            <h4 class="font-semibold text-gray-900">200 Curated Principles</h4>
-                            <p class="text-gray-600">Categorized across Logic, Content, Structure, Style, and Tone dimensions</p>
-                        </div>
-                    </div>
                     <div class="flex items-start">
                         <div class="bg-green-100 p-2 rounded-lg mr-4">
                             <svg class="w-5 h-5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
@@ -426,7 +406,7 @@ print(result.reasoning)  # Detailed explanation of evaluation</code></pre>
 </section>
 
 <!-- Documentation -->
-<section id="documentation" class="py-20 bg-white">
+<section id="documentation" class="py-20 bg-gray-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-16">
             <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Documentation & Resources</h2>
@@ -489,7 +469,7 @@ print(result.reasoning)  # Detailed explanation of evaluation</code></pre>
 </section>
 
 <style>
-/* Special container for paper figures that works in both light and dark modes */
+/* Special container for paper figures with neutral background */
 .paper-figure-container {
     background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
     padding: 2rem;
@@ -503,16 +483,5 @@ print(result.reasoning)  # Detailed explanation of evaluation</code></pre>
     padding: 1rem;
     border-radius: 0.5rem;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-@media (prefers-color-scheme: dark) {
-    .paper-figure-container {
-        background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
-        border-color: #475569;
-    }
-    
-    .paper-figure-container img {
-        background: #f8fafc;
-    }
 }
 </style> 
