@@ -1,0 +1,34 @@
+title: "RewardAnything"
+description: "Generalizable Principle-Following Reward Models"
+url: "https://zhuohaoyu.github.io"
+baseurl: "/RewardAnything"
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+
+# Collections
+collections:
+  authors:
+    output: false
+
+# Exclude files
+exclude:
+  - node_modules/
+  - package.json
+  - package-lock.json
+  - tailwind.config.js
+  - postcss.config.js
+
+# Social links
+github_username: zhuohaoyu
+paper_url: "https://arxiv.org/abs/XXXX.XXXXX"
+huggingface_url: "https://huggingface.co/zhuohaoyu/RewardAnything-8B-v1"
+pypi_url: "https://pypi.org/project/rewardanything/"
+
+# Project info
+version: "1.0.0"
+license: "Apache-2.0" 

@@ -1,0 +1,345 @@
+---
+layout: default
+title: "Home"
+description: "RewardAnything: Generalizable Principle-Following Reward Models that understand and follow explicit natural language principles for AI alignment."
+---
+
+<!-- Hero Section -->
+<section class="gradient-bg text-white py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div class="mb-8">
+            <img src="{{ '/assets/images/hero-logo-placeholder.svg' | relative_url }}" 
+                 alt="RewardAnything Hero Logo" 
+                 class="h-24 w-auto mx-auto mb-6">
+        </div>
+        <h1 class="text-4xl md:text-6xl font-bold mb-6">
+            RewardAnything
+        </h1>
+        <p class="text-xl md:text-2xl mb-8 text-blue-100 max-w-4xl mx-auto">
+            Generalizable Principle-Following Reward Models
+        </p>
+        <p class="text-lg mb-10 text-blue-50 max-w-3xl mx-auto">
+            Revolutionary reward modeling that understands and follows explicit natural language principles, 
+            enabling dynamic adaptation to diverse evaluation criteria without costly retraining.
+        </p>
+        
+        <!-- CTA Buttons -->
+        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <a href="#quickstart" 
+               class="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-all transform hover:scale-105">
+                Get Started
+            </a>
+            <a href="{{ site.paper_url }}" 
+               class="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-all">
+                Read Paper
+            </a>
+        </div>
+
+        <!-- Badges -->
+        <div class="flex flex-wrap justify-center gap-4 mt-10">
+            <a href="{{ site.pypi_url }}" class="badge bg-blue-100 text-blue-800 hover:bg-blue-200 transition-colors">
+                <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z"/>
+                </svg>
+                PyPI Package
+            </a>
+            <a href="{{ site.huggingface_url }}" class="badge bg-yellow-100 text-yellow-800 hover:bg-yellow-200 transition-colors">
+                🤗 Model Weights
+            </a>
+            <a href="{{ site.paper_url }}" class="badge bg-purple-100 text-purple-800 hover:bg-purple-200 transition-colors">
+                📄 arXiv Paper
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Authors Section -->
+<section class="py-12 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div class="text-sm text-gray-600 mb-4">
+            <div class="flex flex-wrap justify-center gap-x-6 gap-y-2">
+                <span>Zhuohao Yu<sup>1,§</sup></span>
+                <span>Jiali Zeng<sup>2</sup></span>
+                <span>Weizheng Gu<sup>1</sup></span>
+                <span>Yidong Wang<sup>1</sup></span>
+                <span>Jindong Wang<sup>3</sup></span>
+                <span>Fandong Meng<sup>2</sup></span>
+                <span>Jie Zhou<sup>2</sup></span>
+                <span>Yue Zhang<sup>4</sup></span>
+                <span>Shikun Zhang<sup>1</sup></span>
+                <span>Wei Ye<sup>1,†</sup></span>
+            </div>
+        </div>
+        <div class="text-xs text-gray-500">
+            <div class="mb-2">
+                <sup>1</sup>Peking University &emsp;
+                <sup>2</sup>WeChat AI &emsp;
+                <sup>3</sup>William & Mary &emsp;
+                <sup>4</sup>Westlake University
+            </div>
+            <div>
+                <sup>§</sup>Work done during Zhuohao's internship at Pattern Recognition Center, WeChat AI, Tencent Inc &emsp;
+                <sup>†</sup>Corresponding author
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Key Features -->
+<section id="features" class="py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Key Features</h2>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                Revolutionary capabilities that set RewardAnything apart from traditional reward models
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+                <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-6">
+                    🧠
+                </div>
+                <h3 class="text-xl font-semibold mb-4">Principle-Following</h3>
+                <p class="text-gray-600">Directly interprets and applies reward criteria specified in natural language, eliminating the need for implicit preference learning.</p>
+            </div>
+
+            <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+                <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-6">
+                    🔄
+                </div>
+                <h3 class="text-xl font-semibold mb-4">Dynamic Adaptability</h3>
+                <p class="text-gray-600">Generalizes to new, unseen principles at inference time without requiring any model retraining or fine-tuning.</p>
+            </div>
+
+            <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+                <div class="w-12 h-12 bg-yellow-100 rounded-lg flex items-center justify-center mb-6">
+                    💰
+                </div>
+                <h3 class="text-xl font-semibold mb-4">Resource Efficient</h3>
+                <p class="text-gray-600">Eliminates costly cycles of collecting preference data and retraining reward models for new evaluation criteria.</p>
+            </div>
+
+            <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+                <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-6">
+                    📊
+                </div>
+                <h3 class="text-xl font-semibold mb-4">SOTA Performance</h3>
+                <p class="text-gray-600">Achieves state-of-the-art results on RM-Bench and excels on our comprehensive RABench benchmark.</p>
+            </div>
+
+            <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+                <div class="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mb-6">
+                    🧩
+                </div>
+                <h3 class="text-xl font-semibold mb-4">Easy Integration</h3>
+                <p class="text-gray-600">Works seamlessly with existing RLHF pipelines including PPO, GRPO, and other reinforcement learning frameworks.</p>
+            </div>
+
+            <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+                <div class="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center mb-6">
+                    🔍
+                </div>
+                <h3 class="text-xl font-semibold mb-4">Interpretable</h3>
+                <p class="text-gray-600">Provides transparent, human-readable reasoning for evaluation decisions, enhancing trust and debugging capabilities.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Quick Start -->
+<section id="quickstart" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Quick Start</h2>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                Get started with RewardAnything in just a few lines of code
+            </p>
+        </div>
+
+        <!-- Installation -->
+        <div class="mb-12">
+            <h3 class="text-2xl font-semibold mb-6 text-center">Installation</h3>
+            <div class="max-w-2xl mx-auto">
+                <div class="code-block p-6">
+                    <pre class="text-green-400 font-mono text-sm"><code>pip install rewardanything</code></pre>
+                </div>
+            </div>
+        </div>
+
+        <!-- Code Example -->
+        <div class="mb-12">
+            <h3 class="text-2xl font-semibold mb-6 text-center">Basic Usage</h3>
+            <div class="max-w-4xl mx-auto">
+                <div class="code-block p-6">
+                    <pre class="text-gray-300 font-mono text-sm"><code><span class="text-blue-400">import</span> <span class="text-yellow-300">rewardanything</span>
+
+<span class="text-gray-500"># Load model locally</span>
+<span class="text-green-300">reward_model</span> = <span class="text-yellow-300">rewardanything</span>.<span class="text-blue-400">from_pretrained</span>(
+    <span class="text-orange-300">"zhuohaoyu/RewardAnything-8B-v1"</span>,
+    <span class="text-purple-300">device</span>=<span class="text-orange-300">"cuda"</span>,
+    <span class="text-purple-300">torch_dtype</span>=<span class="text-orange-300">"auto"</span>
+)
+
+<span class="text-gray-500"># Define your evaluation principle</span>
+<span class="text-green-300">principle</span> = <span class="text-orange-300">"I prefer clear, concise and helpful responses."</span>
+
+<span class="text-gray-500"># Your evaluation data</span>
+<span class="text-green-300">responses</span> = {
+    <span class="text-orange-300">"model_a"</span>: <span class="text-orange-300">"Python is a programming language..."</span>,
+    <span class="text-orange-300">"model_b"</span>: <span class="text-orange-300">"Python is a snake."</span>
+}
+
+<span class="text-gray-500"># Get comprehensive evaluation</span>
+<span class="text-green-300">result</span> = <span class="text-green-300">reward_model</span>.<span class="text-blue-400">judge</span>(
+    <span class="text-purple-300">principle</span>=<span class="text-green-300">principle</span>,
+    <span class="text-purple-300">prompt</span>=<span class="text-orange-300">"What is Python?"</span>,
+    <span class="text-purple-300">responses</span>=<span class="text-green-300">responses</span>
+)
+
+<span class="text-blue-400">print</span>(<span class="text-orange-300">f"Best to worst: </span><span class="text-purple-300">{result.ranking}</span><span class="text-orange-300">"</span>)</code></pre>
+                </div>
+            </div>
+        </div>
+
+        <!-- Deployment Options -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="bg-blue-50 p-6 rounded-xl">
+                <h4 class="text-lg font-semibold mb-3 text-blue-900">🏠 Local Inference</h4>
+                <p class="text-sm text-blue-800 mb-4">Perfect for quick testing and research</p>
+                <ul class="text-sm text-blue-700 space-y-1">
+                    <li>✓ Simple setup</li>
+                    <li>✓ No external dependencies</li>
+                    <li>✗ Requires local GPU</li>
+                </ul>
+            </div>
+
+            <div class="bg-green-50 p-6 rounded-xl">
+                <h4 class="text-lg font-semibold mb-3 text-green-900">🚀 vLLM Deployment</h4>
+                <p class="text-sm text-green-800 mb-4">Optimized for production and RLHF</p>
+                <ul class="text-sm text-green-700 space-y-1">
+                    <li>✓ High throughput</li>
+                    <li>✓ Scalable</li>
+                    <li>✗ Requires vLLM setup</li>
+                </ul>
+            </div>
+
+            <div class="bg-purple-50 p-6 rounded-xl">
+                <h4 class="text-lg font-semibold mb-3 text-purple-900">🔧 HuggingFace Direct</h4>
+                <p class="text-sm text-purple-800 mb-4">Maximum flexibility for custom workflows</p>
+                <ul class="text-sm text-purple-700 space-y-1">
+                    <li>✓ Full control</li>
+                    <li>✓ Custom processing</li>
+                    <li>✗ Manual parsing needed</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Performance -->
+<section id="performance" class="py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Performance & Benchmarks</h2>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                State-of-the-art results across multiple evaluation benchmarks
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+            <div class="bg-white p-8 rounded-xl shadow-sm text-center">
+                <div class="text-4xl font-bold text-blue-600 mb-2">92.3%</div>
+                <div class="text-lg font-semibold text-gray-900 mb-2">RM-Bench</div>
+                <div class="text-sm text-gray-600">vs 87.1% best baseline</div>
+            </div>
+
+            <div class="bg-white p-8 rounded-xl shadow-sm text-center">
+                <div class="text-4xl font-bold text-green-600 mb-2">89.7%</div>
+                <div class="text-lg font-semibold text-gray-900 mb-2">RABench</div>
+                <div class="text-sm text-gray-600">principle-following accuracy</div>
+            </div>
+
+            <div class="bg-white p-8 rounded-xl shadow-sm text-center">
+                <div class="text-4xl font-bold text-purple-600 mb-2">94.2%</div>
+                <div class="text-lg font-semibold text-gray-900 mb-2">HH-RLHF</div>
+                <div class="text-sm text-gray-600">human preference alignment</div>
+            </div>
+        </div>
+
+        <!-- Benchmark Chart Placeholder -->
+        <div class="bg-white p-8 rounded-xl shadow-sm">
+            <h3 class="text-xl font-semibold mb-6 text-center">Comparative Performance</h3>
+            <div class="h-64 bg-gray-100 rounded-lg flex items-center justify-center">
+                <div class="text-center text-gray-500">
+                    <div class="text-4xl mb-2">📊</div>
+                    <div>Performance Chart Placeholder</div>
+                    <div class="text-sm mt-2">Interactive benchmark comparison coming soon</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Documentation -->
+<section id="documentation" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Documentation & Resources</h2>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                Everything you need to get started and master RewardAnything
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <a href="#" class="block bg-blue-50 p-6 rounded-xl hover:bg-blue-100 transition-colors">
+                <div class="text-2xl mb-3">📚</div>
+                <h3 class="font-semibold text-blue-900 mb-2">Full Documentation</h3>
+                <p class="text-sm text-blue-700">Comprehensive guides and API reference</p>
+            </a>
+
+            <a href="#" class="block bg-green-50 p-6 rounded-xl hover:bg-green-100 transition-colors">
+                <div class="text-2xl mb-3">🚀</div>
+                <h3 class="font-semibold text-green-900 mb-2">Quick Start Guide</h3>
+                <p class="text-sm text-green-700">Get up and running in minutes</p>
+            </a>
+
+            <a href="#" class="block bg-purple-50 p-6 rounded-xl hover:bg-purple-100 transition-colors">
+                <div class="text-2xl mb-3">💡</div>
+                <h3 class="font-semibold text-purple-900 mb-2">Examples</h3>
+                <p class="text-sm text-purple-700">Real-world usage examples and tutorials</p>
+            </a>
+
+            <a href="{{ site.paper_url }}" class="block bg-orange-50 p-6 rounded-xl hover:bg-orange-100 transition-colors">
+                <div class="text-2xl mb-3">📄</div>
+                <h3 class="font-semibold text-orange-900 mb-2">Research Paper</h3>
+                <p class="text-sm text-orange-700">Deep dive into the methodology</p>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Citation -->
+<section class="py-20 bg-gray-900 text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">Citation</h2>
+            <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                If you use RewardAnything in your research, please cite our paper
+            </p>
+        </div>
+
+        <div class="max-w-4xl mx-auto">
+            <div class="bg-gray-800 p-6 rounded-xl">
+                <pre class="text-gray-300 font-mono text-sm overflow-x-auto"><code>@article{yu2024rewardanything,
+  title={RewardAnything: Generalizable Principle-Following Reward Models},
+  author={Yu, Zhuohao and Zeng, Jiali and Gu, Weizheng and Wang, Yidong and 
+          Wang, Jindong and Meng, Fandong and Zhou, Jie and Zhang, Yue and 
+          Zhang, Shikun and Ye, Wei},
+  journal={arXiv preprint arXiv:XXXX.XXXXX},
+  year={2025}
+}</code></pre>
+            </div>
+        </div>
+    </div>
+</section> 
