@@ -1,40 +1,57 @@
 <svg width="96" height="96" viewBox="0 0 96 96" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <!-- Outer glow circle -->
-  <circle cx="48" cy="48" r="46" fill="white" fill-opacity="0.1" stroke="white" stroke-opacity="0.2" stroke-width="2"/>
-  
-  <!-- Trophy base with gradient -->
   <defs>
-    <linearGradient id="trophyGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#ffffff;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#f1f5f9;stop-opacity:1" />
+    <linearGradient id="heroGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffffff"/>
+      <stop offset="50%" style="stop-color:#f8fafc"/>
+      <stop offset="100%" style="stop-color:#e2e8f0"/>
     </linearGradient>
-    <linearGradient id="accentGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#10b981;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#059669;stop-opacity:1" />
+    <linearGradient id="centerGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6"/>
+      <stop offset="100%" style="stop-color:#1e40af"/>
     </linearGradient>
+    <linearGradient id="accentHero" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10b981"/>
+      <stop offset="100%" style="stop-color:#059669"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge> 
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
   </defs>
   
-  <!-- Trophy base -->
-  <rect x="33" y="74" width="30" height="8" rx="4" fill="url(#trophyGradient)" stroke="white" stroke-opacity="0.3"/>
+  <!-- Outer glow ring -->
+  <circle cx="48" cy="48" r="46" fill="none" stroke="white" stroke-opacity="0.3" stroke-width="2"/>
+  <circle cx="48" cy="48" r="42" fill="none" stroke="white" stroke-opacity="0.2" stroke-width="1"/>
   
-  <!-- Trophy stem -->
-  <rect x="39" y="62" width="18" height="12" rx="2" fill="url(#trophyGradient)" stroke="white" stroke-opacity="0.3"/>
+  <!-- Main circular background -->
+  <circle cx="48" cy="48" r="38" fill="url(#heroGradient)" stroke="white" stroke-width="1" filter="url(#glow)"/>
   
-  <!-- Main trophy cup -->
-  <path d="M20 20h56c4 0 8 4 8 8v20c0 12-12 20-28 20s-28-8-28-20V28c0-4 4-8 8-8z" 
-        fill="url(#trophyGradient)" stroke="white" stroke-opacity="0.3" stroke-width="1"/>
+  <!-- Central reward medal -->
+  <circle cx="48" cy="42" r="20" fill="white" fill-opacity="0.9" stroke="white" stroke-opacity="0.5"/>
+  <circle cx="48" cy="42" r="16" fill="url(#centerGradient)"/>
   
-  <!-- Trophy handles with improved design -->
-  <ellipse cx="12" cy="35" rx="6" ry="8" fill="url(#accentGradient)" opacity="0.9"/>
-  <ellipse cx="84" cy="35" rx="6" ry="8" fill="url(#accentGradient)" opacity="0.9"/>
+  <!-- Award star -->
+  <path d="M48 28l4 8h8l-6 6 2 8-8-4-8 4 2-8-6-6h8l4-8z" fill="white" filter="url(#glow)"/>
   
-  <!-- Central award star with glow -->
-  <circle cx="48" cy="40" r="12" fill="white" fill-opacity="0.2"/>
-  <circle cx="48" cy="40" r="10" fill="#2563eb"/>
-  <path d="M48 32l2.5 5h5.5l-4.5 3.5L53 46l-5-3.5L43 46l1.5-5.5L40 37.5h5.5L48 32z" 
-        fill="white" stroke="white" stroke-width="0.5"/>
+  <!-- Decorative ribbons -->
+  <path d="M20 60 Q48 55 76 60 Q68 65 48 66 Q28 65 20 60Z" fill="url(#accentHero)" fill-opacity="0.8"/>
+  <path d="M24 65 Q48 62 72 65 Q64 68 48 69 Q32 68 24 65Z" fill="url(#accentHero)" fill-opacity="0.6"/>
   
-  <!-- Decorative elements -->
-  <circle cx="30" cy="28" r="2" fill="url(#accentGradient)" opacity="0.6"/>
-  <circle cx="66" cy="28" r="2" fill="url(#accentGradient)" opacity="0.6"/>
+  <!-- Side elements representing "principles" -->
+  <rect x="12" y="30" width="8" height="2" rx="1" fill="white" fill-opacity="0.8"/>
+  <rect x="12" y="34" width="6" height="2" rx="1" fill="white" fill-opacity="0.6"/>
+  <rect x="12" y="38" width="8" height="2" rx="1" fill="white" fill-opacity="0.8"/>
+  
+  <rect x="76" y="30" width="8" height="2" rx="1" fill="white" fill-opacity="0.8"/>
+  <rect x="78" y="34" width="6" height="2" rx="1" fill="white" fill-opacity="0.6"/>
+  <rect x="76" y="38" width="8" height="2" rx="1" fill="white" fill-opacity="0.8"/>
+  
+  <!-- Sparkle effects -->
+  <circle cx="72" cy="25" r="2" fill="white" fill-opacity="0.8"/>
+  <circle cx="24" cy="25" r="2" fill="white" fill-opacity="0.8"/>
+  <circle cx="30" cy="72" r="1.5" fill="white" fill-opacity="0.7"/>
+  <circle cx="66" cy="72" r="1.5" fill="white" fill-opacity="0.7"/>
 </svg> 

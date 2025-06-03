@@ -33,31 +33,19 @@ description: "RewardAnything: Generalizable Principle-Following Reward Models"
             </p>
         </div>
         
-        <!-- Fixed CTA Buttons -->
-        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-10">
-            <a href="#quickstart" 
-               class="inline-block bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-all transform hover:scale-105 shadow-lg">
-                Get Started
-            </a>
+        <!-- Updated CTA Buttons -->
+        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
             <a href="{{ site.paper_url | default: '#' }}" 
-               class="inline-block border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-all shadow-lg">
-                Read Paper
+               class="inline-flex items-center bg-white text-slate-700 px-8 py-3 rounded-lg font-semibold hover:bg-slate-50 transition-all transform hover:scale-105 shadow-lg">
+                📄 <span class="ml-2">Paper</span>
             </a>
-        </div>
-
-        <!-- Badges -->
-        <div class="flex flex-wrap justify-center gap-4">
-            <a href="{{ site.pypi_url | default: '#' }}" class="badge bg-blue-100 text-blue-800 hover:bg-blue-200 transition-colors">
-                <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z"/>
-                </svg>
-                PyPI Package
+            <a href="{{ site.huggingface_url | default: '#' }}" 
+               class="inline-flex items-center bg-gradient-to-r from-yellow-400 to-orange-500 text-white px-8 py-3 rounded-lg font-semibold hover:from-yellow-500 hover:to-orange-600 transition-all transform hover:scale-105 shadow-lg">
+                🤗 <span class="ml-2">Model Weights</span>
             </a>
-            <a href="{{ site.huggingface_url | default: '#' }}" class="badge bg-yellow-100 text-yellow-800 hover:bg-yellow-200 transition-colors">
-                🤗 Model Weights
-            </a>
-            <a href="{{ site.paper_url | default: '#' }}" class="badge bg-purple-100 text-purple-800 hover:bg-purple-200 transition-colors">
-                📄 arXiv Paper
+            <a href="#quickstart" 
+               class="inline-flex items-center bg-gradient-to-r from-emerald-500 to-teal-600 text-white px-8 py-3 rounded-lg font-semibold hover:from-emerald-600 hover:to-teal-700 transition-all transform hover:scale-105 shadow-lg">
+                💻 <span class="ml-2">Get Started</span>
             </a>
         </div>
     </div>
