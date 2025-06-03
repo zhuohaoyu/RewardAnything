@@ -186,41 +186,46 @@ description: "RewardAnything: Generalizable Principle-Following Reward Models"
             <!-- Method 1: Local Inference -->
             <div class="deployment-card blue bg-gradient-to-br from-blue-50 to-indigo-100 rounded-xl p-6 border border-blue-200" 
                  onclick="selectDeploymentMethod('local')" data-method="local">
-                <div class="flex items-center mb-4">
-                    <span class="text-2xl mr-3">🏠</span>
-                    <h3 class="text-xl font-bold text-gray-900">Local Inference</h3>
+                <!-- Recommended Tag -->
+                <div class="flex justify-between items-start mb-3">
+                    <span class="inline-block bg-blue-500 text-white text-xs px-2 py-1 rounded-full font-medium">
+                        Recommended for Beginners
+                    </span>
+                    <span class="text-2xl">🏠</span>
                 </div>
+                
+                <h3 class="text-xl font-bold text-gray-900 mb-2">Local Inference</h3>
                 <p class="text-gray-600 mb-4">Perfect for quick experimentation and research</p>
                 
-                <div class="mb-4">
-                    <div class="text-sm font-semibold text-green-700 mb-2">✅ Pros:</div>
-                    <ul class="text-sm text-gray-600 space-y-1">
-                        <li>• Simple setup, no external dependencies</li>
-                        <li>• Full control over the model</li>
-                        <li>• Works offline once downloaded</li>
-                    </ul>
+                <!-- Use Case Tags -->
+                <div class="flex flex-wrap gap-2 mb-4">
+                    <span class="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-md font-medium">Quick Testing</span>
+                    <span class="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-md font-medium">Research</span>
+                    <span class="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-md font-medium">Offline Use</span>
                 </div>
                 
-                <div class="mb-4">
-                    <div class="text-sm font-semibold text-orange-700 mb-2">⚠️ Cons:</div>
-                    <ul class="text-sm text-gray-600 space-y-1">
-                        <li>• Requires local GPU (8GB+ VRAM)</li>
-                        <li>• Slower for large batch processing</li>
-                    </ul>
-                </div>
-
-                <div class="mb-4">
-                    <div class="text-sm font-semibold text-blue-700 mb-2">💡 Best for:</div>
-                    <ul class="text-sm text-gray-600 space-y-1">
-                        <li>• Quick testing and research</li>
-                        <li>• Small-scale evaluation</li>
-                        <li>• Offline environments</li>
-                    </ul>
+                <div class="space-y-3 mb-4">
+                    <div>
+                        <div class="text-sm font-semibold text-green-700 mb-1">✅ Pros:</div>
+                        <ul class="text-xs text-gray-600 space-y-1">
+                            <li>• Simple one-line setup</li>
+                            <li>• No external dependencies</li>
+                            <li>• Full control & offline capable</li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <div class="text-sm font-semibold text-orange-700 mb-1">⚠️ Requirements:</div>
+                        <ul class="text-xs text-gray-600 space-y-1">
+                            <li>• 8GB+ GPU memory</li>
+                            <li>• Not ideal for batch processing</li>
+                        </ul>
+                    </div>
                 </div>
                 
                 <div class="flex justify-center">
-                    <div class="text-blue-600 text-sm font-medium bg-blue-100 px-3 py-2 rounded-lg hover:bg-blue-200 transition-colors">
-                        Click to view code →
+                    <div class="text-blue-600 text-sm font-medium bg-blue-100 px-4 py-2 rounded-lg hover:bg-blue-200 transition-colors cursor-pointer">
+                        View Code Example →
                     </div>
                 </div>
             </div>
@@ -228,83 +233,93 @@ description: "RewardAnything: Generalizable Principle-Following Reward Models"
             <!-- Method 2: vLLM Deployment -->
             <div class="deployment-card emerald bg-gradient-to-br from-emerald-50 to-green-100 rounded-xl p-6 border border-emerald-200" 
                  onclick="selectDeploymentMethod('vllm')" data-method="vllm">
-                <div class="flex items-center mb-4">
-                    <span class="text-2xl mr-3">🚀</span>
-                    <h3 class="text-xl font-bold text-gray-900">vLLM Deployment</h3>
+                <!-- Recommended Tag -->
+                <div class="flex justify-between items-start mb-3">
+                    <span class="inline-block bg-emerald-500 text-white text-xs px-2 py-1 rounded-full font-medium">
+                        Recommended for Production
+                    </span>
+                    <span class="text-2xl">🚀</span>
                 </div>
+                
+                <h3 class="text-xl font-bold text-gray-900 mb-2">vLLM Deployment</h3>
                 <p class="text-gray-600 mb-4">Optimized for high-throughput and production</p>
                 
-                <div class="mb-4">
-                    <div class="text-sm font-semibold text-green-700 mb-2">✅ Pros:</div>
-                    <ul class="text-sm text-gray-600 space-y-1">
-                        <li>• Fast batch processing & inference</li>
-                        <li>• Production-ready scalability</li>
-                        <li>• Optimized memory usage</li>
-                    </ul>
+                <!-- Use Case Tags -->
+                <div class="flex flex-wrap gap-2 mb-4">
+                    <span class="inline-block bg-emerald-100 text-emerald-800 text-xs px-2 py-1 rounded-md font-medium">Production</span>
+                    <span class="inline-block bg-emerald-100 text-emerald-800 text-xs px-2 py-1 rounded-md font-medium">RLHF Training</span>
+                    <span class="inline-block bg-emerald-100 text-emerald-800 text-xs px-2 py-1 rounded-md font-medium">Batch Processing</span>
                 </div>
                 
-                <div class="mb-4">
-                    <div class="text-sm font-semibold text-orange-700 mb-2">⚠️ Cons:</div>
-                    <ul class="text-sm text-gray-600 space-y-1">
-                        <li>• Requires vLLM setup and configuration</li>
-                        <li>• More complex deployment</li>
-                    </ul>
-                </div>
-
-                <div class="mb-4">
-                    <div class="text-sm font-semibold text-emerald-700 mb-2">💡 Best for:</div>
-                    <ul class="text-sm text-gray-600 space-y-1">
-                        <li>• Production environments</li>
-                        <li>• RLHF training loops</li>
-                        <li>• Large-scale evaluation</li>
-                    </ul>
+                <div class="space-y-3 mb-4">
+                    <div>
+                        <div class="text-sm font-semibold text-green-700 mb-1">✅ Pros:</div>
+                        <ul class="text-xs text-gray-600 space-y-1">
+                            <li>• 3x faster batch processing</li>
+                            <li>• Production-ready scalability</li>
+                            <li>• Optimized memory usage</li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <div class="text-sm font-semibold text-orange-700 mb-1">⚠️ Requirements:</div>
+                        <ul class="text-xs text-gray-600 space-y-1">
+                            <li>• Server setup required</li>
+                            <li>• More complex configuration</li>
+                        </ul>
+                    </div>
                 </div>
                 
                 <div class="flex justify-center">
-                    <div class="text-emerald-600 text-sm font-medium bg-emerald-100 px-3 py-2 rounded-lg hover:bg-emerald-200 transition-colors">
-                        Click to view code →
+                    <div class="text-emerald-600 text-sm font-medium bg-emerald-100 px-4 py-2 rounded-lg hover:bg-emerald-200 transition-colors cursor-pointer">
+                        View Code Example →
                     </div>
                 </div>
             </div>
 
-            <!-- Method 3: HuggingFace Integration -->
+            <!-- Method 3: HuggingFace Direct -->
             <div class="deployment-card purple bg-gradient-to-br from-purple-50 to-violet-100 rounded-xl p-6 border border-purple-200" 
                  onclick="selectDeploymentMethod('huggingface')" data-method="huggingface">
-                <div class="flex items-center mb-4">
-                    <span class="text-2xl mr-3">🔧</span>
-                    <h3 class="text-xl font-bold text-gray-900">HuggingFace Direct</h3>
+                <!-- Recommended Tag -->
+                <div class="flex justify-between items-start mb-3">
+                    <span class="inline-block bg-purple-500 text-white text-xs px-2 py-1 rounded-full font-medium">
+                        Recommended for Customization
+                    </span>
+                    <span class="text-2xl">🔧</span>
                 </div>
+                
+                <h3 class="text-xl font-bold text-gray-900 mb-2">HuggingFace Direct</h3>
                 <p class="text-gray-600 mb-4">Maximum flexibility for custom workflows</p>
                 
-                <div class="mb-4">
-                    <div class="text-sm font-semibold text-green-700 mb-2">✅ Pros:</div>
-                    <ul class="text-sm text-gray-600 space-y-1">
-                        <li>• Full control over processing</li>
-                        <li>• Custom integration possibilities</li>
-                        <li>• Access to HuggingFace ecosystem</li>
-                    </ul>
+                <!-- Use Case Tags -->
+                <div class="flex flex-wrap gap-2 mb-4">
+                    <span class="inline-block bg-purple-100 text-purple-800 text-xs px-2 py-1 rounded-md font-medium">Custom Integration</span>
+                    <span class="inline-block bg-purple-100 text-purple-800 text-xs px-2 py-1 rounded-md font-medium">Advanced Research</span>
+                    <span class="inline-block bg-purple-100 text-purple-800 text-xs px-2 py-1 rounded-md font-medium">Low-level Control</span>
                 </div>
                 
-                <div class="mb-4">
-                    <div class="text-sm font-semibold text-orange-700 mb-2">⚠️ Cons:</div>
-                    <ul class="text-sm text-gray-600 space-y-1">
-                        <li>• Requires manual output parsing</li>
-                        <li>• More setup and boilerplate code</li>
-                    </ul>
-                </div>
-
-                <div class="mb-4">
-                    <div class="text-sm font-semibold text-purple-700 mb-2">💡 Best for:</div>
-                    <ul class="text-sm text-gray-600 space-y-1">
-                        <li>• Custom integration workflows</li>
-                        <li>• Advanced model customization</li>
-                        <li>• Research requiring low-level control</li>
-                    </ul>
+                <div class="space-y-3 mb-4">
+                    <div>
+                        <div class="text-sm font-semibold text-green-700 mb-1">✅ Pros:</div>
+                        <ul class="text-xs text-gray-600 space-y-1">
+                            <li>• Full model control & access</li>
+                            <li>• Custom processing pipelines</li>
+                            <li>• HuggingFace ecosystem</li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <div class="text-sm font-semibold text-orange-700 mb-1">⚠️ Requirements:</div>
+                        <ul class="text-xs text-gray-600 space-y-1">
+                            <li>• Manual output parsing</li>
+                            <li>• More boilerplate code</li>
+                        </ul>
+                    </div>
                 </div>
                 
                 <div class="flex justify-center">
-                    <div class="text-purple-600 text-sm font-medium bg-purple-100 px-3 py-2 rounded-lg hover:bg-purple-200 transition-colors">
-                        Click to view code →
+                    <div class="text-purple-600 text-sm font-medium bg-purple-100 px-4 py-2 rounded-lg hover:bg-purple-200 transition-colors cursor-pointer">
+                        View Code Example →
                     </div>
                 </div>
             </div>
@@ -314,7 +329,13 @@ description: "RewardAnything: Generalizable Principle-Following Reward Models"
         <div class="bg-gray-50 rounded-xl p-8">
             <!-- Local Inference Tab -->
             <div id="local-tab" class="tab-content">
-                <h4 class="text-lg font-bold text-gray-900 mb-4">🏠 Local Inference - Recommended for Quick Testing</h4>
+                <div class="flex items-center gap-3 mb-6">
+                    <span class="text-2xl">🏠</span>
+                    <div>
+                        <h4 class="text-lg font-bold text-gray-900">Local Inference</h4>
+                        <p class="text-sm text-gray-600">Simple setup for quick testing and research</p>
+                    </div>
+                </div>
                 <div class="rounded-lg overflow-hidden">
                     <pre><code class="language-python">import rewardanything
 
@@ -348,20 +369,19 @@ print(f"Explanation: {result.explanation}")</code></pre>
 
             <!-- vLLM Deployment Tab -->
             <div id="vllm-tab" class="tab-content hidden">
-                <h4 class="text-lg font-bold text-gray-900 mb-4">🚀 vLLM Deployment - Optimized for Production</h4>
+                <div class="flex items-center gap-3 mb-6">
+                    <span class="text-2xl">🚀</span>
+                    <div>
+                        <h4 class="text-lg font-bold text-gray-900">vLLM Deployment</h4>
+                        <p class="text-sm text-gray-600">Production-ready setup for high-throughput evaluation</p>
+                    </div>
+                </div>
                 <div class="space-y-6">
                     <div>
                         <h5 class="font-semibold text-gray-800 mb-2">Step 1: Setup vLLM Server</h5>
                         <div class="rounded-lg overflow-hidden">
-                            <pre><code class="language-bash"># Install vLLM
-pip install vllm
-
-# Start vLLM server with RewardAnything model
-vllm serve zhuohaoyu/RewardAnything-8B-v1 \
-    --host 0.0.0.0 \
-    --port 8000 \
-    --max-model-len 8192 \
-    --tensor-parallel-size 1</code></pre>
+                            <pre><code class="language-bash"># Start vLLM server with RewardAnything model
+vllm serve zhuohaoyu/RewardAnything-8B-v1 --host 0.0.0.0 --port 8000</code></pre>
                         </div>
                     </div>
 
@@ -405,7 +425,13 @@ for result in results:
 
             <!-- HuggingFace Direct Tab -->
             <div id="huggingface-tab" class="tab-content hidden">
-                <h4 class="text-lg font-bold text-gray-900 mb-4">🔧 Direct HuggingFace Integration - Maximum Flexibility</h4>
+                <div class="flex items-center gap-3 mb-6">
+                    <span class="text-2xl">🔧</span>
+                    <div>
+                        <h4 class="text-lg font-bold text-gray-900">Direct HuggingFace Integration</h4>
+                        <p class="text-sm text-gray-600">Maximum flexibility for custom workflows and advanced use cases</p>
+                    </div>
+                </div>
                 <div class="rounded-lg overflow-hidden">
                     <pre><code class="language-python">from transformers import AutoTokenizer, AutoModelForCausalLM
 from rewardanything.processing import prepare_chat_messages, parse_rewardanything_output
@@ -453,39 +479,6 @@ result = parse_rewardanything_output(output_text, masked2real)
 print(f"Parsed scores: {result.scores}")
 print(f"Ranking: {result.ranking}")</code></pre>
                 </div>
-            </div>
-        </div>
-
-        <!-- Decision Matrix (moved below, simplified) -->
-        <div class="mt-16 bg-white rounded-xl p-8 shadow-sm border border-gray-200">
-            <h3 class="text-xl font-bold text-gray-900 mb-6 text-center">Quick Decision Guide</h3>
-            <div class="overflow-x-auto">
-                <table class="min-w-full">
-                    <thead>
-                        <tr class="border-b border-gray-200">
-                            <th class="px-6 py-3 text-left text-sm font-medium text-gray-500 uppercase tracking-wider">Use Case</th>
-                            <th class="px-6 py-3 text-left text-sm font-medium text-gray-500 uppercase tracking-wider">Recommended Method</th>
-                            <th class="px-6 py-3 text-left text-sm font-medium text-gray-500 uppercase tracking-wider">Why</th>
-                        </tr>
-                    </thead>
-                    <tbody class="divide-y divide-gray-200">
-                        <tr>
-                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">Quick testing</td>
-                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-blue-600">Local Inference</td>
-                            <td class="px-6 py-4 text-sm text-gray-600">Simple setup, immediate results</td>
-                        </tr>
-                        <tr class="bg-gray-50">
-                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">Production evaluation</td>
-                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-emerald-600">vLLM Deployment</td>
-                            <td class="px-6 py-4 text-sm text-gray-600">Scalable, reliable, optimized</td>
-                        </tr>
-                        <tr>
-                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">Custom integration</td>
-                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-purple-600">Direct HuggingFace</td>
-                            <td class="px-6 py-4 text-sm text-gray-600">Maximum flexibility</td>
-                        </tr>
-                    </tbody>
-                </table>
             </div>
         </div>
     </div>
