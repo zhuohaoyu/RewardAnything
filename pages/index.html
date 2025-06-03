@@ -55,22 +55,22 @@ description: "RewardAnything: Generalizable Principle-Following Reward Models"
         <div class="text-base md:text-lg text-gray-700 mb-6">
             <div class="space-y-3">
                 <!-- First line of authors (5 authors) -->
-                <div class="flex flex-wrap justify-center gap-x-6 gap-y-2">
-                    <span>Zhuohao Yu<sup>1,§</sup></span>
-                    <span>Jiali Zeng<sup>2</sup></span>
-                    <span>Weizheng Gu<sup>1</sup></span>
-                    <span>Yidong Wang<sup>1</sup></span>
-                    <span>Jindong Wang<sup>3</sup></span>
+            <div class="flex flex-wrap justify-center gap-x-6 gap-y-2">
+                <span>Zhuohao Yu<sup>1,§</sup></span>
+                <span>Jiali Zeng<sup>2</sup></span>
+                <span>Weizheng Gu<sup>1</sup></span>
+                <span>Yidong Wang<sup>1</sup></span>
+                <span>Jindong Wang<sup>3</sup></span>
                 </div>
                 <!-- Second line of authors (5 authors) -->
                 <div class="flex flex-wrap justify-center gap-x-6 gap-y-2">
-                    <span>Fandong Meng<sup>2</sup></span>
-                    <span>Jie Zhou<sup>2</sup></span>
-                    <span>Yue Zhang<sup>4</sup></span>
-                    <span>Shikun Zhang<sup>1</sup></span>
-                    <span>Wei Ye<sup>1,†</sup></span>
-                </div>
+                <span>Fandong Meng<sup>2</sup></span>
+                <span>Jie Zhou<sup>2</sup></span>
+                <span>Yue Zhang<sup>4</sup></span>
+                <span>Shikun Zhang<sup>1</sup></span>
+                <span>Wei Ye<sup>1,†</sup></span>
             </div>
+        </div>
         </div>
         <div class="text-base md:text-lg text-gray-600">
             <div class="mb-4 font-bold">
@@ -171,7 +171,7 @@ description: "RewardAnything: Generalizable Principle-Following Reward Models"
             </p>
         </div>
 
-        <!-- Installation -->
+            <!-- Installation -->
         <div class="mb-16">
             <div class="bg-gray-50 rounded-xl p-8">
                 <h3 class="text-xl font-bold text-gray-900 mb-4">📦 Installation</h3>
@@ -195,25 +195,33 @@ description: "RewardAnything: Generalizable Principle-Following Reward Models"
                 <div class="mb-4">
                     <div class="text-sm font-semibold text-green-700 mb-2">✅ Pros:</div>
                     <ul class="text-sm text-gray-600 space-y-1">
-                        <li>• Simple setup</li>
-                        <li>• No external dependencies</li>
-                        <li>• Full control</li>
+                        <li>• Simple setup, no external dependencies</li>
+                        <li>• Full control over the model</li>
+                        <li>• Works offline once downloaded</li>
                     </ul>
                 </div>
                 
                 <div class="mb-4">
                     <div class="text-sm font-semibold text-orange-700 mb-2">⚠️ Cons:</div>
                     <ul class="text-sm text-gray-600 space-y-1">
-                        <li>• Requires local GPU</li>
-                        <li>• Slower for batches</li>
+                        <li>• Requires local GPU (8GB+ VRAM)</li>
+                        <li>• Slower for large batch processing</li>
+                    </ul>
+                </div>
+
+                <div class="mb-4">
+                    <div class="text-sm font-semibold text-blue-700 mb-2">💡 Best for:</div>
+                    <ul class="text-sm text-gray-600 space-y-1">
+                        <li>• Quick testing and research</li>
+                        <li>• Small-scale evaluation</li>
+                        <li>• Offline environments</li>
                     </ul>
                 </div>
                 
-                <div class="flex justify-between items-center">
-                    <span class="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full font-medium">
-                        Best for: Testing & Research
-                    </span>
-                    <div class="text-blue-600 text-sm font-medium">Click to view code →</div>
+                <div class="flex justify-center">
+                    <div class="text-blue-600 text-sm font-medium bg-blue-100 px-3 py-2 rounded-lg hover:bg-blue-200 transition-colors">
+                        Click to view code →
+                    </div>
                 </div>
             </div>
 
@@ -229,25 +237,33 @@ description: "RewardAnything: Generalizable Principle-Following Reward Models"
                 <div class="mb-4">
                     <div class="text-sm font-semibold text-green-700 mb-2">✅ Pros:</div>
                     <ul class="text-sm text-gray-600 space-y-1">
-                        <li>• Fast batch processing</li>
-                        <li>• Optimized inference</li>
-                        <li>• Scalable</li>
+                        <li>• Fast batch processing & inference</li>
+                        <li>• Production-ready scalability</li>
+                        <li>• Optimized memory usage</li>
                     </ul>
                 </div>
                 
                 <div class="mb-4">
                     <div class="text-sm font-semibold text-orange-700 mb-2">⚠️ Cons:</div>
                     <ul class="text-sm text-gray-600 space-y-1">
-                        <li>• Requires vLLM setup</li>
-                        <li>• More complex config</li>
+                        <li>• Requires vLLM setup and configuration</li>
+                        <li>• More complex deployment</li>
+                    </ul>
+                </div>
+
+                <div class="mb-4">
+                    <div class="text-sm font-semibold text-emerald-700 mb-2">💡 Best for:</div>
+                    <ul class="text-sm text-gray-600 space-y-1">
+                        <li>• Production environments</li>
+                        <li>• RLHF training loops</li>
+                        <li>• Large-scale evaluation</li>
                     </ul>
                 </div>
                 
-                <div class="flex justify-between items-center">
-                    <span class="inline-block bg-emerald-100 text-emerald-800 text-xs px-2 py-1 rounded-full font-medium">
-                        Best for: Production & RLHF
-                    </span>
-                    <div class="text-emerald-600 text-sm font-medium">Click to view code →</div>
+                <div class="flex justify-center">
+                    <div class="text-emerald-600 text-sm font-medium bg-emerald-100 px-3 py-2 rounded-lg hover:bg-emerald-200 transition-colors">
+                        Click to view code →
+                    </div>
                 </div>
             </div>
 
@@ -263,45 +279,39 @@ description: "RewardAnything: Generalizable Principle-Following Reward Models"
                 <div class="mb-4">
                     <div class="text-sm font-semibold text-green-700 mb-2">✅ Pros:</div>
                     <ul class="text-sm text-gray-600 space-y-1">
-                        <li>• Full control</li>
-                        <li>• Custom processing</li>
-                        <li>• HF ecosystem</li>
+                        <li>• Full control over processing</li>
+                        <li>• Custom integration possibilities</li>
+                        <li>• Access to HuggingFace ecosystem</li>
                     </ul>
                 </div>
                 
                 <div class="mb-4">
                     <div class="text-sm font-semibold text-orange-700 mb-2">⚠️ Cons:</div>
                     <ul class="text-sm text-gray-600 space-y-1">
-                        <li>• Manual parsing</li>
-                        <li>• More setup code</li>
+                        <li>• Requires manual output parsing</li>
+                        <li>• More setup and boilerplate code</li>
+                    </ul>
+                </div>
+
+                <div class="mb-4">
+                    <div class="text-sm font-semibold text-purple-700 mb-2">💡 Best for:</div>
+                    <ul class="text-sm text-gray-600 space-y-1">
+                        <li>• Custom integration workflows</li>
+                        <li>• Advanced model customization</li>
+                        <li>• Research requiring low-level control</li>
                     </ul>
                 </div>
                 
-                <div class="flex justify-between items-center">
-                    <span class="inline-block bg-purple-100 text-purple-800 text-xs px-2 py-1 rounded-full font-medium">
-                        Best for: Custom Integration
-                    </span>
-                    <div class="text-purple-600 text-sm font-medium">Click to view code →</div>
+                <div class="flex justify-center">
+                    <div class="text-purple-600 text-sm font-medium bg-purple-100 px-3 py-2 rounded-lg hover:bg-purple-200 transition-colors">
+                        Click to view code →
+                    </div>
                 </div>
             </div>
         </div>
 
-        <!-- Code Examples Tabs -->
+        <!-- Code Examples (no redundant tabs) -->
         <div class="bg-gray-50 rounded-xl p-8">
-            <div class="mb-6">
-                <div class="flex flex-wrap gap-2 mb-6" role="tablist">
-                    <button class="tab-button active" onclick="showTab('local')" data-tab="local">
-                        🏠 Local Inference
-                    </button>
-                    <button class="tab-button" onclick="showTab('vllm')" data-tab="vllm">
-                        🚀 vLLM Deployment
-                    </button>
-                    <button class="tab-button" onclick="showTab('huggingface')" data-tab="huggingface">
-                        🔧 HuggingFace Direct
-                    </button>
-                </div>
-            </div>
-
             <!-- Local Inference Tab -->
             <div id="local-tab" class="tab-content">
                 <h4 class="text-lg font-bold text-gray-900 mb-4">🏠 Local Inference - Recommended for Quick Testing</h4>
@@ -338,148 +348,30 @@ print(f"Best to worst: {result.ranking}")
 print(f"Reasoning: {result.reasoning}")</code></pre>
                 </div>
             </div>
-
-            <!-- vLLM Deployment Tab -->
-            <div id="vllm-tab" class="tab-content hidden">
-                <h4 class="text-lg font-bold text-gray-900 mb-4">🚀 vLLM Deployment - Recommended for Production & RL Training</h4>
-                
-                <div class="space-y-6">
-                    <div>
-                        <h5 class="font-semibold text-gray-800 mb-2">Step 1: Setup vLLM Server</h5>
-                        <div class="rounded-lg overflow-hidden">
-                            <pre><code class="language-bash"># Install vLLM
-pip install vllm
-
-# Start vLLM server with RewardAnything model
-vllm serve zhuohaoyu/RewardAnything-8B-v1 \
-    --host 0.0.0.0 \
-    --port 8000 \
-    --max-model-len 8192 \
-    --tensor-parallel-size 1</code></pre>
-                        </div>
-                    </div>
-
-                    <div>
-                        <h5 class="font-semibold text-gray-800 mb-2">Step 2: Start RewardAnything Server</h5>
-                        <div class="rounded-lg overflow-hidden">
-                            <pre><code class="language-bash"># Start the RewardAnything API server
-rewardanything serve -c config.json --port 8001</code></pre>
-                        </div>
-                    </div>
-
-                    <div>
-                        <h5 class="font-semibold text-gray-800 mb-2">Step 3: Use in Your Code</h5>
-                        <div class="rounded-lg overflow-hidden">
-                            <pre><code class="language-python">import rewardanything
-
-# Connect to the RewardAnything server
-client = rewardanything.Client("http://localhost:8001")
-
-# Process batch requests efficiently
-requests = [
-    {
-        "principle": "Prefer clear, concise and helpful responses...",
-        "prompt": "How to learn programming?",
-        "responses": {
-            "assistant_a": "Start with Python, practice daily, build projects.",
-            "assistant_b": "Read books and hope for the best.",
-            "assistant_c": "Start with Python.org's tutorial, practice daily..."
-        }
-    },
-    # ... more requests
-]
-
-results = client.judge_batch(requests)
-for result in results:
-    print(f"Winner: {result.ranking[0]}")</code></pre>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- HuggingFace Direct Tab -->
-            <div id="huggingface-tab" class="tab-content hidden">
-                <h4 class="text-lg font-bold text-gray-900 mb-4">🔧 Direct HuggingFace Integration - Maximum Flexibility</h4>
-                <div class="rounded-lg overflow-hidden">
-                    <pre><code class="language-python">from transformers import AutoTokenizer, AutoModelForCausalLM
-from rewardanything.processing import prepare_chat_messages, parse_rewardanything_output
-
-# Load model and tokenizer directly
-model = AutoModelForCausalLM.from_pretrained(
-    "zhuohaoyu/RewardAnything-8B-v1",
-    torch_dtype="auto",
-    device_map="auto"
-)
-tokenizer = AutoTokenizer.from_pretrained("zhuohaoyu/RewardAnything-8B-v1")
-
-# Prepare evaluation data
-principle = "Judge responses based on helpfulness and accuracy"
-prompt = "What is the capital of France?"
-responses = {
-    "model_a": "Paris is the capital of France.",
-    "model_b": "I think it might be Lyon or Paris."
-}
-
-# Prepare chat messages (handles masking automatically)
-messages, masked2real = prepare_chat_messages(principle, prompt, responses)
-
-# Format with chat template
-formatted_input = tokenizer.apply_chat_template(
-    messages, tokenize=False, add_generation_prompt=True
-)
-
-# Generate response
-inputs = tokenizer(formatted_input, return_tensors="pt").to(model.device)
-with torch.no_grad():
-    outputs = model.generate(
-        **inputs,
-        max_new_tokens=4096,
-        temperature=0.1,
-        do_sample=True,
-        pad_token_id=tokenizer.eos_token_id
-    )
-
-# Parse structured results (handles JSON parsing robustly)
-result = parse_rewardanything_output(output_text, masked2real)
-
-print(f"Parsed scores: {result.scores}")
-print(f"Ranking: {result.ranking}")</code></pre>
-                </div>
-            </div>
         </div>
 
-        <!-- When to Use Each Method -->
-        <div class="mt-12">
-            <h3 class="text-2xl font-bold text-gray-900 mb-6 text-center">📊 When to Use Each Method</h3>
+        <!-- Decision Matrix (moved below, simplified) -->
+        <div class="mt-16 bg-white rounded-xl p-8 shadow-sm border border-gray-200">
+            <h3 class="text-xl font-bold text-gray-900 mb-6 text-center">Quick Decision Guide</h3>
             <div class="overflow-x-auto">
-                <table class="w-full bg-white rounded-lg shadow-sm border border-gray-200">
-                    <thead class="bg-gray-50">
-                        <tr>
-                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Use Case</th>
-                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Method</th>
-                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Why</th>
+                <table class="min-w-full">
+                    <thead>
+                        <tr class="border-b border-gray-200">
+                            <th class="px-6 py-3 text-left text-sm font-medium text-gray-500 uppercase tracking-wider">Use Case</th>
+                            <th class="px-6 py-3 text-left text-sm font-medium text-gray-500 uppercase tracking-wider">Recommended Method</th>
+                            <th class="px-6 py-3 text-left text-sm font-medium text-gray-500 uppercase tracking-wider">Why</th>
                         </tr>
                     </thead>
                     <tbody class="divide-y divide-gray-200">
                         <tr>
                             <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">Quick testing</td>
                             <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-blue-600">Local Inference</td>
-                            <td class="px-6 py-4 text-sm text-gray-600">Simplest setup</td>
-                        </tr>
-                        <tr class="bg-gray-50">
-                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">Research & development</td>
-                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-blue-600">Local Inference</td>
-                            <td class="px-6 py-4 text-sm text-gray-600">Full control, easy debugging</td>
-                        </tr>
-                        <tr>
-                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">RLHF training</td>
-                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-emerald-600">vLLM Deployment</td>
-                            <td class="px-6 py-4 text-sm text-gray-600">High throughput, optimized for batches</td>
+                            <td class="px-6 py-4 text-sm text-gray-600">Simple setup, immediate results</td>
                         </tr>
                         <tr class="bg-gray-50">
                             <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">Production evaluation</td>
                             <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-emerald-600">vLLM Deployment</td>
-                            <td class="px-6 py-4 text-sm text-gray-600">Scalable, reliable</td>
+                            <td class="px-6 py-4 text-sm text-gray-600">Scalable, reliable, optimized</td>
                         </tr>
                         <tr>
                             <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">Custom integration</td>
@@ -824,7 +716,7 @@ rewards = [reward_function(principle, prompt, resp)
 .tab-content {
     @apply transition-all duration-300;
 }
-</style>
+</style> 
 
 <script>
 function selectDeploymentMethod(method) {
@@ -838,12 +730,6 @@ function selectDeploymentMethod(method) {
     
     // Show corresponding tab
     showTab(method);
-    
-    // Scroll to code section
-    document.querySelector('.bg-gray-50.rounded-xl.p-8').scrollIntoView({
-        behavior: 'smooth',
-        block: 'start'
-    });
 }
 
 function showTab(tabName) {
@@ -852,27 +738,24 @@ function showTab(tabName) {
         tab.classList.add('hidden');
     });
     
-    // Remove active class from all buttons
-    document.querySelectorAll('.tab-button').forEach(btn => {
-        btn.classList.remove('active');
-    });
-    
     // Show selected tab content
     document.getElementById(tabName + '-tab').classList.remove('hidden');
     
-    // Add active class to clicked button
-    document.querySelector(`[data-tab="${tabName}"]`).classList.add('active');
-    
     // Trigger Prism.js to highlight code
-    Prism.highlightAll();
+    if (typeof Prism !== 'undefined') {
+        Prism.highlightAll();
+    }
 }
 
 // Initialize on page load
 document.addEventListener('DOMContentLoaded', function() {
-    // Select first deployment method by default
-    selectDeploymentMethod('local');
+    // Select first deployment method by default WITHOUT scrolling
+    document.querySelector(`[data-method="local"]`).classList.add('selected');
+    showTab('local');
     
     // Highlight all code blocks
-    Prism.highlightAll();
+    if (typeof Prism !== 'undefined') {
+        Prism.highlightAll();
+    }
 });
 </script> 
