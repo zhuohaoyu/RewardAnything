@@ -86,6 +86,209 @@ description: "RewardAnything: Generalizable Principle-Following Reward Models"
     </div>
 </section>
 
+<!-- Problem Demonstration with Real Cases -->
+<section class="py-20 bg-gradient-to-br from-red-50 to-orange-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">The Problem: Static, Implicit Reward Learning</h2>
+            <p class="text-xl text-gray-600 max-w-4xl mx-auto">
+                Current reward models learn <span class="font-semibold text-red-600">implicit preferences</span> from chosen-rejected pairs, 
+                leading to <span class="font-semibold text-red-600">spurious correlations</span> and <span class="font-semibold text-red-600">limited adaptability</span>.
+            </p>
+        </div>
+
+        <!-- Problem Illustration with Real Cases -->
+        <div class="grid lg:grid-cols-2 gap-12 mb-16">
+            <!-- Case 1: Length Bias -->
+            <div class="bg-white rounded-2xl p-8 shadow-lg border border-red-100">
+                <div class="flex items-center mb-6">
+                    <div class="bg-red-100 p-3 rounded-lg mr-4">
+                        <svg class="w-6 h-6 text-red-600" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-gray-900">Issue #1: Length = Quality Bias</h3>
+                        <p class="text-sm text-gray-600">Models learn "longer responses are better" instead of "accurate responses are better"</p>
+                    </div>
+                </div>
+                
+                <div class="space-y-4">
+                    <div class="bg-blue-50 p-4 rounded-lg border-l-4 border-blue-400">
+                        <div class="text-sm font-semibold text-blue-900 mb-2">🙋 Prompt:</div>
+                        <p class="text-blue-800 text-sm">"What are some species of bears that are now extinct?"</p>
+                    </div>
+                    
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div class="bg-green-50 p-4 rounded-lg border border-green-200">
+                            <div class="flex items-center mb-2">
+                                <span class="text-green-600 font-semibold text-sm mr-2">✅ Chosen (Long + Correct)</span>
+                            </div>
+                            <p class="text-green-800 text-xs leading-relaxed">
+                                "Several species of bears have become extinct... <strong>Cave Bear (Ursus spelaeus)</strong>: One of the best-known extinct bear species... <strong>Short-faced Bear (Arctodus simus)</strong>: Once the largest..."
+                            </p>
+                            <div class="mt-2 text-xs text-green-600">
+                                ✓ Accurate facts ✓ Detailed explanations
+                            </div>
+                        </div>
+                        
+                        <div class="bg-red-50 p-4 rounded-lg border border-red-200">
+                            <div class="flex items-center mb-2">
+                                <span class="text-red-600 font-semibold text-sm mr-2">❌ Rejected (Short + Wrong)</span>
+                            </div>
+                            <p class="text-red-800 text-xs leading-relaxed">
+                                "Three species of bears that are now extinct are the <strong>woolly mammoth</strong>, the <strong>woolly rhinoceros</strong>, and the <strong>thylacine</strong>."
+                            </p>
+                            <div class="mt-2 text-xs text-red-600">
+                                ❌ Factually incorrect ❌ None are bears
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-yellow-50 p-4 rounded-lg border border-yellow-200">
+                        <div class="text-sm font-semibold text-yellow-800 mb-1">⚠️ What Current RMs Learn:</div>
+                        <p class="text-yellow-700 text-sm">"Longer responses are better" — but what if the user wanted a brief answer?</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Case 2: Format Over Content -->
+            <div class="bg-white rounded-2xl p-8 shadow-lg border border-red-100">
+                <div class="flex items-center mb-6">
+                    <div class="bg-red-100 p-3 rounded-lg mr-4">
+                        <svg class="w-6 h-6 text-red-600" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-gray-900">Issue #2: Format Over Substance</h3>
+                        <p class="text-sm text-gray-600">Models prioritize structure and completeness over actual content quality</p>
+                    </div>
+                </div>
+                
+                <div class="space-y-4">
+                    <div class="bg-blue-50 p-4 rounded-lg border-l-4 border-blue-400">
+                        <div class="text-sm font-semibold text-blue-900 mb-2">🙋 Prompt:</div>
+                        <p class="text-blue-800 text-sm">"What are some good browser alternatives to Chrome?"</p>
+                    </div>
+                    
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div class="bg-green-50 p-4 rounded-lg border border-green-200">
+                            <div class="flex items-center mb-2">
+                                <span class="text-green-600 font-semibold text-sm mr-2">✅ Chosen (Well-Structured)</span>
+                            </div>
+                            <p class="text-green-800 text-xs leading-relaxed">
+                                "There are several good browser alternatives... <strong>1. Mozilla Firefox:</strong> Strong privacy features, Open-source, Customizable... <strong>2. Microsoft Edge:</strong> Built on Chromium..."
+                            </p>
+                            <div class="mt-2 text-xs text-green-600">
+                                ✓ Clear structure ✓ Complete response
+                            </div>
+                        </div>
+                        
+                        <div class="bg-red-50 p-4 rounded-lg border border-red-200">
+                            <div class="flex items-center mb-2">
+                                <span class="text-red-600 font-semibold text-sm mr-2">❌ Rejected (Incomplete)</span>
+                            </div>
+                            <p class="text-red-800 text-xs leading-relaxed">
+                                "Some good browser alternatives... Firefox offers... Vivaldi is a fast and customizable browser... Opera offers a range of features including a built-in ad blocker, secure password manager,"
+                            </p>
+                            <div class="mt-2 text-xs text-red-600">
+                                ❌ Cuts off mid-sentence ❌ Incomplete
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-yellow-50 p-4 rounded-lg border border-yellow-200">
+                        <div class="text-sm font-semibold text-yellow-800 mb-1">⚠️ What Current RMs Learn:</div>
+                        <p class="text-yellow-700 text-sm">"Complete, structured responses are better" — but what about different user needs?</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- The Core Problems -->
+        <div class="bg-white rounded-2xl p-8 shadow-lg border border-gray-200">
+            <h3 class="text-2xl font-bold text-gray-900 mb-6 text-center">Why Current Reward Models Fail</h3>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="text-center">
+                    <div class="bg-red-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-red-600" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M4 2a1 1 0 011 1v2.101a7.002 7.002 0 0111.601 2.566 1 1 0 11-1.885.666A5.002 5.002 0 005.999 7H9a1 1 0 010 2H4a1 1 0 01-1-1V3a1 1 0 011-1zm.008 9.057a1 1 0 011.276.61A5.002 5.002 0 0014.001 13H11a1 1 0 110-2h5a1 1 0 011 1v5a1 1 0 11-2 0v-2.101a7.002 7.002 0 01-11.601-2.566 1 1 0 01.61-1.276z" clip-rule="evenodd"/>
+                        </svg>
+                    </div>
+                    <h4 class="font-semibold text-gray-900 mb-2">Static Preferences</h4>
+                    <p class="text-sm text-gray-600">Same criteria for all contexts — customer service vs academic research</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="bg-red-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-red-600" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M3 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"/>
+                        </svg>
+                    </div>
+                    <h4 class="font-semibold text-gray-900 mb-2">Spurious Correlations</h4>
+                    <p class="text-sm text-gray-600">Learn "length = quality" instead of actual quality metrics</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="bg-red-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-red-600" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M18 8A6 6 0 006 8v2.5A3.5 3.5 0 009.5 14h1A3.5 3.5 0 0014 10.5V8a6 6 0 00-6-6z" clip-rule="evenodd"/>
+                        </svg>
+                    </div>
+                    <h4 class="font-semibold text-gray-900 mb-2">Implicit Learning</h4>
+                    <p class="text-sm text-gray-600">No explicit rationale — only outcome supervision from chosen-rejected pairs</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="bg-red-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-red-600" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"/>
+                        </svg>
+                    </div>
+                    <h4 class="font-semibold text-gray-900 mb-2">Costly Adaptation</h4>
+                    <p class="text-sm text-gray-600">New criteria require expensive data collection and model retraining</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- The Paradigm Shift -->
+        <div class="mt-12 text-center">
+            <div class="bg-gradient-to-r from-blue-600 to-purple-600 text-white p-8 rounded-2xl shadow-lg">
+                <h3 class="text-2xl font-bold mb-4">The Solution: Principle-Following Reward Models</h3>
+                <p class="text-lg mb-6 max-w-4xl mx-auto">
+                    Instead of learning implicit preferences, RewardAnything follows <span class="font-semibold">explicit natural language principles</span> — enabling dynamic adaptation to any evaluation criteria without retraining.
+                </p>
+                
+                <!-- Mini Demo -->
+                <div class="bg-white/10 backdrop-blur-sm rounded-xl p-6 max-w-4xl mx-auto">
+                    <div class="grid md:grid-cols-2 gap-6 text-left">
+                        <div>
+                            <div class="text-sm font-semibold text-blue-200 mb-2">📋 Principle A: Brevity Focus</div>
+                            <div class="bg-blue-500/20 p-3 rounded-lg text-sm">
+                                "Prefer concise, to-the-point responses that directly answer the question without unnecessary details."
+                            </div>
+                            <div class="mt-2 text-xs text-blue-200">→ Ranks brief, accurate answer highest</div>
+                        </div>
+                        <div>
+                            <div class="text-sm font-semibold text-purple-200 mb-2">📋 Principle B: Detail Focus</div>
+                            <div class="bg-purple-500/20 p-3 rounded-lg text-sm">
+                                "Prefer comprehensive responses with detailed explanations, examples, and thorough coverage of the topic."
+                            </div>
+                            <div class="mt-2 text-xs text-purple-200">→ Ranks detailed, educational answer highest</div>
+                        </div>
+                    </div>
+                    <div class="text-center mt-4 text-sm text-white/80">
+                        <span class="font-semibold">Same model, same responses, different principles → different rankings</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
 <!-- Problem & Solution Overview -->
 <section class="py-20 bg-gray-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
