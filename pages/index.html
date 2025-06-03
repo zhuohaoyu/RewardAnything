@@ -184,7 +184,8 @@ description: "RewardAnything: Generalizable Principle-Following Reward Models"
         <!-- Three Deployment Methods -->
         <div class="grid md:grid-cols-3 gap-8 mb-16">
             <!-- Method 1: Local Inference -->
-            <div class="bg-gradient-to-br from-blue-50 to-indigo-100 rounded-xl p-6 border border-blue-200">
+            <div class="deployment-card blue bg-gradient-to-br from-blue-50 to-indigo-100 rounded-xl p-6 border border-blue-200" 
+                 onclick="selectDeploymentMethod('local')" data-method="local">
                 <div class="flex items-center mb-4">
                     <span class="text-2xl mr-3">🏠</span>
                     <h3 class="text-xl font-bold text-gray-900">Local Inference</h3>
@@ -208,13 +209,17 @@ description: "RewardAnything: Generalizable Principle-Following Reward Models"
                     </ul>
                 </div>
                 
-                <span class="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full font-medium">
-                    Best for: Testing & Research
-                </span>
+                <div class="flex justify-between items-center">
+                    <span class="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full font-medium">
+                        Best for: Testing & Research
+                    </span>
+                    <div class="text-blue-600 text-sm font-medium">Click to view code →</div>
+                </div>
             </div>
 
             <!-- Method 2: vLLM Deployment -->
-            <div class="bg-gradient-to-br from-emerald-50 to-green-100 rounded-xl p-6 border border-emerald-200">
+            <div class="deployment-card emerald bg-gradient-to-br from-emerald-50 to-green-100 rounded-xl p-6 border border-emerald-200" 
+                 onclick="selectDeploymentMethod('vllm')" data-method="vllm">
                 <div class="flex items-center mb-4">
                     <span class="text-2xl mr-3">🚀</span>
                     <h3 class="text-xl font-bold text-gray-900">vLLM Deployment</h3>
@@ -238,13 +243,17 @@ description: "RewardAnything: Generalizable Principle-Following Reward Models"
                     </ul>
                 </div>
                 
-                <span class="inline-block bg-emerald-100 text-emerald-800 text-xs px-2 py-1 rounded-full font-medium">
-                    Best for: Production & RLHF
-                </span>
+                <div class="flex justify-between items-center">
+                    <span class="inline-block bg-emerald-100 text-emerald-800 text-xs px-2 py-1 rounded-full font-medium">
+                        Best for: Production & RLHF
+                    </span>
+                    <div class="text-emerald-600 text-sm font-medium">Click to view code →</div>
+                </div>
             </div>
 
             <!-- Method 3: HuggingFace Integration -->
-            <div class="bg-gradient-to-br from-purple-50 to-violet-100 rounded-xl p-6 border border-purple-200">
+            <div class="deployment-card purple bg-gradient-to-br from-purple-50 to-violet-100 rounded-xl p-6 border border-purple-200" 
+                 onclick="selectDeploymentMethod('huggingface')" data-method="huggingface">
                 <div class="flex items-center mb-4">
                     <span class="text-2xl mr-3">🔧</span>
                     <h3 class="text-xl font-bold text-gray-900">HuggingFace Direct</h3>
@@ -268,9 +277,12 @@ description: "RewardAnything: Generalizable Principle-Following Reward Models"
                     </ul>
                 </div>
                 
-                <span class="inline-block bg-purple-100 text-purple-800 text-xs px-2 py-1 rounded-full font-medium">
-                    Best for: Custom Integration
-                </span>
+                <div class="flex justify-between items-center">
+                    <span class="inline-block bg-purple-100 text-purple-800 text-xs px-2 py-1 rounded-full font-medium">
+                        Best for: Custom Integration
+                    </span>
+                    <div class="text-purple-600 text-sm font-medium">Click to view code →</div>
+                </div>
             </div>
         </div>
 
@@ -293,8 +305,8 @@ description: "RewardAnything: Generalizable Principle-Following Reward Models"
             <!-- Local Inference Tab -->
             <div id="local-tab" class="tab-content">
                 <h4 class="text-lg font-bold text-gray-900 mb-4">🏠 Local Inference - Recommended for Quick Testing</h4>
-                <div class="bg-gray-900 rounded-lg p-4 overflow-x-auto">
-                    <pre class="text-sm text-gray-100"><code>import rewardanything
+                <div class="rounded-lg overflow-hidden">
+                    <pre><code class="language-python">import rewardanything
 
 # Load model locally (similar to HuggingFace)
 reward_model = rewardanything.from_pretrained(
@@ -334,8 +346,8 @@ print(f"Reasoning: {result.reasoning}")</code></pre>
                 <div class="space-y-6">
                     <div>
                         <h5 class="font-semibold text-gray-800 mb-2">Step 1: Setup vLLM Server</h5>
-                        <div class="bg-gray-900 rounded-lg p-4 overflow-x-auto">
-                            <pre class="text-sm text-gray-100"><code># Install vLLM
+                        <div class="rounded-lg overflow-hidden">
+                            <pre><code class="language-bash"># Install vLLM
 pip install vllm
 
 # Start vLLM server with RewardAnything model
@@ -349,16 +361,16 @@ vllm serve zhuohaoyu/RewardAnything-8B-v1 \
 
                     <div>
                         <h5 class="font-semibold text-gray-800 mb-2">Step 2: Start RewardAnything Server</h5>
-                        <div class="bg-gray-900 rounded-lg p-4 overflow-x-auto">
-                            <pre class="text-sm text-gray-100"><code># Start the RewardAnything API server
+                        <div class="rounded-lg overflow-hidden">
+                            <pre><code class="language-bash"># Start the RewardAnything API server
 rewardanything serve -c config.json --port 8001</code></pre>
                         </div>
                     </div>
 
                     <div>
                         <h5 class="font-semibold text-gray-800 mb-2">Step 3: Use in Your Code</h5>
-                        <div class="bg-gray-900 rounded-lg p-4 overflow-x-auto">
-                            <pre class="text-sm text-gray-100"><code>import rewardanything
+                        <div class="rounded-lg overflow-hidden">
+                            <pre><code class="language-python">import rewardanything
 
 # Connect to the RewardAnything server
 client = rewardanything.Client("http://localhost:8001")
@@ -388,8 +400,8 @@ for result in results:
             <!-- HuggingFace Direct Tab -->
             <div id="huggingface-tab" class="tab-content hidden">
                 <h4 class="text-lg font-bold text-gray-900 mb-4">🔧 Direct HuggingFace Integration - Maximum Flexibility</h4>
-                <div class="bg-gray-900 rounded-lg p-4 overflow-x-auto">
-                    <pre class="text-sm text-gray-100"><code>from transformers import AutoTokenizer, AutoModelForCausalLM
+                <div class="rounded-lg overflow-hidden">
+                    <pre><code class="language-python">from transformers import AutoTokenizer, AutoModelForCausalLM
 from rewardanything.processing import prepare_chat_messages, parse_rewardanything_output
 
 # Load model and tokenizer directly
@@ -496,8 +508,8 @@ print(f"Ranking: {result.ranking}")</code></pre>
             <div class="bg-white rounded-xl p-8 shadow-sm border border-gray-200">
                 <h3 class="text-xl font-bold text-gray-900 mb-4">🎯 Custom Principles</h3>
                 <p class="text-gray-600 mb-4">RewardAnything excels with sophisticated, multi-criteria principles:</p>
-                <div class="bg-gray-900 rounded-lg p-4 overflow-x-auto">
-                    <pre class="text-sm text-gray-100"><code>complex_principle = """
+                <div class="rounded-lg overflow-hidden">
+                    <pre><code class="language-python">complex_principle = """
 Evaluate responses using these criteria:
 1. **Technical Accuracy** (40%): Factual correctness
 2. **Clarity** (30%): Clear explanations  
@@ -515,8 +527,8 @@ result = reward_model.judge(complex_principle, prompt, responses)</code></pre>
             <div class="bg-white rounded-xl p-8 shadow-sm border border-gray-200">
                 <h3 class="text-xl font-bold text-gray-900 mb-4">🔄 RLHF Integration</h3>
                 <p class="text-gray-600 mb-4">Seamlessly integrate with your RLHF training pipelines:</p>
-                <div class="bg-gray-900 rounded-lg p-4 overflow-x-auto">
-                    <pre class="text-sm text-gray-100"><code># Example: Use in PPO training loop
+                <div class="rounded-lg overflow-hidden">
+                    <pre><code class="language-python"># Example: Use in PPO training loop
 def reward_function(principle, prompt, response):
     result = reward_model.judge(
         principle=principle,
@@ -770,7 +782,7 @@ rewards = [reward_function(principle, prompt, resp)
 
         <div class="max-w-4xl mx-auto">
             <div class="bg-gray-800 p-6 rounded-xl">
-                <pre class="text-gray-300 font-mono text-sm overflow-x-auto"><code>@article{yu2024rewardanything,
+                <pre><code class="language-latex">@article{yu2024rewardanything,
   title={RewardAnything: Generalizable Principle-Following Reward Models},
   author={Yu, Zhuohao and Zeng, Jiali and Gu, Weizheng and Wang, Yidong and 
           Wang, Jindong and Meng, Fandong and Zhou, Jie and Zhang, Yue and 
@@ -815,6 +827,25 @@ rewards = [reward_function(principle, prompt, resp)
 </style>
 
 <script>
+function selectDeploymentMethod(method) {
+    // Remove selected state from all cards
+    document.querySelectorAll('.deployment-card').forEach(card => {
+        card.classList.remove('selected');
+    });
+    
+    // Add selected state to clicked card
+    document.querySelector(`[data-method="${method}"]`).classList.add('selected');
+    
+    // Show corresponding tab
+    showTab(method);
+    
+    // Scroll to code section
+    document.querySelector('.bg-gray-50.rounded-xl.p-8').scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+    });
+}
+
 function showTab(tabName) {
     // Hide all tab contents
     document.querySelectorAll('.tab-content').forEach(tab => {
@@ -831,5 +862,17 @@ function showTab(tabName) {
     
     // Add active class to clicked button
     document.querySelector(`[data-tab="${tabName}"]`).classList.add('active');
+    
+    // Trigger Prism.js to highlight code
+    Prism.highlightAll();
 }
+
+// Initialize on page load
+document.addEventListener('DOMContentLoaded', function() {
+    // Select first deployment method by default
+    selectDeploymentMethod('local');
+    
+    // Highlight all code blocks
+    Prism.highlightAll();
+});
 </script> 
