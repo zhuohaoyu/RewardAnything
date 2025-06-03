@@ -2,41 +2,148 @@
 
 This directory contains the GitHub Pages website for the RewardAnything project.
 
-## Structure
+## 🏗️ Structure
 
-- `_config.yml` - Jekyll configuration
-- `_layouts/default.html` - Main layout template
-- `index.html` - Homepage
-- `assets/` - Static assets (images, icons, etc.)
+```
+pages/
+├── _config.yml              # Jekyll configuration
+├── _layouts/
+│   └── default.html         # Main layout template
+├── index.html               # Homepage content
+├── assets/
+│   ├── images/              # Logo and image placeholders
+│   └── favicon.svg          # Site favicon
+├── Gemfile                  # Ruby dependencies
+├── setup.sh                 # Local setup script
+└── README.md               # This file
+```
 
-## Local Development
+## 🚀 Automatic Deployment
 
-To run the site locally:
+The site automatically deploys to `https://zhuohaoyu.github.io/RewardAnything` whenever:
 
-1. Install Jekyll:
-   ```bash
-   gem install jekyll bundler
-   ```
+1. **Changes are pushed** to the `main` branch in the `pages/` directory
+2. **Manual trigger** via GitHub Actions tab
 
-2. Navigate to the pages directory:
-   ```bash
-   cd pages
-   ```
+The deployment is handled by the GitHub Actions workflow in `.github/workflows/deploy-pages.yml`.
 
-3. Serve the site:
-   ```bash
-   jekyll serve
-   ```
+## 🏠 Local Development
 
-4. Visit `http://localhost:4000/RewardAnything`
+### Quick Setup
 
-## Deployment
+```bash
+# Navigate to pages directory
+cd pages
 
-The site is automatically deployed to `https://zhuohaoyu.github.io/RewardAnything` when changes are pushed to the main branch.
+# Run setup script (macOS/Linux)
+chmod +x setup.sh
+./setup.sh
 
-## Customization
+# Start development server
+bundle exec jekyll serve
+```
 
-- Update `_config.yml` for site-wide settings
-- Modify `index.html` for homepage content
-- Add new pages as needed
-- Replace placeholder images in `assets/images/` with actual project assets 
+### Manual Setup
+
+```bash
+# Install Ruby dependencies
+gem install jekyll bundler
+bundle install
+
+# Serve the site locally
+bundle exec jekyll serve --livereload
+```
+
+Then visit: `http://localhost:4000/RewardAnything`
+
+## 📝 Configuration
+
+### GitHub Pages Settings
+
+1. Go to **Repository Settings** → **Pages**
+2. Source: **GitHub Actions**
+3. The workflow will handle the rest automatically
+
+### Environment Variables
+
+The following are configured in `_config.yml`:
+
+- `github_username`: Your GitHub username
+- `paper_url`: Link to your arXiv paper
+- `huggingface_url`: Link to model weights
+- `pypi_url`: Link to PyPI package
+
+## 🎨 Customization
+
+### Replacing Placeholder Images
+
+Replace the SVG placeholders in `assets/images/` with your actual logos:
+
+- `logo-placeholder.svg` → Navigation logo
+- `logo-placeholder-white.svg` → Footer logo (white version)  
+- `hero-logo-placeholder.svg` → Large hero section logo
+- `favicon.svg` → Browser favicon
+
+### Updating Content
+
+- **Homepage**: Edit `index.html`
+- **Navigation**: Modify `_layouts/default.html`
+- **Site settings**: Update `_config.yml`
+- **Styling**: Customize Tailwind classes in templates
+
+### Adding New Pages
+
+Create new `.html` or `.md` files with front matter:
+
+```yaml
+---
+layout: default
+title: "Page Title"
+description: "Page description"
+---
+
+Your content here...
+```
+
+## 🔧 Troubleshooting
+
+### Local Development Issues
+
+```bash
+# Clean build files
+bundle exec jekyll clean
+
+# Rebuild dependencies
+bundle install --force
+
+# Verbose build for debugging
+bundle exec jekyll serve --verbose
+```
+
+### Deployment Issues
+
+1. Check **Actions** tab for build logs
+2. Ensure `pages/` directory changes are pushed to `main`
+3. Verify GitHub Pages settings are correct
+
+## 📊 Performance
+
+The site is optimized for:
+- ✅ Mobile responsiveness
+- ✅ Fast loading (Tailwind CSS via CDN)
+- ✅ SEO optimization
+- ✅ Accessibility
+- ✅ Modern browsers
+
+## 🤝 Contributing
+
+When making changes:
+
+1. Test locally first: `bundle exec jekyll serve`
+2. Commit changes to `pages/` directory
+3. Push to `main` branch
+4. Automatic deployment will trigger
+
+---
+
+**Live Site**: https://zhuohaoyu.github.io/RewardAnything 

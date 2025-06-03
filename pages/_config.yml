@@ -9,6 +9,7 @@ highlighter: rouge
 plugins:
   - jekyll-feed
   - jekyll-sitemap
+  - jekyll-seo-tag
 
 # Collections
 collections:
@@ -22,6 +23,11 @@ exclude:
   - package-lock.json
   - tailwind.config.js
   - postcss.config.js
+  - Gemfile
+  - Gemfile.lock
+  - vendor/
+  - .bundle/
+  - README.md
 
 # Social links
 github_username: zhuohaoyu
@@ -31,4 +37,10 @@ pypi_url: "https://pypi.org/project/rewardanything/"
 
 # Project info
 version: "1.0.0"
-license: "Apache-2.0" 
+license: "Apache-2.0"
+
+# GitHub Pages specific settings
+github: [metadata]
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge 
