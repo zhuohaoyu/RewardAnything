@@ -90,11 +90,28 @@ description: "RewardAnything: Generalizable Principle-Following Reward Models"
 <section class="py-20 bg-gradient-to-br from-red-50 to-orange-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-16">
-            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">The Problem: Static, Implicit Reward Learning</h2>
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">The Core Problem: Flawed Training & Narrow Evaluation</h2>
             <p class="text-xl text-gray-600 max-w-4xl mx-auto">
-                Current reward models learn <span class="font-semibold text-red-600">implicit preferences</span> from chosen-rejected pairs, 
-                leading to <span class="font-semibold text-red-600">spurious correlations</span> and <span class="font-semibold text-red-600">limited adaptability</span>.
+                Current reward models face fundamental limitations in how they are <span class="font-semibold text-red-700">trained</span> and <span class="font-semibold text-red-700">evaluated</span>, hindering their ability to truly align with diverse human values.
             </p>
+        </div>
+
+        <!-- Problematic Training -->
+        <div class="mb-12 bg-white rounded-2xl p-8 shadow-lg border border-red-100">
+            <h3 class="text-2xl font-bold text-gray-900 mb-4 text-center">1. Problematic Training: Learning Static & Biased Preferences</h3>
+            <p class="text-gray-700 mb-4 text-center max-w-3xl mx-auto">
+                Reward models are typically trained on vast datasets of <span class="font-semibold text-red-700">(prompt, chosen response, rejected response)</span> tuples. This teaches the model a <span class="font-semibold text-red-700">single, implicit preference</span> distribution.
+            </p>
+            <div class="grid md:grid-cols-2 gap-6 text-sm text-gray-600">
+                <div class="bg-red-50 p-4 rounded-lg">
+                    <h4 class="font-semibold text-red-800 mb-1">No Principled Control:</h4>
+                    <p>Even if the prompt and responses are identical, applying <span class="italic">different evaluation principles</span> (e.g., "be concise" vs. "be detailed") should lead to different rankings. Current RMs struggle to adapt this way without costly retraining for each new principle.</p>
+                </div>
+                <div class="bg-red-50 p-4 rounded-lg">
+                    <h4 class="font-semibold text-red-800 mb-1">Implicit & Outcome-Only Learning:</h4>
+                    <p>Models learn <span class="italic">what</span> to prefer based on outcomes, but not <span class="italic">why</span>. This lack of explicit rationale leads to learning superficial patterns or <span class="font-semibold text-red-700">spurious correlations</span> (e.g., "longer is better," "lists are good") rather than the true underlying human intent, as shown below.</p>
+                </div>
+            </div>
         </div>
 
         <!-- Problem Illustration with Real Cases -->
@@ -206,9 +223,28 @@ description: "RewardAnything: Generalizable Principle-Following Reward Models"
             </div>
         </div>
 
+        <!-- Incomplete Evaluation -->
+        <div class="my-16 bg-white rounded-2xl p-8 shadow-lg border border-orange-100">
+            <h3 class="text-2xl font-bold text-gray-900 mb-4 text-center">2. Incomplete Evaluation: Missing True Generalization</h3>
+            <p class="text-gray-700 mb-4 text-center max-w-3xl mx-auto">
+                Existing Reward Model benchmarks primarily measure how well an RM aligns with a <span class="font-semibold text-orange-700">single, predefined preference distribution</span> (often the one it was trained on or a similar one).
+            </p>
+            <div class="grid md:grid-cols-2 gap-6 text-sm text-gray-600">
+                <div class="bg-orange-50 p-4 rounded-lg">
+                    <h4 class="font-semibold text-orange-800 mb-1">Ignoring Multifaceted Values:</h4>
+                    <p>Human preferences are complex, context-dependent, and multifaceted. A truly useful RM must adapt to <span class="italic">any</span> explicitly stated principle, not just echo a single, baked-in preference.</p>
+                </div>
+                <div class="bg-orange-50 p-4 rounded-lg">
+                    <h4 class="font-semibold text-orange-800 mb-1">Superficial Alignment:</h4>
+                    <p>This narrow evaluation fails to assess the critical capability of <span class="font-semibold text-orange-700">generalizing to diverse and novel principles</span> at inference time, which is essential for robust and trustworthy AI systems.</p>
+                </div>
+            </div>
+        </div>
+
         <!-- The Core Problems -->
         <div class="bg-white rounded-2xl p-8 shadow-lg border border-gray-200">
-            <h3 class="text-2xl font-bold text-gray-900 mb-6 text-center">Why Current Reward Models Fail</h3>
+            <h3 class="text-2xl font-bold text-gray-900 mb-2 text-center">Consequences: Why Current Reward Models Fall Short</h3>
+            <p class="text-gray-600 text-center mb-8 max-w-3xl mx-auto">These fundamental issues in training and evaluation lead to several critical shortcomings:</p>
             
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
                 <div class="text-center">
