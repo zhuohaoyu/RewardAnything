@@ -310,7 +310,7 @@ description: "RewardAnything: Generalizable Principle-Following Reward Models"
             </div>
         </div>
 
-        <!-- Code Examples (no redundant tabs) -->
+        <!-- Code Examples -->
         <div class="bg-gray-50 rounded-xl p-8">
             <!-- Local Inference Tab -->
             <div id="local-tab" class="tab-content">
@@ -318,34 +318,140 @@ description: "RewardAnything: Generalizable Principle-Following Reward Models"
                 <div class="rounded-lg overflow-hidden">
                     <pre><code class="language-python">import rewardanything
 
-# Load model locally (similar to HuggingFace)
-reward_model = rewardanything.from_pretrained(
-    "zhuohaoyu/RewardAnything-8B-v1",  # Model path/name
-    device="cuda",                        # Device placement
-    torch_dtype="auto"                   # Automatic dtype selection
-)
+# Load model locally (downloads automatically on first use)
+reward_model = rewardanything.RewardModel("zhuohaoyu/RewardAnything-8B-v1")
 
 # Define your evaluation principle
-principle = "I prefer clear, concise and helpful responses over long and detailed ones."
+principle = "Judge responses based on helpfulness, accuracy, and clarity. Prefer concise but complete answers."
 
-# Your evaluation data
-prompt = "How do I learn Python programming effectively?"
+# Prepare responses to evaluate
+prompt = "How do I learn Python programming?"
 responses = {
-    "response_a": "Start with Python.org's tutorial, practice daily with small projects...",
-    "response_b": "Here's a comprehensive approach: 1) Start with Python basics...",
-    "response_c": "Learn Python by coding."
+    "assistant_a": "Start with Python.org tutorials, practice daily coding, and build small projects.",
+    "assistant_b": "Python is a programming language. It's used for many things.",
+    "assistant_c": "Begin with Python.org's official tutorial, practice coding daily, join communities like r/learnpython, and work on projects that interest you."
 }
 
-# Get comprehensive evaluation
+# Evaluate and get results
 result = reward_model.judge(
     principle=principle,
-    prompt=prompt, 
+    prompt=prompt,
     responses=responses
 )
 
+# Access results
 print(f"Scores: {result.scores}")
-print(f"Best to worst: {result.ranking}")
-print(f"Reasoning: {result.reasoning}")</code></pre>
+print(f"Ranking: {result.ranking}")
+print(f"Explanation: {result.explanation}")</code></pre>
+                </div>
+            </div>
+
+            <!-- vLLM Deployment Tab -->
+            <div id="vllm-tab" class="tab-content hidden">
+                <h4 class="text-lg font-bold text-gray-900 mb-4">🚀 vLLM Deployment - Optimized for Production</h4>
+                <div class="space-y-6">
+                    <div>
+                        <h5 class="font-semibold text-gray-800 mb-2">Step 1: Setup vLLM Server</h5>
+                        <div class="rounded-lg overflow-hidden">
+                            <pre><code class="language-bash"># Install vLLM
+pip install vllm
+
+# Start vLLM server with RewardAnything model
+vllm serve zhuohaoyu/RewardAnything-8B-v1 \
+    --host 0.0.0.0 \
+    --port 8000 \
+    --max-model-len 8192 \
+    --tensor-parallel-size 1</code></pre>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h5 class="font-semibold text-gray-800 mb-2">Step 2: Start RewardAnything Server</h5>
+                        <div class="rounded-lg overflow-hidden">
+                            <pre><code class="language-bash"># Start the RewardAnything API server
+rewardanything serve -c config.json --port 8001</code></pre>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h5 class="font-semibold text-gray-800 mb-2">Step 3: Use in Your Code</h5>
+                        <div class="rounded-lg overflow-hidden">
+                            <pre><code class="language-python">import rewardanything
+
+# Connect to the RewardAnything server
+client = rewardanything.Client("http://localhost:8001")
+
+# Process batch requests efficiently
+requests = [
+    {
+        "principle": "Prefer clear, concise and helpful responses...",
+        "prompt": "How to learn programming?",
+        "responses": {
+            "assistant_a": "Start with Python, practice daily, build projects.",
+            "assistant_b": "Read books and hope for the best.",
+            "assistant_c": "Start with Python.org's tutorial, practice daily..."
+        }
+    },
+    # ... more requests
+]
+
+results = client.judge_batch(requests)
+for result in results:
+    print(f"Winner: {result.ranking[0]}")</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- HuggingFace Direct Tab -->
+            <div id="huggingface-tab" class="tab-content hidden">
+                <h4 class="text-lg font-bold text-gray-900 mb-4">🔧 Direct HuggingFace Integration - Maximum Flexibility</h4>
+                <div class="rounded-lg overflow-hidden">
+                    <pre><code class="language-python">from transformers import AutoTokenizer, AutoModelForCausalLM
+from rewardanything.processing import prepare_chat_messages, parse_rewardanything_output
+import torch
+
+# Load model and tokenizer directly
+model = AutoModelForCausalLM.from_pretrained(
+    "zhuohaoyu/RewardAnything-8B-v1",
+    torch_dtype="auto",
+    device_map="auto"
+)
+tokenizer = AutoTokenizer.from_pretrained("zhuohaoyu/RewardAnything-8B-v1")
+
+# Prepare evaluation data
+principle = "Judge responses based on helpfulness and accuracy"
+prompt = "What is the capital of France?"
+responses = {
+    "model_a": "Paris is the capital of France.",
+    "model_b": "I think it might be Lyon or Paris."
+}
+
+# Prepare chat messages (handles masking automatically)
+messages, masked2real = prepare_chat_messages(principle, prompt, responses)
+
+# Format with chat template
+formatted_input = tokenizer.apply_chat_template(
+    messages, tokenize=False, add_generation_prompt=True
+)
+
+# Generate response
+inputs = tokenizer(formatted_input, return_tensors="pt").to(model.device)
+with torch.no_grad():
+    outputs = model.generate(
+        **inputs,
+        max_new_tokens=4096,
+        temperature=0.1,
+        do_sample=True,
+        pad_token_id=tokenizer.eos_token_id
+    )
+
+# Parse structured results (handles JSON parsing robustly)
+output_text = tokenizer.decode(outputs[0][inputs['input_ids'].shape[1]:], skip_special_tokens=True)
+result = parse_rewardanything_output(output_text, masked2real)
+
+print(f"Parsed scores: {result.scores}")
+print(f"Ranking: {result.ranking}")</code></pre>
                 </div>
             </div>
         </div>
