@@ -17,4 +17,7 @@ requests = [
 ]
 
 results = client.judge_batch(requests)
-print(results)
+for result in results:
+    print(f"Scores: {result.scores}")
+    print(f"Best to worst: {result.ranking}")
+    print(f"Reasoning: {result.reasoning}")

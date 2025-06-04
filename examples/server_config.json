@@ -12,7 +12,7 @@
     "frequency_penalty": 0.0,
     "presence_penalty": 0.0
   },
-  "num_workers": 8,
+  "num_workers": 4,
   "request_limit": 500,
   "request_limit_period": 60,
   "max_error_count": 30,
