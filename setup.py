@@ -14,13 +14,14 @@ def read_requirements(filename):
 
 # Core requirements for the package
 core_requirements = [
-    "torch>=1.9.0",
-    "transformers>=4.21.0",
+    "torch>=2.0.0",
+    "transformers>=4.51.0",
     "tokenizers>=0.13.0",
     "requests>=2.25.0",
     "pydantic>=1.8.0",
     "tqdm>=4.62.0",
     "numpy>=1.21.0",
+    "accelerate>=1.7.0",
 ]
 
 # Server requirements
@@ -53,7 +54,7 @@ benchmark_requirements = [
 
 setup(
     name="RewardAnything",
-    version="1.0.0",
+    version="1.0.1",
     author="Zhuohao Yu",
     author_email="zyu@stu.pku.edu.cn",
     description="RewardAnything: Generalizable Principle-Following Reward Models",

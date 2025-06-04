@@ -36,7 +36,7 @@ huggingface_url: "https://huggingface.co/zhuohaoyu/RewardAnything-8B-v1"
 pypi_url: "https://pypi.org/project/rewardanything/"
 
 # Project info
-version: "1.0.0"
+version: "1.0.1"
 license: "Apache-2.0"
 
 # GitHub Pages specific settings

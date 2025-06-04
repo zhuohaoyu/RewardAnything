@@ -40,7 +40,7 @@ class Client:
         
         self.headers = {
             "Content-Type": "application/json",
-            "User-Agent": "RewardAnything-Python-Client/1.0.0"
+            "User-Agent": "RewardAnything-Python-Client/1.0.1"
         }
         
         if api_key:

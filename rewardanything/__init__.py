@@ -10,7 +10,7 @@ from .client import Client
 from .models import RewardResult, RewardRequest, RewardResponse
 # from .benchmarks import RABench
 
-__version__ = "1.0.0"
+__version__ = "1.0.1"
 __all__ = ["from_pretrained", "Client", "RewardResult", "RewardRequest", "RewardResponse"]
 
 # Optional benchmarks import (only if available)

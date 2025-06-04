@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "rewardanything"
-version = "1.0.0"
+version = "1.0.1"
 description = "RewardAnything: Generalizable Principle-Following Reward Models"
 readme = "README.md"
 license = {text = "Apache-2.0"}
@@ -41,8 +41,8 @@ classifiers = [
 ]
 requires-python = ">=3.8"
 dependencies = [
-    "torch>=1.13.0",
-    "transformers>=4.35.0",
+    "torch>=2.0.0",
+    "transformers>=4.51.0",
     "fastapi>=0.104.0",
     "uvicorn>=0.24.0",
     "pydantic>=2.0.0",
@@ -59,14 +59,14 @@ server = [
     "uvicorn>=0.24.0",
 ]
 local = [
-    "torch>=1.13.0",
-    "transformers>=4.35.0",
+    "torch>=2.0.0",
+    "transformers>=4.51.0",
 ]
 all = [
     "fastapi>=0.104.0",
     "uvicorn>=0.24.0",
-    "torch>=1.13.0",
-    "transformers>=4.35.0",
+    "torch>=2.0.0",
+    "transformers>=4.51.0",
 ]
 dev = [
     "pytest>=7.0.0",
