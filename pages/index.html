@@ -349,10 +349,6 @@ description: "RewardAnything: Generalizable Principle-Following Reward Models"
                 <img src="{{ '/assets/images/figure_1_placeholder.jpg' | relative_url }}" 
                      alt="Figure 1: Current post-training optimization paradigm vs RewardAnything approach"
                      class="w-full h-auto rounded-lg shadow-sm">
-                <p class="text-sm text-gray-600 text-center mt-4 italic">
-                    <strong>Figure 1:</strong> Current post-training optimization requires costly retraining for different preferences. 
-                    RewardAnything directly follows natural language principles without retraining.
-                </p>
             </div>
         </div>
     </div>
@@ -708,14 +704,28 @@ print(f"Ranking: {result.ranking}")</code></pre>
                     <h3 class="text-xl lg:text-2xl font-bold text-gray-900">Complex Principles</h3>
                 </div>
                 <p class="text-gray-700 mb-4 leading-relaxed flex-grow">
-                    RewardAnything excels when provided with clear, structured principles, especially for nuanced tasks involving multiple, potentially conflicting objectives. Define criteria and specify priorities to guide the model's judgment effectively. This allows for fine-grained control over the evaluation process.
+                    RewardAnything excels when provided with clear, structured principles, especially for nuanced tasks involving multiple, potentially conflicting objectives. Define criteria, assign weights (e.g., via textual emphasis or explicit percentages), and specify priorities to guide the model's judgment effectively. This allows for fine-grained control over the evaluation process.
                 </p>
-                <div class="rounded-lg overflow-hidden bg-gray-800 mt-auto"> <!-- Added bg-gray-800 for better contrast with Prism themes -->
-                    <pre class="p-4"><code class="language-python text-sm">complex_principle = """
-Safety comes first but also be sure not to encourage overly sensitive reiectionsfor safe or benignly borderline queries. Next, equally value warmth, appropriate humor (to deflect borderline harm), and genuine helpfulness. Remember, content and tone is more important than presentation style.
+                <div class="rounded-lg overflow-hidden bg-gray-800 mt-auto">
+                    <pre class="p-4"><code class="language-python text-sm"># Define a detailed, multi-faceted principle
+complex_principle = """
+Safety comes first but also be sure not to encourage
+overly sensitive reiections for safe or benignly
+borderline queries. Next, equally value warmth,
+appropriate humor (to deflect borderline harm), 
+and genuine helpfulness. Remember, content and tone 
+are more important than presentation style.
+
 """
 
-result = reward_model.judge(complex_principle, prompt, responses)</code></pre>
+# Assume 'reward_model' is initialized
+# prompt = "Your specific prompt here"
+# responses = {"res_a": "...", "res_b": "..."}
+result = reward_model.judge(
+    principle=complex_principle,
+    prompt=prompt,
+    responses=responses
+)</code></pre>
                 </div>
             </div>
 
@@ -726,34 +736,27 @@ result = reward_model.judge(complex_principle, prompt, responses)</code></pre>
                     <h3 class="text-xl lg:text-2xl font-bold text-gray-900">RLHF Integration</h3>
                 </div>
                 <p class="text-gray-700 mb-4 leading-relaxed flex-grow">
-                    Seamlessly integrate RewardAnything into your RL pipelines. It can serve as a dynamic, principle-driven reward function. RewardAnything is compatible with popular RL frameworks (e.g. veRL), allowing you to guide model generation based on explicit criteria rather than static preferences.
+                    Seamlessly integrate RewardAnything into your Reinforcement Learning from Human Feedback (RLHF) pipelines. It can serve as a dynamic, principle-driven reward function. RewardAnything is compatible with popular RL frameworks (e.g., TRL, veRL), allowing you to guide model generation based on explicit criteria rather than static preferences.
                 </p>
                 <p class="text-gray-700 mb-4 leading-relaxed flex-grow">
                     Detailed integration examples and best practices can be found in our official repository.
                 </p>
-                <div class="rounded-lg overflow-hidden bg-gray-800 mt-auto"> <!-- Added bg-gray-800 for better contrast with Prism themes -->
+                <div class="rounded-lg overflow-hidden bg-gray-800 mt-auto">
                     <pre class="p-4"><code class="language-python text-sm"># Example: Use in a PPO-style training loop
-# Assuming 'reward_model' is initialized
+# Assume 'reward_model' is initialized
 # principle = "Your guiding principle"
 # prompt = "The input prompt"
 
 def reward_function(principle, prompt, response_text):
-    # Responses can be a dict, e.g. comparing generated to a baseline
     eval_responses = {"generated": response_text}
-    # Add a reference response if available for comparison
-    # eval_responses["reference"] = "A baseline or reference response"
-    
     result = reward_model.judge(
         principle=principle,
         prompt=prompt,
         responses=eval_responses
     )
-    # Return the score for the generated response
     return result.scores.get("generated", 0.0)
 
-# Placeholder for your list of generated responses
-# generated_responses = ["response1_text", "response2_text", ...]
-
+# generated_responses = ["response1", "response2", ...]
 rewards = [reward_function(principle, prompt, resp) 
            for resp in generated_responses]</code></pre>
                 </div>
@@ -778,9 +781,6 @@ rewards = [reward_function(principle, prompt, resp)
                 <img src="{{ '/assets/images/table2_rm_bench_results.jpg' | relative_url }}" 
                      alt="Table 2: Accuracies (%) of reward models on RM-Bench"
                      class="w-full h-auto rounded-md shadow-md mx-auto border border-gray-300" style="max-width: 800px;">
-                <p class="text-sm text-gray-600 text-center mt-4 italic">
-                    Highlights of our model's performance on RM-Bench compared to other models across various domains.
-                </p>
             </div>
 
             <div class="bg-white p-4 md:p-6 rounded-xl shadow-xl border border-gray-200">
@@ -788,9 +788,6 @@ rewards = [reward_function(principle, prompt, resp)
                 <img src="{{ '/assets/images/table3_rabench_results.jpg' | relative_url }}" 
                      alt="Table 3: Performance of reward models on RABench"
                      class="w-full h-auto rounded-md shadow-md mx-auto border border-gray-300" style="max-width: 900px;">
-                <p class="text-sm text-gray-600 text-center mt-4 italic">
-                    Results on our novel RABench benchmark, specifically designed to evaluate principle-following capabilities.
-                </p>
             </div>
         </div>
     </div>
