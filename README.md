@@ -323,7 +323,7 @@ We welcome contributions! See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
 ## 📄 Citation
 
 ```bibtex
-@article{yu2024rewardanything,
+@article{yu2025rewardanything,
   title={RewardAnything: Generalizable Principle-Following Reward Models},
   author={Yu, Zhuohao and Zeng, Jiali and Gu, Weizheng and Wang, Yidong and Wang, Jindong and Meng, Fandong and Zhou, Jie and Zhang, Yue and Zhang, Shikun and Ye, Wei},
   journal={arXiv preprint arXiv:XXXX.XXXXX},
