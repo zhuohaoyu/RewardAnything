@@ -696,24 +696,23 @@ print(f"Ranking: {result.ranking}")</code></pre>
         <div class="text-center mb-16">
             <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">🔬 Advanced Usage</h2>
             <p class="text-xl text-gray-600 max-w-4xl mx-auto">
-                Unlock the full potential of RewardAnything with sophisticated principles and RLHF integration.
+                Unlock the full potential of RewardAnything by leveraging sophisticated principles and seamlessly integrating it into your RLHF workflows.
             </p>
         </div>
 
-        <div class="grid md:grid-cols-2 gap-8">
-            <!-- Custom Principles -->
-            <div class="bg-white rounded-xl p-8 shadow-sm border border-gray-200">
-                <h3 class="text-xl font-bold text-gray-900 mb-4">🎯 Custom Principles</h3>
-                <p class="text-gray-600 mb-4">RewardAnything excels with sophisticated, multi-criteria principles:</p>
-                <div class="rounded-lg overflow-hidden">
-                    <pre><code class="language-python">complex_principle = """
-Evaluate responses using these criteria:
-1. **Technical Accuracy** (40%): Factual correctness
-2. **Clarity** (30%): Clear explanations  
-3. **Practical Value** (20%): Actionable advice
-4. **Safety** (10%): No harmful content
-
-Priority: safety > accuracy > clarity > practical value.
+        <div class="grid md:grid-cols-2 gap-8 items-stretch"> <!-- items-stretch to make cards same height if content varies -->
+            <!-- Complex Principles -->
+            <div class="bg-white rounded-xl p-8 shadow-lg border border-gray-200 flex flex-col">
+                <div class="flex items-center mb-4">
+                    <span class="text-2xl mr-3">🧩</span>
+                    <h3 class="text-xl lg:text-2xl font-bold text-gray-900">Complex Principles</h3>
+                </div>
+                <p class="text-gray-700 mb-4 leading-relaxed flex-grow">
+                    RewardAnything excels when provided with clear, structured principles, especially for nuanced tasks involving multiple, potentially conflicting objectives. Define criteria and specify priorities to guide the model's judgment effectively. This allows for fine-grained control over the evaluation process.
+                </p>
+                <div class="rounded-lg overflow-hidden bg-gray-800 mt-auto"> <!-- Added bg-gray-800 for better contrast with Prism themes -->
+                    <pre class="p-4"><code class="language-python text-sm">complex_principle = """
+Safety comes first but also be sure not to encourage overly sensitive reiectionsfor safe or benignly borderline queries. Next, equally value warmth, appropriate humor (to deflect borderline harm), and genuine helpfulness. Remember, content and tone is more important than presentation style.
 """
 
 result = reward_model.judge(complex_principle, prompt, responses)</code></pre>
@@ -721,22 +720,42 @@ result = reward_model.judge(complex_principle, prompt, responses)</code></pre>
             </div>
 
             <!-- RLHF Integration -->
-            <div class="bg-white rounded-xl p-8 shadow-sm border border-gray-200">
-                <h3 class="text-xl font-bold text-gray-900 mb-4">🔄 RLHF Integration</h3>
-                <p class="text-gray-600 mb-4">Seamlessly integrate with your RLHF training pipelines:</p>
-                <div class="rounded-lg overflow-hidden">
-                    <pre><code class="language-python"># Example: Use in PPO training loop
-def reward_function(principle, prompt, response):
+            <div class="bg-white rounded-xl p-8 shadow-lg border border-gray-200 flex flex-col">
+                <div class="flex items-center mb-4">
+                    <span class="text-2xl mr-3">🔄</span>
+                    <h3 class="text-xl lg:text-2xl font-bold text-gray-900">RLHF Integration</h3>
+                </div>
+                <p class="text-gray-700 mb-4 leading-relaxed flex-grow">
+                    Seamlessly integrate RewardAnything into your RL pipelines. It can serve as a dynamic, principle-driven reward function. RewardAnything is compatible with popular RL frameworks (e.g. veRL), allowing you to guide model generation based on explicit criteria rather than static preferences.
+                </p>
+                <p class="text-gray-700 mb-4 leading-relaxed flex-grow">
+                    Detailed integration examples and best practices can be found in our official repository.
+                </p>
+                <div class="rounded-lg overflow-hidden bg-gray-800 mt-auto"> <!-- Added bg-gray-800 for better contrast with Prism themes -->
+                    <pre class="p-4"><code class="language-python text-sm"># Example: Use in a PPO-style training loop
+# Assuming 'reward_model' is initialized
+# principle = "Your guiding principle"
+# prompt = "The input prompt"
+
+def reward_function(principle, prompt, response_text):
+    # Responses can be a dict, e.g. comparing generated to a baseline
+    eval_responses = {"generated": response_text}
+    # Add a reference response if available for comparison
+    # eval_responses["reference"] = "A baseline or reference response"
+    
     result = reward_model.judge(
         principle=principle,
         prompt=prompt,
-        responses={"generated": response, "reference": "baseline"}
+        responses=eval_responses
     )
-    return result.scores["generated"]
+    # Return the score for the generated response
+    return result.scores.get("generated", 0.0)
 
-# Use in your RLHF training
+# Placeholder for your list of generated responses
+# generated_responses = ["response1_text", "response2_text", ...]
+
 rewards = [reward_function(principle, prompt, resp) 
-          for resp in generated_responses]</code></pre>
+           for resp in generated_responses]</code></pre>
                 </div>
             </div>
         </div>
