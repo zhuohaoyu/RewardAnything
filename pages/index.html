@@ -358,6 +358,22 @@ description: "RewardAnything: Generalizable Principle-Following Reward Models"
     </div>
 </section>
 
+<!-- Refer to Paper for Technical Details -->
+<section class="py-16 bg-slate-100">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-2xl md:text-3xl font-semibold text-gray-800 mb-6">
+            <span class="mr-2">📖</span>Dive Deeper into the Details
+        </h2>
+        <p class="text-lg md:text-xl text-gray-700 leading-relaxed mb-8">
+            For a comprehensive understanding of our methodology, technical innovations, detailed model architecture, training procedures, and full experimental setup, please refer to our full research paper. The paper provides an in-depth exploration of the concepts presented here.
+        </p>
+        <a href="{{ site.paper_url | default: '#' }}" 
+           class="inline-flex items-center bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-all transform hover:scale-105 shadow-lg text-base md:text-lg">
+            📄 <span class="ml-2">Read the Full Paper</span>
+        </a>
+    </div>
+</section>
+
 <!-- Installation & Usage Guide -->
 <section id="quickstart" class="py-20 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -732,79 +748,30 @@ rewards = [reward_function(principle, prompt, resp)
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-16">
             <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">State-of-the-Art Performance</h2>
-            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                RewardAnything achieves excellent performance on both traditional benchmarks and our new principle-following evaluation
+            <p class="text-xl text-gray-600 max-w-4xl mx-auto">
+                RewardAnything achieves excellent performance on both traditional benchmarks and our new principle-following evaluation. Below are highlights from RM-Bench and our proposed RABench. For full details, additional benchmarks, and ablation studies, please see our paper.
             </p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <!-- RM-Bench Results -->
-            <div class="bg-white p-8 rounded-xl shadow-sm">
-                <div class="text-center mb-6">
-                    <div class="text-3xl font-bold text-blue-600 mb-2">89.2%</div>
-                    <div class="text-lg font-semibold text-gray-900">RM-Bench Accuracy</div>
-                    <div class="text-sm text-gray-600">State-of-the-art on challenging "hard" settings</div>
-                </div>
-                <div class="space-y-3 text-sm">
-                    <div class="flex justify-between">
-                        <span class="text-gray-600">Math:</span>
-                        <span class="font-semibold">89.1%</span>
-                    </div>
-                    <div class="flex justify-between">
-                        <span class="text-gray-600">Code:</span>
-                        <span class="font-semibold">89.1%</span>
-                    </div>
-                    <div class="flex justify-between">
-                        <span class="text-gray-600">Safety:</span>
-                        <span class="font-semibold">89.6%</span>
-                    </div>
-                </div>
+        <div class="space-y-12 md:space-y-16">
+            <div class="bg-white p-4 md:p-6 rounded-xl shadow-xl border border-gray-200">
+                <h3 class="text-xl md:text-2xl font-semibold text-gray-800 mb-4 text-center">Table 2: Performance on RM-Bench</h3>
+                <img src="{{ '/assets/images/table2_rm_bench_results.jpg' | relative_url }}" 
+                     alt="Table 2: Accuracies (%) of reward models on RM-Bench"
+                     class="w-full h-auto rounded-md shadow-md mx-auto border border-gray-300" style="max-width: 800px;">
+                <p class="text-sm text-gray-600 text-center mt-4 italic">
+                    Highlights of our model's performance on RM-Bench compared to other models across various domains.
+                </p>
             </div>
 
-            <!-- RABench Results -->
-            <div class="bg-white p-8 rounded-xl shadow-sm">
-                <div class="text-center mb-6">
-                    <div class="text-3xl font-bold text-green-600 mb-2">80.5%</div>
-                    <div class="text-lg font-semibold text-gray-900">RABench Accuracy</div>
-                    <div class="text-sm text-gray-600">Novel benchmark for principle-following</div>
-                </div>
-                <div class="space-y-3 text-sm">
-                    <div class="flex justify-between">
-                        <span class="text-gray-600">Content:</span>
-                        <span class="font-semibold">82.6%</span>
-                    </div>
-                    <div class="flex justify-between">
-                        <span class="text-gray-600">Logic:</span>
-                        <span class="font-semibold">80.7%</span>
-                    </div>
-                    <div class="flex justify-between">
-                        <span class="text-gray-600">Style:</span>
-                        <span class="font-semibold">80.5%</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Key Advantages -->
-            <div class="bg-white p-8 rounded-xl shadow-sm">
-                <div class="text-center mb-6">
-                    <div class="text-3xl font-bold text-purple-600 mb-2">Zero</div>
-                    <div class="text-lg font-semibold text-gray-900">Retraining Required</div>
-                    <div class="text-sm text-gray-600">Adapt to new principles instantly</div>
-                </div>
-                <div class="space-y-3 text-sm">
-                    <div class="flex items-center">
-                        <div class="w-2 h-2 bg-green-500 rounded-full mr-2"></div>
-                        <span>200+ principle categories</span>
-                    </div>
-                    <div class="flex items-center">
-                        <div class="w-2 h-2 bg-green-500 rounded-full mr-2"></div>
-                        <span>Listwise evaluation</span>
-                    </div>
-                    <div class="flex items-center">
-                        <div class="w-2 h-2 bg-green-500 rounded-full mr-2"></div>
-                        <span>Transparent reasoning</span>
-                    </div>
-                </div>
+            <div class="bg-white p-4 md:p-6 rounded-xl shadow-xl border border-gray-200">
+                <h3 class="text-xl md:text-2xl font-semibold text-gray-800 mb-4 text-center">Table 3: Performance on RABench (Ours)</h3>
+                <img src="{{ '/assets/images/table3_rabench_results.jpg' | relative_url }}" 
+                     alt="Table 3: Performance of reward models on RABench"
+                     class="w-full h-auto rounded-md shadow-md mx-auto border border-gray-300" style="max-width: 900px;">
+                <p class="text-sm text-gray-600 text-center mt-4 italic">
+                    Results on our novel RABench benchmark, specifically designed to evaluate principle-following capabilities.
+                </p>
             </div>
         </div>
     </div>
