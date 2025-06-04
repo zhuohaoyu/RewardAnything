@@ -6,11 +6,10 @@
     </picture>
   <br/>
   <p>
-    <a href="https://pypi.org/project/rewardanything/"><img alt="PyPI" src="https://img.shields.io/pypi/v/rewardanything.svg?style=flat-square&color=7B9BB3&labelColor=5A7A94"></a>
+    <a href="https://zhuohaoyu.github.io/RewardAnything"><img alt="Website" src="https://img.shields.io/badge/🌐_Project-Website-A593C2?style=flat-square&labelColor=8A7AA8"></a>
     <a href="https://huggingface.co/zhuohaoyu/RewardAnything-8B-v1"><img alt="Model Weights" src="https://img.shields.io/badge/🤗_HuggingFace-Model_Weights-D4A574?style=flat-square&labelColor=B8956A"></a>
     <a href="https://arxiv.org/abs/XXXX.XXXXX"><img alt="Paper" src="https://img.shields.io/badge/📄_arXiv-Paper-C7969C?style=flat-square&labelColor=A8798A"></a>
-    <a href="https://github.com/zhuohaoyu/RewardAnything#readme"><img alt="Documentation" src="https://img.shields.io/badge/📚_GitHub-Documentation-9CAF88?style=flat-square&labelColor=7D9170"></a>
-    <a href="https://zhuohaoyu.github.io/RewardAnything"><img alt="Website" src="https://img.shields.io/badge/🌐_Project-Website-A593C2?style=flat-square&labelColor=8A7AA8"></a>
+    <a href="https://pypi.org/project/rewardanything/"><img alt="PyPI" src="https://img.shields.io/pypi/v/rewardanything.svg?style=flat-square&color=7B9BB3&labelColor=5A7A94"></a>
     </p>
   <br/>
 
@@ -38,7 +37,10 @@
   </div>
 </div>
 
-**RewardAnything** introduces a revolutionary paradigm for reward modeling: instead of learning implicit preferences from fixed datasets, our models understand and follow explicit natural language principles. This enables dynamic adaptation to diverse evaluation criteria without costly retraining.
+Traditional reward models learn **implicit preferences** from fixed datasets, leading to static judgments that struggle with the **nuanced and multifaceted nature of human values**.
+We believe that, much like Large Language Models follow diverse instructions, reward models must be able to understand and follow **explicitly specified principles**.
+
+**RewardAnything** embodies this new paradigm. Our models are designed to interpret natural language principles at inference time, enabling **dynamic adaptation** to a wide array of evaluation criteria **without costly retraining**. This approach shifts from fitting a single preference distribution to achieving true principle-following generalization.
 
 ## 🌟 Key Features
 

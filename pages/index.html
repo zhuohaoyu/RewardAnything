@@ -536,31 +536,24 @@ description: "RewardAnything: Generalizable Principle-Following Reward Models"
                 <div class="rounded-lg overflow-hidden">
                     <pre><code class="language-python">import rewardanything
 
-# Load model locally (downloads automatically on first use)
-reward_model = rewardanything.RewardModel("zhuohaoyu/RewardAnything-8B-v1")
+# Load model locally (similar to HuggingFace)
+reward_model = rewardanything.from_pretrained("zhuohaoyu/RewardAnything-8B-v1", device="cuda")
 
-# Define your evaluation principle
-principle = "Judge responses based on helpfulness, accuracy, and clarity. Prefer concise but complete answers."
-
-# Prepare responses to evaluate
-prompt = "How do I learn Python programming?"
-responses = {
-    "assistant_a": "Start with Python.org tutorials, practice daily coding, and build small projects.",
-    "assistant_b": "Python is a programming language. It's used for many things.",
-    "assistant_c": "Begin with Python.org's official tutorial, practice coding daily, join communities like r/learnpython, and work on projects that interest you."
-}
-
-# Evaluate and get results
+# Get comprehensive evaluation
 result = reward_model.judge(
-    principle=principle,
-    prompt=prompt,
-    responses=responses
+    principle="I prefer clear, concise and helpful responses over long and detailed ones.",
+    prompt="How do I learn Python programming effectively?", 
+    responses={ # responses with keys, note these are masked and shuffled and then given to RewardAnything to prevent cheating
+        "response_a": "Start with Python.org\\'s tutorial, practice daily with small projects, and join r/learnpython for help. Focus on fundamentals first.",
+        "response_b": "Here\\'s a comprehensive approach: 1) Start with Python basics including variables, data types, operators, control structures like if-statements, for-loops, while-loops, and functions, 2) Practice with small projects like calculators, text games, and data manipulation scripts, 3) Use interactive platforms like Codecademy, Python.org\\'s official tutorial, edX courses, Coursera specializations, and YouTube channels, 4) Join communities like r/learnpython, Stack Overflow, Python Discord servers, and local meetups for support and networking, 5) Build progressively complex projects including web scrapers, APIs, data analysis tools, and web applications, 6) Read books like \\'Automate the Boring Stuff\\', \\'Python Crash Course\\', and \\'Effective Python\\', 7) Dedicate 1-2 hours daily for consistent progress and track your learning journey.",
+        "response_c": "Learn Python by coding."
+    }
 )
 
 # Access results
 print(f"Scores: {result.scores}")
 print(f"Ranking: {result.ranking}")
-print(f"Explanation: {result.explanation}")</code></pre>
+print(f"Reasoning: {result.reasoning}")</code></pre>
                 </div>
             </div>
 
