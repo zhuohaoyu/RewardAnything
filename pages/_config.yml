@@ -30,9 +30,9 @@ exclude:
   - README.md
 
 # Social links
-github_username: zhuohaoyu
+github_username: WisdomShell
 paper_url: "https://arxiv.org/abs/2506.03637"
-huggingface_url: "https://huggingface.co/zhuohaoyu/RewardAnything-8B-v1"
+huggingface_url: "https://huggingface.co/WisdomShell/RewardAnything-8B-v1"
 pypi_url: "https://pypi.org/project/rewardanything/"
 
 # Project info
