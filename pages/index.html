@@ -549,7 +549,7 @@ description: "RewardAnything: Generalizable Principle-Following Reward Models"
                     <pre><code class="language-python">import rewardanything
 
 # Load model locally (similar to HuggingFace)
-reward_model = rewardanything.from_pretrained("zhuohaoyu/RewardAnything-8B-v1", device="cuda")
+reward_model = rewardanything.from_pretrained("WisdomShell/RewardAnything-8B-v1", device="cuda")
 
 # Get comprehensive evaluation
 result = reward_model.judge(
@@ -583,7 +583,7 @@ print(f"Reasoning: {result.reasoning}")</code></pre>
                         <h5 class="font-semibold text-gray-800 mb-2">Step 1: Setup vLLM Server</h5>
                         <div class="rounded-lg overflow-hidden">
                             <pre><code class="language-bash"># Start vLLM server with RewardAnything model
-vllm serve zhuohaoyu/RewardAnything-8B-v1 --host 0.0.0.0 --port 8000</code></pre>
+vllm serve WisdomShell/RewardAnything-8B-v1 --host 0.0.0.0 --port 8000</code></pre>
                         </div>
                     </div>
 
@@ -641,11 +641,11 @@ import torch
 
 # Load model and tokenizer directly
 model = AutoModelForCausalLM.from_pretrained(
-    "zhuohaoyu/RewardAnything-8B-v1",
+    "WisdomShell/RewardAnything-8B-v1",
     torch_dtype="auto",
     device_map="auto"
 )
-tokenizer = AutoTokenizer.from_pretrained("zhuohaoyu/RewardAnything-8B-v1")
+tokenizer = AutoTokenizer.from_pretrained("WisdomShell/RewardAnything-8B-v1")
 
 # Prepare evaluation data
 principle = "Judge responses based on helpfulness and accuracy"
